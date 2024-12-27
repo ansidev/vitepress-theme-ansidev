@@ -1,0 +1,51 @@
+# https://taskfile.dev
+
+version: '3'
+
+tasks:
+  install:
+    desc: Install dependencies
+    cmds:
+      - pnpm install
+
+  dev:
+    deps:
+      - install
+    cmds:
+      - pnpm dev
+    silent: true
+
+  rmdir:
+    desc: Remove directory if and only if it exists
+    vars:
+      DIR: '{{index (splitArgs .CLI_ARGS) 0}}'
+    cmds:
+      - |
+        [ -d "{{.DIR}}" ] && rm -r "{{.DIR}}"
+    silent: true
+
+  clean:
+    cmds:
+      - task: rmdir
+        vars:
+          CLI_ARGS: './dist'
+      - task: rmdir
+        vars:
+          CLI_ARGS: './demo-dist'
+      - task: rmdir
+        vars:
+          CLI_ARGS: './demo/.vitepress/cache'
+    silent: true
+    ignore_error: true
+
+  build-demo:
+    desc: Build demo site
+    cmds:
+      - pnpm build:demo
+
+  build:
+    deps:
+      - clean
+      - build-demo
+    silent: true
+
