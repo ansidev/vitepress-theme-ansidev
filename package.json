@@ -43,7 +43,7 @@
     "serve": "npm run build:demo && vitepress serve demo"
   },
   "dependencies": {
-    "vue-i18n": "^10.0.5"
+    "vue-i18n": "^11.0.0"
   },
   "devDependencies": {
     "@iconify/vue": "^4.2.0",
