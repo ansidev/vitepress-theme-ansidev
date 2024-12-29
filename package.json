@@ -39,7 +39,7 @@
     "type": "vue-tsc --noEmit",
     "test": "npm run lint && npm run type",
     "dev": "vitepress dev demo",
-    "build:demo": "NODE_ENV=production vitepress build demo",
+    "build": "NODE_ENV=production vitepress build demo",
     "serve": "npm run build:demo && vitepress serve demo"
   },
   "dependencies": {
