@@ -8,7 +8,7 @@ globalThis.__VUE_PROD_DEVTOOLS__ = process.env.NODE_ENV === 'development'
 export default defineConfigWithTheme<ThemeConfig>({
   extends: baseConfig,
   srcDir: 'content',
-  outDir: '../demo-dist',
+  outDir: '../dist',
   vite: {
     resolve: {
       alias: {
