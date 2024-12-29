@@ -20,9 +20,30 @@ tasks:
       - task: install
       - ${PACKAGE_MANAGER} run build
 
-  clean:
-    desc: Clean the build output
+  rmdir:
+    desc: Remove directory if and only if it exists
+    vars:
+      DIR: '{{index (splitArgs .CLI_ARGS) 0}}'
     cmds:
-      - rm -r ./{{.OUTPUT_DIR}}
+      - |
+        [ -d "{{.DIR}}" ] && rm -r "{{.DIR}}"
+    silent: true
+
+  clean:
+    desc: Clean generated directories
+    cmds:
+      - task: rmdir
+        vars:
+          CLI_ARGS: './demo/.vitepress/cache'
+      - task: rmdir
+        vars:
+          CLI_ARGS: './{{.OUTPUT_DIR}}'
     silent: true
     ignore_error: true
+
+  dev:
+    deps:
+      - install
+    cmds:
+      - ${PACKAGE_MANAGER} dev
+    silent: true
