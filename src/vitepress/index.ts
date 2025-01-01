@@ -7,7 +7,7 @@ import Layout from './components/Layout.vue'
 import Page from './pages/Page.vue'
 import PostsPage from './pages/PostsPage.vue'
 import HomePage from './pages/HomePage.vue'
-import ProjectPage from './pages/ProjectPage.vue'
+import ProjectsPage from './pages/ProjectsPage.vue'
 import CategoriesPage from './pages/CategoriesPage.vue'
 import TagsPage from './pages/TagsPage.vue'
 
@@ -25,11 +25,11 @@ const VPTheme: Theme = {
     app.component('Page', Page)
     app.component('PostsPage', PostsPage)
     app.component('HomePage', HomePage)
-    app.component('ProjectPage', ProjectPage)
+    app.component('ProjectsPage', ProjectsPage)
     app.component('CategoriesPage', CategoriesPage)
     app.component('TagsPage', TagsPage)
     app.use(i18n)
-  }
+  },
 } satisfies Theme
 
 export { VPTheme }

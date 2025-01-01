@@ -1,4 +1,4 @@
-<script setup lang='ts'>
+<script setup lang="ts">
 import type { PropType } from 'vue'
 import { useI18n } from 'vue-i18n'
 import type { Project } from '../../core/types'
@@ -8,8 +8,8 @@ defineProps({
   projects: {
     type: Object as PropType<Project[]>,
     required: true,
-    default: [],
-  },
+    default: []
+  }
 })
 
 const { t } = useI18n()
