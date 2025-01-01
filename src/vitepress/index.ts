@@ -10,6 +10,7 @@ import HomePage from './pages/HomePage.vue'
 import ProjectsPage from './pages/ProjectsPage.vue'
 import CategoriesPage from './pages/CategoriesPage.vue'
 import TagsPage from './pages/TagsPage.vue'
+import ArchivesPage from './pages/ArchivesPage.vue'
 
 import i18n from '../core/plugins/i18n'
 
@@ -28,6 +29,7 @@ const VPTheme: Theme = {
     app.component('ProjectsPage', ProjectsPage)
     app.component('CategoriesPage', CategoriesPage)
     app.component('TagsPage', TagsPage)
+    app.component('ArchivesPage', ArchivesPage)
     app.use(i18n)
   },
 } satisfies Theme
