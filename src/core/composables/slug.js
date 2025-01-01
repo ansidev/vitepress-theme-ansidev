@@ -11,9 +11,10 @@ export const useSlug = (str) => {
   .replace(/^-+|-+$/g, ''); // Remove leading or trailing dashes
 }
 
-export const useSlugFromMarkdownFrontMatter = (pattern, frontMatterProperty, excerptSeparator = '---') => {
+export const useSlugFromMarkdownFrontMatter = (pattern, frontmatterMappingFn, excerptSeparator = '---') => {
   const frontMatters = useMarkdownFrontmatter(pattern, excerptSeparator)
-  const arr = frontMatters.flatMap(frontMatter => frontMatter[frontMatterProperty])
+  const _frontmatterMappingFn = typeof frontmatterMappingFn === 'string' ? (frontMatter => frontMatter[frontmatterMappingFn]) : frontmatterMappingFn
+  const arr = frontMatters.flatMap(_frontmatterMappingFn)
 
   const set = [...new Set(arr)]
   const slugs = set.map(str => {
