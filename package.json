@@ -40,7 +40,7 @@
     "test": "npm run lint && npm run type",
     "dev": "vitepress dev demo",
     "build": "NODE_ENV=production vitepress build demo",
-    "serve": "npm run build:demo && vitepress serve demo"
+    "serve": "npm run build && vitepress serve demo"
   },
   "dependencies": {
     "vue-i18n": "^11.0.0"
