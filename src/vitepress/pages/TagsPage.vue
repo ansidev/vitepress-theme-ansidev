@@ -22,7 +22,7 @@ const tags = computed(() => useRank(props.posts.flatMap(post => post.tags)))
   <Page :title="t('tags')">
     <div class="flex flex-wrap pt-4">
       <div v-if="Object.keys(tags).length === 0" class="mt-2 mb-2 mr-5">
-        {{ t('no_category') }}
+        {{ t('no_tag') }}
       </div>
       <TermBadge v-for="(count, tag) in tags" :key="tag" :title="tag" :count="count" :href="`/tags/${useSlug(tag)}`" />
     </div>

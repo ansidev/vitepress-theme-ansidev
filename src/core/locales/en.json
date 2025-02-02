@@ -1,11 +1,18 @@
 {
-  "home": "Home",
-  "posts": "Posts",
-  "projects": "Projects",
-  "about_me": "About me",
+  "button": {
+    "toggle_locale": "Change language",
+    "read_more": "Read more"
+  },
   "all_posts": "All posts",
-  "latest_posts": "Latest posts",
+  "posted_on": "Posted on",
   "my_projects": "My projects",
+  "categories": "Categories",
+  "tags": "Tags",
+  "archives": "Archives",
+  "no_post": "No post.",
+  "no_category": "No category.",
+  "no_tag": "No tag.",
+  "no_archive": "No archive.",
   "license": "License",
   "source_code": "Source Code",
   "technologies": "Technologies",
@@ -14,33 +21,5 @@
     "active": "Active",
     "inactive": "Inactive",
     "unmaintained": "Unmaintained"
-  },
-  "authors": "Authors",
-  "back_to_home": "Back to home",
-  "back_to_projects": "Back to projects",
-  "table_of_contents": "Table of contents",
-  "button": {
-    "about": "About",
-    "back": "Back",
-    "go": "GO",
-    "home": "Home",
-    "toggle_dark": "Toggle dark mode",
-    "toggle_locale": "Change languages",
-    "toggle_mobile_menu": "Toggle mobile menu",
-    "remove": "Remove"
-  },
-  "categories": "Categories",
-  "name": "Name",
-  "no_category": "No category.",
-  "no_tag": "No tag.",
-  "no_post": "No post.",
-  "not_found": "Not found",
-  "posted_on": "Posted on",
-  "read_more": "Read more",
-  "search_articles": "Search articles",
-  "search_projects": "Search projects",
-  "share": "Share",
-  "tags": "Tags",
-  "archives": "Archives",
-  "no_archive": "No archive"
+  }
 }
