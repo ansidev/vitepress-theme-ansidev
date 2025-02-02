@@ -5,4 +5,5 @@
     "src/core/locales"
   ],
   "i18n-ally.keystyle": "nested",
+  "vue.server.includeLanguages": ["vue", "markdown"]
 }
