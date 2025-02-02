@@ -8,8 +8,11 @@ importers:
 
   .:
     dependencies:
+      '@vueuse/core':
+        specifier: ^12.5.0
+        version: 12.5.0(typescript@5.7.3)
       vue-i18n:
-        specifier: ^11.0.0
+        specifier: ^11.1.0
         version: 11.1.0(vue@3.5.13(typescript@5.7.3))
     devDependencies:
       '@iconify/vue':
@@ -19,10 +22,10 @@ importers:
         specifier: 4.0.3
         version: 4.0.3(vite@5.4.14(@types/node@22.13.0)(lightningcss@1.29.1)(sass-embedded@1.83.0)(sass@1.83.0))
       '@types/node':
-        specifier: ^22.10.2
+        specifier: ^22.13.0
         version: 22.13.0
       glob:
-        specifier: ^11.0.0
+        specifier: ^11.0.1
         version: 11.0.1
       gray-matter:
         specifier: ^4.0.3
@@ -37,16 +40,16 @@ importers:
         specifier: ^10.9.2
         version: 10.9.2(@types/node@22.13.0)(typescript@5.7.3)
       typescript:
-        specifier: ^5.7.2
+        specifier: ^5.7.3
         version: 5.7.3
       vitepress:
-        specifier: ^1.5.0
+        specifier: ^1.6.3
         version: 1.6.3(@algolia/client-search@5.20.0)(@types/node@22.13.0)(lightningcss@1.29.1)(postcss@8.5.1)(sass-embedded@1.83.0)(sass@1.83.0)(search-insights@2.14.0)(typescript@5.7.3)
       vue:
         specifier: ^3.5.13
         version: 3.5.13(typescript@5.7.3)
       vue-tsc:
-        specifier: ^2.1.10
+        specifier: ^2.2.0
         version: 2.2.0(typescript@5.7.3)
 
 packages:

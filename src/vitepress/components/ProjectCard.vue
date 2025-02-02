@@ -61,7 +61,7 @@ const projectStatusStyles = computed(() => useProjectStatusStyle(props.project.d
     </div>
     <div class="text-end">
       <a :href="project.url" :aria-label="`Read ${project.title}`">
-        {{ t('read_more') }} &rarr;
+        {{ t('button.read_more') }} &rarr;
       </a>
     </div>
   </div>
