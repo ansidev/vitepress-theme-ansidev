@@ -8,4 +8,7 @@
     "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true,
   },
+  "vueCompilerOptions": {
+    "vitePressExtensions": [".md"],
+  },
 }
