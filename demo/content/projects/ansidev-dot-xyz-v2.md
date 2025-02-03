@@ -8,7 +8,7 @@ licenseUrl: https://github.com/ansidev/blog/blob/main/LICENSE
 techs:
   - TypeScript
   - Vite
-  - Vue3
+  - Vue 3
   - Vue Router
   - Vue I18n
   - TailwindCSS
