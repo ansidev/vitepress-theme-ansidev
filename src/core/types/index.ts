@@ -1,3 +1,3 @@
-export * from './post'
-export * from './postDate'
-export * from './project'
+export * from './post.js'
+export * from './postDate.js'
+export * from './project.js'

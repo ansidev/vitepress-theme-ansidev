@@ -31,7 +31,7 @@ const VPTheme: Theme = {
     app.component('TagsPage', TagsPage)
     app.component('ArchivesPage', ArchivesPage)
     app.use(i18n)
-  },
+  }
 } satisfies Theme
 
 export { VPTheme }

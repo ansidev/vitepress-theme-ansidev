@@ -8,3 +8,6 @@ export const useSlug = (str: string) => {
     .replace(/[^a-z0-9]+/g, '-') // Replace non-alphanumeric characters with dashes
     .replace(/^-+|-+$/g, '') // Remove leading or trailing dashes
 }
+
+export const useSlugFilter = (slug: string) => (str: string) =>
+  useSlug(str) === slug
