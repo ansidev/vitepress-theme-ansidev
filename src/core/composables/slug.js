@@ -11,6 +11,8 @@ export const useSlug = (str) => {
   .replace(/^-+|-+$/g, ''); // Remove leading or trailing dashes
 }
 
+export const useSlugFilter = slug => str => useSlug(str) === slug
+
 export const useSlugFromMarkdownFrontMatter = (pattern, frontmatterMappingFn, excerptSeparator = '---') => {
   const frontMatters = useMarkdownFrontmatter(pattern, excerptSeparator)
   const _frontmatterMappingFn = typeof frontmatterMappingFn === 'string' ? (frontMatter => frontMatter[frontmatterMappingFn]) : frontmatterMappingFn
