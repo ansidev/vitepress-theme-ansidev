@@ -1,3 +1,4 @@
+import { fileURLToPath, URL } from 'node:url'
 import { loadEnv } from 'vitepress'
 import tailwindcss from '@tailwindcss/vite'
 
@@ -44,6 +45,16 @@ const config = {
     plugins: [
       tailwindcss(),
     ],
+    resolve: {
+      alias: [
+        {
+          find: /^.*\/VPFooter\.vue$/,
+          replacement: fileURLToPath(
+            new URL('../components/EmptyFooter.vue', import.meta.url)
+          )
+        }
+      ]
+    }
   },
 }
 

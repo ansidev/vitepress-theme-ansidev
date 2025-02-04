@@ -2,6 +2,7 @@
 import { useData } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 import LocaleSwitcher from './LocaleSwitcher.vue'
+import Footer from './Footer.vue'
 
 const { Layout: DefaultLayout } = DefaultTheme
 const { frontmatter } = useData()
@@ -16,6 +17,9 @@ const { frontmatter } = useData()
     </template>
     <template #nav-bar-content-after>
       <LocaleSwitcher />
+    </template>
+    <template #layout-bottom>
+      <Footer />
     </template>
   </DefaultLayout>
 </template>
