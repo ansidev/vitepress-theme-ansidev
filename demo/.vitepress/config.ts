@@ -86,6 +86,9 @@ const siteConfig = defineConfigWithTheme<ThemeConfig>({
       },
     ],
     outline: 'deep',
+    footer: {
+      copyright: 'Copyright © 2019-#{present} Le Minh Tri (a.k.a ansidev)'
+    }
   },
 })
 
