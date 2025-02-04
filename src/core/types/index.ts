@@ -1,3 +1,3 @@
-export * from './post.js'
-export * from './postDate.js'
-export * from './project.js'
+export type { Post } from './post'
+export type { PostDate } from './postDate'
+export type { Project } from './project'
