@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useData } from 'vitepress'
 import { useSidebar } from 'vitepress/theme'
-import { computed } from 'vue'
+import { defineAsyncComponent, computed } from 'vue'
 
 const { theme, frontmatter } = useData()
 const { hasSidebar } = useSidebar()
@@ -12,6 +12,9 @@ const copyright = computed(() => {
     theme.value.footer.copyright
 })
 
+const GoogleAnalytics = !!theme.value.googleAnalytics
+  ? defineAsyncComponent(() => import('./GoogleAnalytics.vue'))
+  : () => null
 </script>
 
 <template>
@@ -19,6 +22,9 @@ const copyright = computed(() => {
     <div class="container">
       <p v-if="theme.footer.message" class="message" v-html="theme.footer.message"></p>
       <p v-if="copyright" class="copyright" v-html="copyright"></p>
+    </div>
+    <div class="plugin-google-analytics">
+      <GoogleAnalytics :google-analytics="theme.googleAnalytics" />
     </div>
   </footer>
 </template>

@@ -27,6 +27,9 @@ const deps = ['vitepress-theme-ansidev']
 const config = {
   themeConfig: {
     siteURL,
+    googleAnalytics: {
+      id: env.VITE_GA_ID,
+    }
   },
   vite: {
     ssr: {

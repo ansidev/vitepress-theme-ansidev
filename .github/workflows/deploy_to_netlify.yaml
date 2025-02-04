@@ -88,18 +88,18 @@ jobs:
         env:
           NETLIFY_DEPLOY_PREFIX: ${{ needs.set_deploy_environment.outputs.netlify_deploy_prefix }}
           NETLIFY_DEPLOY_ALIAS: ${{ needs.set_deploy_environment.outputs.netlify_deploy_alias }}
-          SITE_GA_ID: ${{ vars.SITE_GA_ID }}
-          SITE_SWETRIX_ID: ${{ vars.SITE_SWETRIX_ID }}
-          SITE_COUNTER_ANALYTICS_ID: ${{ vars.SITE_COUNTER_ANALYTICS_ID }}
-          SITE_DISQUS_ID: ${{ vars.SITE_DISQUS_ID }}
+          VITE_GA_ID: ${{ vars.VITE_GA_ID }}
+          VITE_SWETRIX_ID: ${{ vars.VITE_SWETRIX_ID }}
+          VITE_COUNTER_ANALYTICS_ID: ${{ vars.VITE_COUNTER_ANALYTICS_ID }}
+          VITE_DISQUS_ID: ${{ vars.VITE_DISQUS_ID }}
         run: |
           {
             echo "ASTRO_BASE_URL=https://${NETLIFY_DEPLOY_PREFIX}${NETLIFY_SITE_NAME}.netlify.app"
             echo "NETLIFY_DEPLOY_ALIAS=${NETLIFY_DEPLOY_ALIAS}"
-            echo "GA_ID=${SITE_GA_ID}"
-            echo "SWETRIX_ID=${SITE_SWETRIX_ID}"
-            echo "COUNTER_ANALYTICS_ID=${SITE_COUNTER_ANALYTICS_ID}"
-            echo "DISQUS_ID=${SITE_DISQUS_ID}"
+            echo "VITE_GA_ID=${VITE_GA_ID}"
+            echo "VITE_SWETRIX_ID=${VITE_SWETRIX_ID}"
+            echo "VITE_COUNTER_ANALYTICS_ID=${VITE_COUNTER_ANALYTICS_ID}"
+            echo "VITE_DISQUS_ID=${VITE_DISQUS_ID}"
           } >> "$GITHUB_ENV"
 
       - name: Build

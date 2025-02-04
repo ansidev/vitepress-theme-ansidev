@@ -1,27 +1,30 @@
+import merge from 'lodash.merge'
 import { defineConfigWithTheme } from 'vitepress'
+import type { Alias } from 'vite'
 import path from 'path'
 import baseConfig from '../../src/vitepress/config/baseConfig'
 import type { Config as ThemeConfig } from '../../src/vitepress/config'
 
 globalThis.__VUE_PROD_DEVTOOLS__ = process.env.NODE_ENV === 'development'
 
-export default defineConfigWithTheme<ThemeConfig>({
-  extends: baseConfig,
+const siteConfig = defineConfigWithTheme<ThemeConfig>({
   srcDir: 'content',
   outDir: '../dist',
   vite: {
     resolve: {
-      alias: {
-        '~': path.join(__dirname, '../../src'),
-        'vitepress-theme-ansidev': path.join(__dirname, '../../src')
-      }
-    },
-    css: {
-      preprocessorOptions: {
-        scss: {
-          api: 'modern-compiler'
-        }
-      }
+      alias: [
+        ...(baseConfig.vite?.resolve?.alias as unknown as Alias[]),
+        ...[
+          {
+            find: '~',
+            replacement: path.join(__dirname, '../../src')
+          },
+          {
+            find: 'vitepress-theme-ansidev',
+            replacement: path.join(__dirname, '../../src')
+          },
+        ]
+      ]
     }
   },
   lang: 'en-US',
@@ -83,5 +86,10 @@ export default defineConfigWithTheme<ThemeConfig>({
       },
     ],
     outline: 'deep',
+    footer: {
+      copyright: 'Copyright © 2019-#{present} Le Minh Tri (a.k.a ansidev)'
+    }
   },
 })
+
+export default merge(baseConfig, siteConfig)
