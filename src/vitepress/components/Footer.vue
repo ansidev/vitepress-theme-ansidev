@@ -23,10 +23,8 @@ const GoogleAnalytics = !!theme.value.googleAnalytics
       <p v-if="theme.footer.message" class="message" v-html="theme.footer.message"></p>
       <p v-if="copyright" class="copyright" v-html="copyright"></p>
     </div>
-    <div class="plugin-google-analytics">
-      <GoogleAnalytics :google-analytics="theme.googleAnalytics" />
-    </div>
   </footer>
+  <GoogleAnalytics :google-analytics="theme.googleAnalytics" />
 </template>
 
 <style scoped>
