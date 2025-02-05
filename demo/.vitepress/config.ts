@@ -3,7 +3,7 @@ import { defineConfigWithTheme } from 'vitepress'
 import type { Alias } from 'vite'
 import path from 'path'
 import baseConfig from '../../src/vitepress/config/baseConfig'
-import type { Config as ThemeConfig } from '../../src/vitepress/config'
+import type { Config as ThemeConfig } from '../../src/vitepress/config.js'
 
 globalThis.__VUE_PROD_DEVTOOLS__ = process.env.NODE_ENV === 'development'
 
@@ -86,6 +86,21 @@ const siteConfig = defineConfigWithTheme<ThemeConfig>({
       },
     ],
     outline: 'deep',
+    donation: {
+      paypal: 'ansidev',
+      kofi: 'ansidev',
+      buymeacoffee: 'ansidev',
+      custom: {
+        momo: {
+          donationBaseUrl: 'https://me.momo.vn',
+          donationId: 'ansidev',
+          donationButtonImage: '/imgs/momo_icon_rectangle_pinkbg_RGB.png',
+          donationButtonStyle: {
+            height: '60px !important',
+          },
+        },
+      },
+    },
     footer: {
       copyright: 'Copyright © 2019-#{present} Le Minh Tri (a.k.a ansidev)'
     }

@@ -1,4 +1,5 @@
 import { type DefaultTheme } from 'vitepress/theme'
+import { DonationPluginConfig } from './plugins/donation/index.js'
 
 export interface GoogleAnalyticsOptions {
   /**
@@ -17,4 +18,5 @@ export interface Config extends DefaultTheme.Config {
    */
   siteURL?: string
   googleAnalytics?: GoogleAnalyticsOptions
+  donation?: DonationPluginConfig
 }

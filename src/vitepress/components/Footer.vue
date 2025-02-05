@@ -7,26 +7,46 @@ const { theme, frontmatter } = useData()
 const { hasSidebar } = useSidebar()
 
 const copyright = computed(() => {
-  return typeof theme.value.footer.copyright === 'string' ?
-    theme.value.footer.copyright.replace(/\#\{present\}/g, new Date().getFullYear().toString()) :
-    theme.value.footer.copyright
+  return typeof theme.value.footer.copyright === 'string'
+    ? theme.value.footer.copyright.replace(
+        /\#\{present\}/g,
+        new Date().getFullYear().toString()
+      )
+    : theme.value.footer.copyright
 })
 
 const GoogleAnalytics = !!theme.value.googleAnalytics
-  ? defineAsyncComponent(() => import('./GoogleAnalytics.vue'))
+  ? defineAsyncComponent(
+      () => import('../plugins/google-analytics/components/GoogleAnalytics.vue')
+    )
+  : () => null
+
+const Donation = !!theme.value.donation
+  ? defineAsyncComponent(
+      () => import('../plugins/donation/components/Donation.vue')
+    )
   : () => null
 </script>
 
 <template>
-  <footer v-if="theme.footer && frontmatter.footer !== false" class="VPFooter" :class="{ 'has-sidebar': hasSidebar }">
+  <div class="flex flex-wrap space-x-4 py-4 items-center justify-center">
+    <Donation :donation="theme.donation" />
+  </div>
+  <footer
+    v-if="theme.footer && frontmatter.footer !== false"
+    class="VPFooter"
+    :class="{ 'has-sidebar': hasSidebar }"
+  >
     <div class="container">
-      <p v-if="theme.footer.message" class="message" v-html="theme.footer.message"></p>
+      <p
+        v-if="theme.footer.message"
+        class="message"
+        v-html="theme.footer.message"
+      ></p>
       <p v-if="copyright" class="copyright" v-html="copyright"></p>
     </div>
-    <div class="plugin-google-analytics">
-      <GoogleAnalytics :google-analytics="theme.googleAnalytics" />
-    </div>
   </footer>
+  <GoogleAnalytics :google-analytics="theme.googleAnalytics" />
 </template>
 
 <style scoped>
