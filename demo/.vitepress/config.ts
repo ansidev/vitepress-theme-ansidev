@@ -1,6 +1,4 @@
-import merge from 'lodash.merge'
-import { defineConfigWithTheme } from 'vitepress'
-import type { Alias } from 'vite'
+import { defineConfigWithTheme, mergeConfig } from 'vitepress'
 import path from 'path'
 import baseConfig from '../../src/vitepress/config/baseConfig'
 import type { Config as ThemeConfig } from '../../src/vitepress/config.js'
@@ -13,17 +11,14 @@ const siteConfig = defineConfigWithTheme<ThemeConfig>({
   vite: {
     resolve: {
       alias: [
-        ...(baseConfig.vite?.resolve?.alias as unknown as Alias[]),
-        ...[
-          {
-            find: '~',
-            replacement: path.join(__dirname, '../../src')
-          },
-          {
-            find: 'vitepress-theme-ansidev',
-            replacement: path.join(__dirname, '../../src')
-          },
-        ]
+        {
+          find: '~',
+          replacement: path.join(__dirname, '../../src')
+        },
+        {
+          find: 'vitepress-theme-ansidev',
+          replacement: path.join(__dirname, '../../src')
+        },
       ]
     }
   },
@@ -107,4 +102,4 @@ const siteConfig = defineConfigWithTheme<ThemeConfig>({
   },
 })
 
-export default merge(baseConfig, siteConfig)
+export default mergeConfig(baseConfig, siteConfig)
