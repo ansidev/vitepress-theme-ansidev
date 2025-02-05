@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { onMounted } from 'vue'
-import type { GoogleAnalyticsOptions } from '../config'
+import type { GoogleAnalyticsOptions } from '../../../config'
 
 declare const dataLayer: any[]
 declare const gtag: (...args: any[]) => void
