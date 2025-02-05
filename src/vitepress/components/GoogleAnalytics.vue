@@ -46,3 +46,5 @@ if (googleAnalyticsOptions) {
   onMounted(init)
 }
 </script>
+
+<template />
