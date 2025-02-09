@@ -1,5 +1,6 @@
 import { fileURLToPath, URL } from 'node:url'
 import { loadEnv } from 'vitepress'
+import { pagefindPlugin as pagefind } from 'vitepress-plugin-pagefind'
 
 process.env.VITE_EXTRA_EXTENSIONS = 'rss'
 globalThis.__VUE_PROD_DEVTOOLS__ = process.env.NODE_ENV === 'development'
@@ -44,6 +45,9 @@ const config = {
         }
       }
     },
+    plugins: [
+      pagefind(),
+    ],
     resolve: {
       alias: [
         {
