@@ -10,7 +10,7 @@ importers:
     dependencies:
       '@vueuse/core':
         specifier: ^12.5.0
-        version: 12.5.0(typescript@5.7.3)
+        version: 12.6.1(typescript@5.7.3)
       vue-i18n:
         specifier: ^11.1.0
         version: 11.1.1(vue@3.5.13(typescript@5.7.3))
@@ -991,6 +991,9 @@ packages:
   '@vueuse/core@12.5.0':
     resolution: {integrity: sha512-GVyH1iYqNANwcahAx8JBm6awaNgvR/SwZ1fjr10b8l1HIgDp82ngNbfzJUgOgWEoxjL+URAggnlilAEXwCOZtg==}
 
+  '@vueuse/core@12.6.1':
+    resolution: {integrity: sha512-FpgM1tXGAHsAC5n4Tflyg0vSoJUmdevfKaAhKFdxiK9BTIdHOHOiWmo+xivwdzjYFIvI8cEeJWYuqs646jOM2w==}
+
   '@vueuse/integrations@12.5.0':
     resolution: {integrity: sha512-HYLt8M6mjUfcoUOzyBcX2RjpfapIwHPBmQJtTmXOQW845Y/Osu9VuTJ5kPvnmWJ6IUa05WpblfOwZ+P0G4iZsQ==}
     peerDependencies:
@@ -1035,8 +1038,14 @@ packages:
   '@vueuse/metadata@12.5.0':
     resolution: {integrity: sha512-Ui7Lo2a7AxrMAXRF+fAp9QsXuwTeeZ8fIB9wsLHqzq9MQk+2gMYE2IGJW48VMJ8ecvCB3z3GsGLKLbSasQ5Qlg==}
 
+  '@vueuse/metadata@12.6.1':
+    resolution: {integrity: sha512-2094HNXGdsU3aqRbad0vmlRgGncMC4u2f6nFdW1mUn7b7ym4hORrDZfyeq8G5BfGvX4y0zZynWfCdtB2WwpyVw==}
+
   '@vueuse/shared@12.5.0':
     resolution: {integrity: sha512-vMpcL1lStUU6O+kdj6YdHDixh0odjPAUM15uJ9f7MY781jcYkIwFA4iv2EfoIPO6vBmvutI1HxxAwmf0cx5ISQ==}
+
+  '@vueuse/shared@12.6.1':
+    resolution: {integrity: sha512-ukTb2na19KT1/YVjj4CYBDOgiV/xmsSJRL6TcKeiz2db+P5bT3I0OJxy38eRR3WSN8CmSnt7MdVJ16vX6VZFxg==}
 
   acorn-walk@8.3.4:
     resolution: {integrity: sha512-ueEepnujpqee2o5aIYnvHU6C0A42MNdsIDeqy5BydrkuC5R1ZuUFnm27EeFJGoEHJQgn3uleRvmTXaJgfXbt4g==}
@@ -2668,6 +2677,15 @@ snapshots:
     transitivePeerDependencies:
       - typescript
 
+  '@vueuse/core@12.6.1(typescript@5.7.3)':
+    dependencies:
+      '@types/web-bluetooth': 0.0.20
+      '@vueuse/metadata': 12.6.1
+      '@vueuse/shared': 12.6.1(typescript@5.7.3)
+      vue: 3.5.13(typescript@5.7.3)
+    transitivePeerDependencies:
+      - typescript
+
   '@vueuse/integrations@12.5.0(focus-trap@7.6.4)(typescript@5.7.3)':
     dependencies:
       '@vueuse/core': 12.5.0(typescript@5.7.3)
@@ -2680,7 +2698,15 @@ snapshots:
 
   '@vueuse/metadata@12.5.0': {}
 
+  '@vueuse/metadata@12.6.1': {}
+
   '@vueuse/shared@12.5.0(typescript@5.7.3)':
+    dependencies:
+      vue: 3.5.13(typescript@5.7.3)
+    transitivePeerDependencies:
+      - typescript
+
+  '@vueuse/shared@12.6.1(typescript@5.7.3)':
     dependencies:
       vue: 3.5.13(typescript@5.7.3)
     transitivePeerDependencies:
@@ -3485,7 +3511,7 @@ snapshots:
       '@vitejs/plugin-vue': 5.2.1(vite@5.4.14(@types/node@22.13.4)(lightningcss@1.29.1)(sass-embedded@1.83.0)(sass@1.83.0))(vue@3.5.13(typescript@5.7.3))
       '@vue/devtools-api': 7.7.0
       '@vue/shared': 3.5.13
-      '@vueuse/core': 12.5.0(typescript@5.7.3)
+      '@vueuse/core': 12.6.1(typescript@5.7.3)
       '@vueuse/integrations': 12.5.0(focus-trap@7.6.4)(typescript@5.7.3)
       focus-trap: 7.6.4
       mark.js: 8.11.1
