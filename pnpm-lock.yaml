@@ -32,7 +32,7 @@ importers:
         version: 4.0.3
       prettier:
         specifier: ^3.4.2
-        version: 3.5.2
+        version: 3.5.3
       tailwindcss:
         specifier: 4.0.9
         version: 4.0.9
@@ -1367,8 +1367,8 @@ packages:
   preact@10.25.4:
     resolution: {integrity: sha512-jLdZDb+Q+odkHJ+MpW/9U5cODzqnB+fy2EiHSZES7ldV5LK7yjlVzTp7R8Xy6W6y75kfK8iWYtFVH7lvjwrCMA==}
 
-  prettier@3.5.2:
-    resolution: {integrity: sha512-lc6npv5PH7hVqozBR7lkBNOGXV9vMwROAPlumdBkX0wTbbzPu/U1hk5yL8p2pt4Xoc+2mkT8t/sow2YrV/M5qg==}
+  prettier@3.5.3:
+    resolution: {integrity: sha512-QQtaxnoDJeAkDvDKWCLiwIXkTgRhwYDEQCghU9Z6q03iyek/rxRh/2lC3HB7P8sWT2xC/y5JDctPLBIGzHKbhw==}
     engines: {node: '>=14'}
     hasBin: true
 
@@ -2973,7 +2973,7 @@ snapshots:
 
   preact@10.25.4: {}
 
-  prettier@3.5.2: {}
+  prettier@3.5.3: {}
 
   property-information@6.5.0: {}
 
