@@ -12,7 +12,7 @@ import CategoriesPage from './pages/CategoriesPage.vue'
 import TagsPage from './pages/TagsPage.vue'
 import ArchivesPage from './pages/ArchivesPage.vue'
 
-import i18n from '../core/plugins/i18n'
+import i18n from '../core/plugins/i18n.js'
 
 import type { Theme } from 'vitepress'
 
@@ -36,4 +36,4 @@ const VPTheme: Theme = {
 
 export { VPTheme }
 
-export type { Config } from './config'
+export type { Config } from './config.js'

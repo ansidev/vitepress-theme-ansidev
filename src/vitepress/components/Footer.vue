@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { useData } from 'vitepress'
-import { useSidebar } from 'vitepress/theme'
+import { useLayout } from 'vitepress/theme'
 import { defineAsyncComponent, computed } from 'vue'
 
 const { theme, frontmatter } = useData()
-const { hasSidebar } = useSidebar()
+const { hasSidebar } = useLayout()
 
 const copyright = computed(() => {
   return typeof theme.value.footer.copyright === 'string'
