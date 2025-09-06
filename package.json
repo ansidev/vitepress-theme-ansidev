@@ -48,22 +48,29 @@
   },
   "devDependencies": {
     "@iconify/vue": "^5.0.0",
-    "@tailwindcss/vite": "4.1.12",
+    "@tailwindcss/postcss": "^4.1.12",
     "@types/node": "^22.13.0",
+    "autoprefixer": "^10.4.21",
     "glob": "^11.0.1",
     "gray-matter": "^4.0.3",
+    "postcss": "^8.5.6",
     "prettier": "^3.4.2",
-    "tailwindcss": "4.1.12",
+    "tailwindcss": "^4.1.12",
     "ts-node": "^10.9.2",
     "typescript": "^5.7.3",
-    "vite": "^7.0.0",
-    "vitepress": "^1.6.3",
+    "vite": "^7.1.4",
+    "vitepress": "^2.0.0-alpha.12",
     "vue": "^3.5.13",
     "vue-tsc": "^3.0.0"
   },
   "peerDependencies": {
-    "vitepress": "^1.6.3"
+    "vitepress": "^2.0.0-alpha.12"
   },
+  "trustedDependencies": [
+    "@parcel/watcher",
+    "@tailwindcss/oxide",
+    "esbuild"
+  ],
   "pnpm": {
     "peerDependencyRules": {
       "ignoreMissing": [
@@ -71,5 +78,5 @@
       ]
     }
   },
-  "packageManager": "pnpm@10.15.0"
+  "packageManager": "pnpm@10.15.1"
 }

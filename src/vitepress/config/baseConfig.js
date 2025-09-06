@@ -1,6 +1,5 @@
 import { fileURLToPath, URL } from 'node:url'
 import { loadEnv } from 'vitepress'
-import tailwindcss from '@tailwindcss/vite'
 
 process.env.VITE_EXTRA_EXTENSIONS = 'rss'
 globalThis.__VUE_PROD_DEVTOOLS__ = process.env.NODE_ENV === 'development'
@@ -45,9 +44,6 @@ const config = {
         }
       }
     },
-    plugins: [
-      tailwindcss(),
-    ],
     resolve: {
       alias: [
         {
