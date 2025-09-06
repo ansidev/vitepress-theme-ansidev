@@ -1,11 +1,11 @@
-import { defineConfigWithTheme, mergeConfig } from 'vitepress'
+import { defineConfig, mergeConfig } from 'vitepress'
 import path from 'path'
 import baseConfig from '../../src/vitepress/config/baseConfig'
 import type { Config as ThemeConfig } from '../../src/vitepress/config.js'
 
 globalThis.__VUE_PROD_DEVTOOLS__ = process.env.NODE_ENV === 'development'
 
-const siteConfig = defineConfigWithTheme<ThemeConfig>({
+const siteConfig = defineConfig<ThemeConfig>({
   srcDir: 'content',
   outDir: '../dist',
   vite: {
