@@ -107,7 +107,7 @@ jobs:
         with:
           node-version: 22
           package-manager: pnpm
-          package-manager-version: 9
+          package-manager-version: 10
           skip-test: true
 
       - name: Deploy
