@@ -129,7 +129,7 @@ jobs:
     needs:
       - set_deploy_environment
       - deploy
-    if: needs.deploy.outputs.success == 'true' && github.base_ref == 'develop' && github.event.action == 'closed' && github.event.pull_request.merged == true
+    if: needs.deploy.outputs.success == 'true' && github.base_ref == 'develop'
     runs-on: ubuntu-latest
     steps:
       - name: Delete the PR branch after merged into develop
@@ -152,6 +152,8 @@ jobs:
             -H "Accept: application/vnd.github+json" \
             /repos/${{ github.repository }}/environments/${{ needs.set_deploy_environment.outputs.github_pr_environment }} 2>&1)
 
+          echo "Raw response: $response"
+
           status=$(echo "$response" | jq -r '.status // "unknown"' 2>/dev/null)
 
           if [[ "$status" == "404" ]]; then
@@ -159,6 +161,6 @@ jobs:
           elif [[ "$status" == "204" ]]; then
             echo "Environment pr-${{ github.event.pull_request.number }} deleted successfully."
           else
-            echo "Unexpected response: $response"
+            echo "Unexpected response status: $status"
             exit 1
           fi
