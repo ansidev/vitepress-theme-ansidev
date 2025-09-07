@@ -161,5 +161,4 @@ jobs:
               /repos/${{ github.repository }}/environments/${{ needs.set_deploy_environment.outputs.github_pr_environment }}
           else
             echo "Environment ${{ needs.set_deploy_environment.outputs.github_pr_environment }} does not exist. Skipping deletion."
-            exit 1
           fi
