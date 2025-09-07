@@ -1,19 +1,24 @@
-# https://taskfile.dev
+version: "3"
 
-version: '3'
+env:
+  PACKAGE_MANAGER: pnpm
+
+vars:
+  OUTPUT_DIR: dist
 
 tasks:
   install:
     desc: Install dependencies
     cmds:
-      - pnpm install
-
-  dev:
-    deps:
-      - install
-    cmds:
-      - pnpm dev
+      - ${PACKAGE_MANAGER} install
     silent: true
+
+  build:
+    desc: Build site
+    cmds:
+      - task: clean
+      - task: install
+      - ${PACKAGE_MANAGER} run build
 
   rmdir:
     desc: Remove directory if and only if it exists
@@ -25,27 +30,20 @@ tasks:
     silent: true
 
   clean:
+    desc: Clean generated directories
     cmds:
-      - task: rmdir
-        vars:
-          CLI_ARGS: './dist'
-      - task: rmdir
-        vars:
-          CLI_ARGS: './demo-dist'
       - task: rmdir
         vars:
           CLI_ARGS: './demo/.vitepress/cache'
+      - task: rmdir
+        vars:
+          CLI_ARGS: './{{.OUTPUT_DIR}}'
     silent: true
     ignore_error: true
 
-  build-demo:
-    desc: Build demo site
-    cmds:
-      - pnpm build:demo
-
-  build:
+  dev:
     deps:
-      - clean
-      - build-demo
+      - install
+    cmds:
+      - ${PACKAGE_MANAGER} dev
     silent: true
-

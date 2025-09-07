@@ -29,7 +29,5 @@
   },
   "include": ["src", "demo/.vitepress/theme"],
   "exclude": ["node_modules"],
-  "vueCompilerOptions": {
-    "vitePressExtensions": [".md"],
-  }
+  "references": [{ "path": "./tsconfig.node.json" }]
 }

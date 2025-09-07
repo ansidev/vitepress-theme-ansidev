@@ -1,5 +1,5 @@
-export * from './date'
-export * from './slug'
-export * from './rank'
+export * from './date.js'
+export * from './slug.js'
+export * from './rank.js'
 
-export * from './project'
+export * from './project.js'

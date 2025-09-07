@@ -1,11 +1,18 @@
 {
-  "home": "Trang chủ",
-  "posts": "Bài viết",
-  "projects": "Dự án",
-  "about_me": "Về tôi",
+  "button": {
+    "toggle_locale": "Đổi ngôn ngữ",
+    "read_more": "Đọc thêm"
+  },
   "all_posts": "Tất cả bài viết",
-  "latest_posts": "Các bài viết mới nhất",
+  "posted_on": "Đăng vào",
   "my_projects": "Các dự án của tôi",
+  "categories": "Chủ đề",
+  "tags": "Thẻ",
+  "archives": "Lưu trữ",
+  "no_post": "Không có bài viết nào.",
+  "no_category": "Không có chủ đề nào.",
+  "no_archive": "Không có bản lưu trữ nào.",
+  "no_tag": "Không có thẻ nào.",
   "license": "Giấy phép",
   "source_code": "Mã nguồn",
   "technologies": "Công nghệ",
@@ -14,31 +21,5 @@
     "active": "Đang phát triển",
     "inactive": "Không hoạt động",
     "unmaintained": "Ngừng phát triển"
-  },
-  "authors": "Người đăng",
-  "back_to_home": "Quay lại trang chủ",
-  "back_to_projects": "Quay lại danh sách dự án",
-  "table_of_contents": "Mục lục bài viết",
-  "button": {
-    "about": "Về tôi",
-    "back": "Quay lại",
-    "go": "Đi",
-    "home": "Trang chủ",
-    "toggle_dark": "Bật/Tắt chế độ nền tối",
-    "toggle_locale": "Đổi ngôn ngữ",
-    "toggle_mobile_menu": "Mở/Đóng thực đơn di động",
-    "remove": "Xóa"
-  },
-  "categories": "Chủ đề",
-  "name": "Tên",
-  "no_category": "Không có chủ đề nào.",
-  "no_tag": "Không có thẻ nào.",
-  "no_post": "Không có bài viết nào.",
-  "not_found": "Không tìm thấy",
-  "posted_on": "Đăng vào",
-  "read_more": "Đọc thêm",
-  "search_articles": "Tìm kiếm bài viết",
-  "search_projects": "Tìm kiếm dự án",
-  "share": "Chia sẻ",
-  "tags": "Thẻ"
+  }
 }

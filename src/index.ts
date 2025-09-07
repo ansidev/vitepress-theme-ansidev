@@ -1,2 +1,2 @@
-export * from './core'
-export * from './vitepress'
+export * from './core/index.js'
+export * from './vitepress/index.js'

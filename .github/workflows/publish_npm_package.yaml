@@ -1,0 +1,21 @@
+name: publish_npm_package
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set publish tag
+        run: |
+          ([[ "${GITHUB_REF#refs/*/v}" =~ ^([0-9]+\.)?([0-9]+\.)?(\*|[0-9]+)$ ]] && echo "PUBLISH_TAG=latest" >> "${GITHUB_ENV}") || echo "PUBLISH_TAG=rc" >> "${GITHUB_ENV}"
+
+      - name: Publish NPM package
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          pnpm config set "//registry.npmjs.org/:_authToken" "${{ env.NPM_TOKEN }}"
+          pnpm publish --access public --tag ${{ env.PUBLISH_TAG }}

@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "composite": true,
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+  },
+  "include": ["src"],
+  "vueCompilerOptions": {
+    "vitePressExtensions": [".md"],
+  },
+}

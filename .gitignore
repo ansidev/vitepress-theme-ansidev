@@ -6,3 +6,5 @@ TODOs.md
 .DS_Store
 demo/.vitepress/cache
 .idea
+.history
+.env.local

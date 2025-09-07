@@ -1,27 +1,25 @@
-import { defineConfigWithTheme } from 'vitepress'
+import { defineConfig, mergeConfig } from 'vitepress'
 import path from 'path'
 import baseConfig from '../../src/vitepress/config/baseConfig'
-import type { Config as ThemeConfig } from '../../src/vitepress/config'
+import type { Config as ThemeConfig } from '../../src/vitepress/config.js'
 
 globalThis.__VUE_PROD_DEVTOOLS__ = process.env.NODE_ENV === 'development'
 
-export default defineConfigWithTheme<ThemeConfig>({
-  extends: baseConfig,
+const siteConfig = defineConfig<ThemeConfig>({
   srcDir: 'content',
-  outDir: '../demo-dist',
+  outDir: '../dist',
   vite: {
     resolve: {
-      alias: {
-        '~': path.join(__dirname, '../../src'),
-        'vitepress-theme-ansidev': path.join(__dirname, '../../src')
-      }
-    },
-    css: {
-      preprocessorOptions: {
-        scss: {
-          api: 'modern-compiler'
-        }
-      }
+      alias: [
+        {
+          find: '~',
+          replacement: path.join(__dirname, '../../src')
+        },
+        {
+          find: 'vitepress-theme-ansidev',
+          replacement: path.join(__dirname, '../../src')
+        },
+      ]
     }
   },
   lang: 'en-US',
@@ -83,5 +81,25 @@ export default defineConfigWithTheme<ThemeConfig>({
       },
     ],
     outline: 'deep',
+    donation: {
+      paypal: 'ansidev',
+      kofi: 'ansidev',
+      buymeacoffee: 'ansidev',
+      custom: {
+        momo: {
+          donationBaseUrl: 'https://me.momo.vn',
+          donationId: 'ansidev',
+          donationButtonImage: '/imgs/momo_icon_rectangle_pinkbg_RGB.png',
+          donationButtonStyle: {
+            height: '60px !important',
+          },
+        },
+      },
+    },
+    footer: {
+      copyright: 'Copyright © 2019-#{present} Le Minh Tri (a.k.a ansidev)'
+    }
   },
 })
+
+export default mergeConfig(baseConfig, siteConfig)

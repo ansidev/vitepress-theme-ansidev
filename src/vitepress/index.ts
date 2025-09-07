@@ -7,11 +7,12 @@ import Layout from './components/Layout.vue'
 import Page from './pages/Page.vue'
 import PostsPage from './pages/PostsPage.vue'
 import HomePage from './pages/HomePage.vue'
-import ProjectPage from './pages/ProjectPage.vue'
+import ProjectsPage from './pages/ProjectsPage.vue'
 import CategoriesPage from './pages/CategoriesPage.vue'
 import TagsPage from './pages/TagsPage.vue'
+import ArchivesPage from './pages/ArchivesPage.vue'
 
-import i18n from '../core/plugins/i18n'
+import i18n from '../core/plugins/i18n.js'
 
 import type { Theme } from 'vitepress'
 
@@ -25,13 +26,14 @@ const VPTheme: Theme = {
     app.component('Page', Page)
     app.component('PostsPage', PostsPage)
     app.component('HomePage', HomePage)
-    app.component('ProjectPage', ProjectPage)
+    app.component('ProjectsPage', ProjectsPage)
     app.component('CategoriesPage', CategoriesPage)
     app.component('TagsPage', TagsPage)
+    app.component('ArchivesPage', ArchivesPage)
     app.use(i18n)
   }
 } satisfies Theme
 
 export { VPTheme }
 
-export type { Config } from './config'
+export type { Config } from './config.js'
