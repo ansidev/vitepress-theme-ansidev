@@ -148,19 +148,18 @@ jobs:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
           response=$(gh api \
-            --method DELETE \
             -H "Accept: application/vnd.github+json" \
             /repos/${{ github.repository }}/environments/${{ needs.set_deploy_environment.outputs.github_pr_environment }} || true)
 
-          echo "Raw response: $response"
+          name=$(echo "$response" | jq -r '.name // "unknown"')
 
-          status=$(echo "$response" | jq -r '.status // "unknown"')
-
-          if [[ "$status" == "404" ]]; then
-            echo "Environment pr-${{ github.event.pull_request.number }} does not exist, skipping deletion."
-          elif [[ "$status" == "204" ]]; then
-            echo "Environment pr-${{ github.event.pull_request.number }} deleted successfully."
+          if [[ "$name" == "${{ needs.set_deploy_environment.outputs.github_pr_environment }}" ]]; then
+            echo "Deleting environment ${{ needs.set_deploy_environment.outputs.github_pr_environment }}..."
+            gh api \
+              --method DELETE \
+              -H "Accept: application/vnd.github+json" \
+              /repos/${{ github.repository }}/environments/${{ needs.set_deploy_environment.outputs.github_pr_environment }}
           else
-            echo "Unexpected response status: $status"
+            echo "Environment ${{ needs.set_deploy_environment.outputs.github_pr_environment }} does not exist. Skipping deletion."
             exit 1
           fi
