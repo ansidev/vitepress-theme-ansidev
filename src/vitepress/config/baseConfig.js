@@ -28,6 +28,23 @@ const config = {
     siteURL,
     googleAnalytics: {
       id: env.VITE_GA_ID,
+    },
+    search: {
+      provider: 'local',
+      options: {
+        async _render(src, env, md) {
+          const html = await md.renderAsync(src, env)
+          if (env.frontmatter?.search === false) return ''
+          let renderedHtml = ''
+          if (env.frontmatter?.title) {
+            renderedHtml += `<h1>${env.frontmatter.title} <a href="#">&#8203;</a></h1>`
+          }
+          if (html.length > 0) {
+            renderedHtml += html
+          }
+          return renderedHtml
+        }
+      }
     }
   },
   vite: {
