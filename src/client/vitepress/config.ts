@@ -1,5 +1,5 @@
 import { type DefaultTheme } from 'vitepress/theme'
-import { DonationPluginConfig } from './plugins/donation/index.js'
+import type { DonationPluginConfig } from './plugins/donation/index.js'
 
 export interface GoogleAnalyticsOptions {
   /**

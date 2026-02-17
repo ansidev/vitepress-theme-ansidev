@@ -56,6 +56,15 @@ Here is the list of available scripts that can be used during the development.
 # Boot local dev server.
 $ pnpm dev
 
+# Build and package the theme to ./dist for NPM publishing.
+$ pnpm build
+
+# Build theme styles via vite build.
+$ pnpm theme:build
+
+# Build demo with a locally packed theme tarball.
+$ pnpm demo:build
+
 # Build demo, then serve locally. This is for testing
 # production build in the local environment.
 $ pnpm serve

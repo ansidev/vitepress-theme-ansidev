@@ -1,27 +1,12 @@
 import { defineConfig, mergeConfig } from 'vitepress'
-import path from 'path'
-import baseConfig from '../../src/vitepress/config/baseConfig'
-import type { Config as ThemeConfig } from '../../src/vitepress/config.js'
+import { baseConfig } from 'vitepress-theme-ansidev/server'
+import type { Config as ThemeConfig } from 'vitepress-theme-ansidev/config'
 
 globalThis.__VUE_PROD_DEVTOOLS__ = process.env.NODE_ENV === 'development'
 
 const siteConfig = defineConfig<ThemeConfig>({
   srcDir: 'content',
   outDir: '../dist',
-  vite: {
-    resolve: {
-      alias: [
-        {
-          find: '~',
-          replacement: path.join(__dirname, '../../src')
-        },
-        {
-          find: 'vitepress-theme-ansidev',
-          replacement: path.join(__dirname, '../../src')
-        },
-      ]
-    }
-  },
   lang: 'en-US',
   title: 'ansidev\'s blog',
   description: 'Personal blog of ansidev',

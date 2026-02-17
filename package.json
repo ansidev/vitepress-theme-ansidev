@@ -2,19 +2,32 @@
   "name": "vitepress-theme-ansidev",
   "version": "1.0.0",
   "description": "The VitePress theme for ansidev's blog.",
-  "main": "src/index.ts",
+  "main": "./dist/client/index.js",
   "type": "module",
   "exports": {
-    ".": "./src/index.ts",
-    "./composables": "./src/core/composables/index.js",
-    "./config": {
-      "types": "./src/vitepress/config/baseConfig.d.ts",
-      "default": "./src/vitepress/config/baseConfig.js"
+    ".": {
+      "types": "./dist/core/index.d.ts",
+      "default": "./dist/client/index.js"
     },
-    "./src/*": "./src/*"
+    "./composables": {
+      "types": "./dist/server/composables/index.d.ts",
+      "default": "./dist/server/composables/index.js"
+    },
+    "./config": {
+      "types": "./dist/client/vitepress/config.d.ts",
+      "default": "./dist/server/config/baseConfig.js"
+    },
+    "./server": {
+      "types": "./dist/server/index.d.ts",
+      "default": "./dist/server/index.js"
+    },
+    "./types": {
+      "types": "./dist/core/index.d.ts",
+      "default": "./dist/core/index.js"
+    }
   },
   "files": [
-    "src"
+    "dist"
   ],
   "repository": {
     "type": "git",
@@ -34,17 +47,18 @@
     "url": "https://github.com/ansidev/vitepress-theme-ansidev/issues"
   },
   "scripts": {
-    "lint": "prettier --check --write --parser typescript \"{__tests__,docs,src,types}/**/*.ts\"",
+    "lint": "prettier --check --write --parser typescript \"{__tests__,docs,scripts,src,types}/**/*.ts\"",
     "lint:fail": "prettier --check --parser typescript \"{__tests__,docs,src,types}/**/*.ts\"",
     "type": "vue-tsc --noEmit",
     "test": "npm run lint && npm run type",
     "dev": "vitepress dev demo",
-    "build": "NODE_ENV=production vitepress build demo",
-    "serve": "npm run build && vitepress serve demo"
-  },
-  "dependencies": {
-    "@vueuse/core": "^13.0.0",
-    "vue-i18n": "^11.1.0"
+    "build": "node scripts/build.mjs",
+    "serve": "pnpm demo:build && vitepress serve demo",
+    "clean": "rimraf dist",
+    "theme:build": "vite build --config vite.theme.config.ts",
+    "server:build": "tsdown src/server/index.ts src/core/index.ts src/client/vitepress/config.ts --format esm --out-dir dist --dts",
+    "demo:install-local": "mkdir -p .tmp && pnpm pack --pack-destination .tmp && pnpm --dir demo add \"../$(ls -t .tmp/*.tgz | head -n 1)\" --save-exact --offline --config.auto-install-peers=false",
+    "demo:build": "pnpm build && pnpm demo:install-local && NODE_ENV=production vitepress build demo"
   },
   "devDependencies": {
     "@iconify/vue": "^5.0.0",
@@ -64,7 +78,10 @@
     "vue-tsc": "^3.0.0"
   },
   "peerDependencies": {
-    "vitepress": "^2.0.0-alpha.12"
+    "vitepress": "^2.0.0-alpha.12",
+    "@vueuse/core": "^13.0.0",
+    "vue-i18n": "^11.1.0",
+    "vue": "^3.5.13"
   },
   "trustedDependencies": [
     "@parcel/watcher",
@@ -78,5 +95,6 @@
       ]
     }
   },
-  "packageManager": "pnpm@10.15.1"
+  "packageManager": "pnpm@10.15.1",
+  "types": "./dist/core/index.d.ts"
 }

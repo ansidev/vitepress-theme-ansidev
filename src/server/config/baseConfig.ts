@@ -1,38 +1,26 @@
 import { fileURLToPath, URL } from 'node:url'
-import { loadEnv } from 'vitepress'
+import { loadEnv, type UserConfig } from 'vitepress'
 
 process.env.VITE_EXTRA_EXTENSIONS = 'rss'
-globalThis.__VUE_PROD_DEVTOOLS__ = process.env.NODE_ENV === 'development'
+
+;(globalThis as typeof globalThis & { __VUE_PROD_DEVTOOLS__?: boolean }).__VUE_PROD_DEVTOOLS__ =
+  process.env.NODE_ENV === 'development'
 
 const env = loadEnv(process.env.NODE_ENV || 'development', process.cwd(), 'VITE_')
-
 const siteURL = env.VITE_BASE_URL
 
-// @ts-check
-
-/**
- * This file is intended to be required from VitePress
- * consuming project's config file.
- *
- * It runs in Node.js.
- */
-
-// for local-linked development
 const deps = ['vitepress-theme-ansidev']
 
-/**
- * @type {import('vitepress').UserConfig}
- */
-const config = {
+const config: UserConfig = {
   themeConfig: {
     siteURL,
     googleAnalytics: {
-      id: env.VITE_GA_ID,
+      id: env.VITE_GA_ID
     },
     search: {
       provider: 'local',
       options: {
-        async _render(src, env, md) {
+        async _render(src: string, env: { frontmatter?: Record<string, unknown> }, md: { renderAsync: (source: string, e: { frontmatter?: Record<string, unknown> }) => Promise<string> }) {
           const html = await md.renderAsync(src, env)
           if (env.frontmatter?.search === false) return ''
           let renderedHtml = ''
@@ -56,22 +44,18 @@ const config = {
     },
     css: {
       preprocessorOptions: {
-        scss: {
-          api: 'modern-compiler'
-        }
+        scss: {}
       }
     },
     resolve: {
       alias: [
         {
           find: /^.*\/VPFooter\.vue$/,
-          replacement: fileURLToPath(
-            new URL('../components/EmptyFooter.vue', import.meta.url)
-          )
+          replacement: fileURLToPath(new URL('../../client/vitepress/components/EmptyFooter.vue', import.meta.url))
         }
       ]
     }
-  },
+  }
 }
 
 export default config
