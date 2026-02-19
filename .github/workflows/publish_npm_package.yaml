@@ -35,12 +35,6 @@ jobs:
         run: |
           ([[ "${GITHUB_REF#refs/*/v}" =~ ^([0-9]+\.)?([0-9]+\.)?(\*|[0-9]+)$ ]] && echo "PUBLISH_TAG=latest" >> "${GITHUB_ENV}") || echo "PUBLISH_TAG=rc" >> "${GITHUB_ENV}"
 
-      - name: Config NPM registry
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-          registry-url: https://registry.npmjs.org
-
       - name: Publish NPM package
         run: |
           pnpm --filter ${{ env.PACKAGE_NAME }} publish --provenance --no-git-checks --access public --tag ${{ env.PUBLISH_TAG }}
