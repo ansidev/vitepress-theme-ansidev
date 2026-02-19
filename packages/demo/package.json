@@ -1,7 +1,7 @@
 {
   "name": "@ansidev/vitepress-theme-ansidev-demo",
   "private": true,
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "The demo site for VitePress theme @ansidev/vitepress-theme-ansidev",
   "type": "module",
   "dependencies": {
