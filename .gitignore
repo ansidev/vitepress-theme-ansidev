@@ -1,5 +1,5 @@
 /coverage
-/node_modules
+node_modules
 dist
 demo-dist
 TODOs.md
@@ -8,3 +8,4 @@ demo/.vitepress/cache
 .idea
 .history
 .env.local
+*.tgz

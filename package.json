@@ -1,82 +1,36 @@
 {
   "name": "vitepress-theme-ansidev",
   "version": "1.0.0",
-  "description": "The VitePress theme for ansidev's blog.",
-  "main": "src/index.ts",
+  "private": true,
+  "description": "The VitePress theme for ansidev's blog",
   "type": "module",
-  "exports": {
-    ".": "./src/index.ts",
-    "./composables": "./src/core/composables/index.js",
-    "./config": {
-      "types": "./src/vitepress/config/baseConfig.d.ts",
-      "default": "./src/vitepress/config/baseConfig.js"
-    },
-    "./src/*": "./src/*"
-  },
-  "files": [
-    "src"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ansidev/vitepress-theme-ansidev.git"
+  "packageManager": "pnpm@10.30.0",
+  "scripts": {
+    "build": "pnpm -r build",
+    "dev": "pnpm -r dev",
+    "typecheck": "pnpm -r typecheck",
+    "lint:check": "biome check packages",
+    "lint": "pnpm typecheck && biome check packages --write",
+    "demo:dev": "pnpm --filter @ansidev/vitepress-theme-ansidev-demo dev",
+    "demo:build": "pnpm --filter @ansidev/vitepress-theme-ansidev-demo build",
+    "demo:preview": "pnpm --filter @ansidev/vitepress-theme-ansidev-demo preview"
   },
   "keywords": [
-    "vitepress-theme-ansidev",
-    "vitepress-theme",
     "vitepress",
     "theme",
+    "blog",
+    "tailwindcss",
+    "vue3",
+    "typescript",
+    "i18n",
+    "dark-mode",
     "ansidev"
   ],
-  "author": "Le Minh Tri &lt;ansidev@gmail.com&gt;",
   "license": "MIT",
-  "homepage": "https://github.com/ansidev/vitepress-theme-ansidev",
-  "bugs": {
-    "url": "https://github.com/ansidev/vitepress-theme-ansidev/issues"
-  },
-  "scripts": {
-    "lint": "prettier --check --write --parser typescript \"{__tests__,docs,src,types}/**/*.ts\"",
-    "lint:fail": "prettier --check --parser typescript \"{__tests__,docs,src,types}/**/*.ts\"",
-    "type": "vue-tsc --noEmit",
-    "test": "npm run lint && npm run type",
-    "dev": "vitepress dev demo",
-    "build": "NODE_ENV=production vitepress build demo",
-    "serve": "npm run build && vitepress serve demo"
-  },
-  "dependencies": {
-    "@vueuse/core": "^13.0.0",
-    "vue-i18n": "^11.1.0"
-  },
-  "devDependencies": {
-    "@iconify/vue": "^5.0.0",
-    "@tailwindcss/postcss": "^4.1.12",
-    "@types/node": "^22.13.0",
-    "autoprefixer": "^10.4.21",
-    "glob": "^11.0.1",
-    "gray-matter": "^4.0.3",
-    "postcss": "^8.5.6",
-    "prettier": "^3.4.2",
-    "tailwindcss": "^4.1.12",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.7.3",
-    "vite": "^7.1.4",
-    "vitepress": "^2.0.0-alpha.12",
-    "vue": "^3.5.13",
-    "vue-tsc": "^3.0.0"
-  },
-  "peerDependencies": {
-    "vitepress": "^2.0.0-alpha.12"
-  },
-  "trustedDependencies": [
-    "@parcel/watcher",
-    "@tailwindcss/oxide",
-    "esbuild"
+  "workspaces": [
+    "packages/*"
   ],
-  "pnpm": {
-    "peerDependencyRules": {
-      "ignoreMissing": [
-        "@algolia/client-search"
-      ]
-    }
-  },
-  "packageManager": "pnpm@10.15.1"
+  "devDependencies": {
+    "@biomejs/biome": "2.4.2"
+  }
 }

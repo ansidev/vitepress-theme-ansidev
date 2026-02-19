@@ -14,7 +14,7 @@ env:
   NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
   NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
   NETLIFY_SITE_NAME: ${{ vars.NETLIFY_SITE_NAME }}
-  DEPLOY_DIR: dist
+  DEPLOY_DIR: packages/demo/dist
 
 jobs:
   set_deploy_environment:

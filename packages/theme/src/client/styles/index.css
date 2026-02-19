@@ -1,0 +1,30 @@
+@import "tailwindcss";
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-primary: rgb(59, 130, 246);
+  --color-primary-alt: rgb(29, 78, 216);
+  --color-primary-alt-dark: rgb(147, 197, 253);
+  --color-secondary: rgb(239, 68, 68);
+  --color-secondary-dark: rgb(234, 179, 8);
+}
+
+@utility component-border {
+  @apply border rounded-md border-gray-500 hover:border-secondary dark:hover:border-secondary-dark;
+}
+
+@utility link {
+  @apply no-underline hover:text-secondary dark:hover:text-secondary-dark;
+}
+
+@utility link-alt {
+  @apply text-primary-alt! dark:text-primary-alt-dark! link!;
+}
+
+:root {
+  --vp-c-brand-1: var(--color-primary);
+}
+
+.vp-doc a {
+  @apply link;
+}
