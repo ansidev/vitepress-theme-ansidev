@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](http://semver.org).
 
+## [v1.0.2](https://github.com/ansidev/vitepress-theme-ansidev/compare/v1.0.1...v1.0.2) (2026-02-19)
+
+### Bug Fixes
+
+- migrate to pnpm workspace, refactor code and fix bugs to be able to build NPM package properly
+
+Full Changelog: [v1.0.1...v1.0.2](https://github.com/ansidev/vitepress-theme-ansidev/compare/v1.0.1...v1.0.2)
+
 ## v1.0.1 (2025-09-08)
 
 ### Bug Fixes

@@ -7,7 +7,13 @@ newlines:
   afterChangelogHeader: 0
   beforeChangelogVersion: 1
   endOfVersion: 1
-# replacements:
-#   - path: "package.json"
-#     find: '"version": ".*"'
-#     replace: '"version": "{{.VersionNoPrefix}}"'
+replacements:
+  - path: "package.json"
+    find: '"version": ".*"'
+    replace: '"version": "{{.VersionNoPrefix}}"'
+  - path: "packages/theme/package.json"
+    find: '"version": ".*"'
+    replace: '"version": "{{.VersionNoPrefix}}"'
+  - path: "packages/demo/package.json"
+    find: '"version": ".*"'
+    replace: '"version": "{{.VersionNoPrefix}}"'
