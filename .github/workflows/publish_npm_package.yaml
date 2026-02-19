@@ -36,7 +36,7 @@ jobs:
           ([[ "${GITHUB_REF#refs/*/v}" =~ ^([0-9]+\.)?([0-9]+\.)?(\*|[0-9]+)$ ]] && echo "PUBLISH_TAG=latest" >> "${GITHUB_ENV}") || echo "PUBLISH_TAG=rc" >> "${GITHUB_ENV}"
 
       - name: Config NPM registry
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: ${{ env.NODE_VERSION }}
           registry-url: https://registry.npmjs.org
