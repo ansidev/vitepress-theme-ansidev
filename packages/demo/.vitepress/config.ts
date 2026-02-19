@@ -1,7 +1,7 @@
 // @ts-nocheck
 
-import type { ThemeConfig } from '@ansidev/vitepress-theme-ansidev'
-import baseConfig from '@ansidev/vitepress-theme-ansidev/config'
+import type { ThemeConfig } from '@ansidev-oss/vitepress-theme-ansidev'
+import baseConfig from '@ansidev-oss/vitepress-theme-ansidev/config'
 import { defineConfig, mergeConfig } from 'vitepress'
 
 globalThis.__VUE_PROD_DEVTOOLS__ = process.env.NODE_ENV === 'development'

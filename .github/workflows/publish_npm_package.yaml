@@ -5,8 +5,12 @@ on:
     tags:
       - "v*.*.*"
 
+permissions:
+  id-token: write
+
 env:
-  PACKAGE_NAME: '@ansidev/vitepress-theme-ansidev'
+  NODE_VERSION: 24
+  PACKAGE_NAME: '@ansidev-oss/vitepress-theme-ansidev'
   OUTPUT_DIR: packages/theme/dist/
 
 jobs:
@@ -21,7 +25,7 @@ jobs:
           VITE_DISQUS_ID: ${{ vars.VITE_DISQUS_ID }}
         uses: ghacts/static-site@main
         with:
-          node-version: 24
+          node-version: ${{ env.NODE_VERSION }}
           package-manager: pnpm
           package-manager-version: 10
           output-dir: ${{ env.OUTPUT_DIR }}
@@ -31,9 +35,14 @@ jobs:
         run: |
           ([[ "${GITHUB_REF#refs/*/v}" =~ ^([0-9]+\.)?([0-9]+\.)?(\*|[0-9]+)$ ]] && echo "PUBLISH_TAG=latest" >> "${GITHUB_ENV}") || echo "PUBLISH_TAG=rc" >> "${GITHUB_ENV}"
 
+      - name: Config NPM registry
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          registry-url: https://registry.npmjs.org
+
       - name: Publish NPM package
         env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
-          pnpm config set "//registry.npmjs.org/:_authToken" "${{ env.NPM_TOKEN }}"
-          pnpm --filter ${{ env.PACKAGE_NAME }} publish --no-git-checks --access public --tag ${{ env.PUBLISH_TAG }}
+          pnpm --filter ${{ env.PACKAGE_NAME }} publish --provenance --no-git-checks --access public --tag ${{ env.PUBLISH_TAG }}

@@ -1,4 +1,4 @@
-import type { Project } from '@ansidev/vitepress-theme-ansidev'
+import type { Project } from '@ansidev-oss/vitepress-theme-ansidev'
 import { createContentLoader } from 'vitepress'
 
 declare const data: Project[]

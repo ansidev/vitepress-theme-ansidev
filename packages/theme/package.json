@@ -1,5 +1,5 @@
 {
-  "name": "@ansidev/vitepress-theme-ansidev",
+  "name": "@ansidev-oss/vitepress-theme-ansidev",
   "version": "1.0.6",
   "description": "The VitePress theme for ansidev's blog",
   "type": "module",
