@@ -14,7 +14,8 @@ env:
   NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
   NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
   NETLIFY_SITE_NAME: ${{ vars.NETLIFY_SITE_NAME }}
-  DEPLOY_DIR: packages/demo/dist
+  PACKAGE_NAME: '@ansidev/vitepress-theme-ansidev-demo'
+  DEPLOY_DIR: dist
 
 jobs:
   set_deploy_environment:
@@ -119,6 +120,7 @@ jobs:
           auth-token: ${{ env.NETLIFY_AUTH_TOKEN }}
           site: ${{ env.NETLIFY_SITE_ID }}
           dir: ${{ env.DEPLOY_DIR }}
+          filter: ${{ env.PACKAGE_NAME }}
           alias: ${{ env.NETLIFY_DEPLOY_ALIAS }}
           prod: ${{ env.PROD }}
 
