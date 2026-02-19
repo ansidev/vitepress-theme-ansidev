@@ -12,5 +12,16 @@ export default defineConfig([
     format: 'esm',
     clean: true,
     tsconfig: 'tsconfig.node.json',
+    external: [
+      'glob',
+      'kind-of',
+      'is-extendable',
+      'extend-shallow',
+      'section-matter',
+      'js-yaml',
+      'esprima',
+      'gray-matter',
+      'strip-bom-string',
+    ]
   },
 ])
