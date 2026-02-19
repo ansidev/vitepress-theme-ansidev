@@ -5,10 +5,28 @@ on:
     tags:
       - "v*.*.*"
 
+env:
+  PACKAGE_NAME: '@ansidev/vitepress-theme-ansidev-demo'
+  OUTPUT_DIR: packages/demo/dist/
+
 jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
+      - name: Build
+        env:
+          VITE_GA_ID: ${{ vars.VITE_GA_ID }}
+          VITE_SWETRIX_ID: ${{ vars.VITE_SWETRIX_ID }}
+          VITE_COUNTER_ANALYTICS_ID: ${{ vars.VITE_COUNTER_ANALYTICS_ID }}
+          VITE_DISQUS_ID: ${{ vars.VITE_DISQUS_ID }}
+        uses: ghacts/static-site@main
+        with:
+          node-version: 24
+          package-manager: pnpm
+          package-manager-version: 10
+          output-dir: ${{ env.OUTPUT_DIR }}
+          skip-test: true
+
       - name: Set publish tag
         run: |
           ([[ "${GITHUB_REF#refs/*/v}" =~ ^([0-9]+\.)?([0-9]+\.)?(\*|[0-9]+)$ ]] && echo "PUBLISH_TAG=latest" >> "${GITHUB_ENV}") || echo "PUBLISH_TAG=rc" >> "${GITHUB_ENV}"
@@ -18,4 +36,4 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
           pnpm config set "//registry.npmjs.org/:_authToken" "${{ env.NPM_TOKEN }}"
-          pnpm --filter @ansidev/vitepress-theme-ansidev publish --access public --tag ${{ env.PUBLISH_TAG }}
+          pnpm --filter ${{ env.PACKAGE_NAME }} publish --access public --tag ${{ env.PUBLISH_TAG }}
