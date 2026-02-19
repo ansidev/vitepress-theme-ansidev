@@ -1,4 +1,4 @@
-import { useArchiveRoute } from '@ansidev/vitepress-theme-ansidev/composables'
+import { useArchiveRoute } from '@ansidev-oss/vitepress-theme-ansidev/composables'
 
 // archives/[slug].paths.js
 export default useArchiveRoute('content/posts/**/!(index).md', '<!-- more -->')

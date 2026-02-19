@@ -1,11 +1,11 @@
 {
-  "name": "@ansidev/vitepress-theme-ansidev-demo",
+  "name": "@ansidev-oss/vitepress-theme-ansidev-demo",
   "private": true,
   "version": "1.0.6",
-  "description": "The demo site for VitePress theme @ansidev/vitepress-theme-ansidev",
+  "description": "The demo site for VitePress theme @ansidev-oss/vitepress-theme-ansidev",
   "type": "module",
   "dependencies": {
-    "@ansidev/vitepress-theme-ansidev": "workspace:*",
+    "@ansidev-oss/vitepress-theme-ansidev": "workspace:*",
     "vitepress": "^2.0.0-alpha.16"
   },
   "scripts": {

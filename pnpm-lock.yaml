@@ -14,7 +14,7 @@ importers:
 
   packages/demo:
     dependencies:
-      '@ansidev/vitepress-theme-ansidev':
+      '@ansidev-oss/vitepress-theme-ansidev':
         specifier: workspace:*
         version: link:../theme
       vitepress:

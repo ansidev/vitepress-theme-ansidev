@@ -6,7 +6,7 @@ on:
       - "v*.*.*"
 
 env:
-  PACKAGE_NAME: '@ansidev/vitepress-theme-ansidev'
+  PACKAGE_NAME: '@ansidev-oss/vitepress-theme-ansidev'
   OUTPUT_DIR: packages/theme/dist/
 
 jobs:
