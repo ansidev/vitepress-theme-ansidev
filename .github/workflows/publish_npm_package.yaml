@@ -42,7 +42,5 @@ jobs:
           registry-url: https://registry.npmjs.org
 
       - name: Publish NPM package
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
           pnpm --filter ${{ env.PACKAGE_NAME }} publish --provenance --no-git-checks --access public --tag ${{ env.PUBLISH_TAG }}
