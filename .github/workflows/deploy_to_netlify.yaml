@@ -106,7 +106,7 @@ jobs:
       - name: Build
         uses: ghacts/static-site@main
         with:
-          node-version: 22
+          node-version: 24
           package-manager: pnpm
           package-manager-version: 10
           project-path: packages/demo
