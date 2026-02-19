@@ -14,7 +14,8 @@ env:
   NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
   NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
   NETLIFY_SITE_NAME: ${{ vars.NETLIFY_SITE_NAME }}
-  DEPLOY_DIR: dist
+  PACKAGE_NAME: "'@ansidev/vitepress-theme-ansidev-demo'"
+  DEPLOY_DIR: packages/demo/dist/
 
 jobs:
   set_deploy_environment:
@@ -105,9 +106,10 @@ jobs:
       - name: Build
         uses: ghacts/static-site@main
         with:
-          node-version: 22
+          node-version: 24
           package-manager: pnpm
           package-manager-version: 10
+          output-dir: packages/demo/dist/
           skip-test: true
 
       - name: Deploy
@@ -119,6 +121,7 @@ jobs:
           auth-token: ${{ env.NETLIFY_AUTH_TOKEN }}
           site: ${{ env.NETLIFY_SITE_ID }}
           dir: ${{ env.DEPLOY_DIR }}
+          filter: ${{ env.PACKAGE_NAME }}
           alias: ${{ env.NETLIFY_DEPLOY_ALIAS }}
           prod: ${{ env.PROD }}
 

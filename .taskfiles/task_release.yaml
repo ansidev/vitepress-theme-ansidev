@@ -7,7 +7,10 @@ env:
   CHANGES_DIR: .changes
 
 vars:
-  VERSION_FILE: package.json
+  VERSION_FILES:
+    - package.json
+    - packages/theme/package.json
+    - packages/demo/package.json
 
 tasks:
   prepare:
@@ -46,7 +49,7 @@ tasks:
     cmds:
       - git add ${CHANGES_DIR}
       - git add CHANGELOG.md
-      - git add {{.VERSION_FILE}}
+      - git add {{range .VERSION_FILES}}{{.}} {{end}}
       - |
         git commit -m "chore(release): {{.VERSION_TAG}}"
     silent: true
