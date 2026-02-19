@@ -109,7 +109,7 @@ jobs:
           node-version: 24
           package-manager: pnpm
           package-manager-version: 10
-          project-path: packages/demo
+          output-dir: packages/demo/dist/
           skip-test: true
 
       - name: Deploy
