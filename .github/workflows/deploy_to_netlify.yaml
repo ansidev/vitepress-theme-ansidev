@@ -14,7 +14,7 @@ env:
   NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
   NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
   NETLIFY_SITE_NAME: ${{ vars.NETLIFY_SITE_NAME }}
-  PACKAGE_NAME: '@ansidev/vitepress-theme-ansidev-demo'
+  PACKAGE_NAME: "'@ansidev/vitepress-theme-ansidev-demo'"
   DEPLOY_DIR: dist
 
 jobs:
@@ -109,6 +109,7 @@ jobs:
           node-version: 22
           package-manager: pnpm
           package-manager-version: 10
+          project-path: packages/demo
           skip-test: true
 
       - name: Deploy
