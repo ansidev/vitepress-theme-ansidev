@@ -1,6 +1,6 @@
-import AnsidevTheme from '@ansidev/vitepress-theme-ansidev'
+import AnsidevTheme from '@ansidev-oss/vitepress-theme-ansidev'
 import type { Theme } from 'vitepress'
-import '@ansidev/vitepress-theme-ansidev/styles.css'
+import '@ansidev-oss/vitepress-theme-ansidev/styles.css'
 
 export default {
   extends: AnsidevTheme,

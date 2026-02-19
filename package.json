@@ -1,6 +1,6 @@
 {
   "name": "vitepress-theme-ansidev",
-  "version": "1.0.6",
+  "version": "1.0.8",
   "private": true,
   "description": "The VitePress theme for ansidev's blog",
   "type": "module",
@@ -11,9 +11,9 @@
     "typecheck": "pnpm -r typecheck",
     "lint:check": "pnpm biome check",
     "lint": "pnpm -r typecheck && pnpm lint:check --write",
-    "demo:dev": "pnpm --filter @ansidev/vitepress-theme-ansidev-demo dev",
-    "demo:build": "pnpm --filter @ansidev/vitepress-theme-ansidev-demo build",
-    "demo:preview": "pnpm --filter @ansidev/vitepress-theme-ansidev-demo preview"
+    "demo:dev": "pnpm --filter @ansidev-oss/vitepress-theme-ansidev-demo dev",
+    "demo:build": "pnpm --filter @ansidev-oss/vitepress-theme-ansidev-demo build",
+    "demo:preview": "pnpm --filter @ansidev-oss/vitepress-theme-ansidev-demo preview"
   },
   "keywords": [
     "vitepress",

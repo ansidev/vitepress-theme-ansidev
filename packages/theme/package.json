@@ -1,6 +1,6 @@
 {
-  "name": "@ansidev/vitepress-theme-ansidev",
-  "version": "1.0.6",
+  "name": "@ansidev-oss/vitepress-theme-ansidev",
+  "version": "1.0.8",
   "description": "The VitePress theme for ansidev's blog",
   "type": "module",
   "main": "dist/node/index.js",

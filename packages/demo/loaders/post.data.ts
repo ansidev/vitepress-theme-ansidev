@@ -1,4 +1,4 @@
-import type { Post } from '@ansidev/vitepress-theme-ansidev'
+import type { Post } from '@ansidev-oss/vitepress-theme-ansidev'
 import { createContentLoader } from 'vitepress'
 
 declare const data: Post[]
