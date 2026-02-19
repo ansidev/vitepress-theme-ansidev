@@ -44,12 +44,14 @@
     "LICENSE"
   ],
   "scripts": {
+    "typecheck": "tsc --noEmit",
+    "lint:check": "biome check",
+    "lint": "biome check --write",
+    "dev": "vite build --watch",
     "clean": "rimraf dist",
     "build:client": "vite build && tsc --emitDeclarationOnly",
     "build:node": "tsdown",
-    "build": "pnpm clean && pnpm build:client && pnpm build:node",
-    "dev": "vite build --watch",
-    "typecheck": "tsc --noEmit"
+    "build": "pnpm clean && pnpm build:client && pnpm build:node"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.2.0",
@@ -57,6 +59,7 @@
     "vue-i18n": "^11.2.8"
   },
   "devDependencies": {
+    "@biomejs/biome": "2.4.2",
     "@iconify/vue": "^5.0.0",
     "@tailwindcss/postcss": "^4.1.18",
     "@types/node": "^25.2.3",

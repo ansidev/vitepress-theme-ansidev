@@ -22,6 +22,6 @@ export default defineConfig([
       'esprima',
       'gray-matter',
       'strip-bom-string',
-    ]
+    ],
   },
 ])

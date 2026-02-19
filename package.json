@@ -9,8 +9,8 @@
     "build": "pnpm -r build",
     "dev": "pnpm -r dev",
     "typecheck": "pnpm -r typecheck",
-    "lint:check": "biome check packages",
-    "lint": "pnpm typecheck && biome check packages --write",
+    "lint:check": "pnpm biome check",
+    "lint": "pnpm -r typecheck && pnpm lint:check --write",
     "demo:dev": "pnpm --filter @ansidev/vitepress-theme-ansidev-demo dev",
     "demo:build": "pnpm --filter @ansidev/vitepress-theme-ansidev-demo build",
     "demo:preview": "pnpm --filter @ansidev/vitepress-theme-ansidev-demo preview"

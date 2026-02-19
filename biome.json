@@ -31,9 +31,16 @@
       "quoteStyle": "single"
     }
   },
+  "json": {
+    "formatter": {
+      "expand": "always"
+    }
+  },
   "overrides": [
     {
-      "includes": ["**/*.vue"],
+      "includes": [
+        "**/*.vue"
+      ],
       "linter": {
         "rules": {
           "style": {
