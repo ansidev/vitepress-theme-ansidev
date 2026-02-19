@@ -36,4 +36,4 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
           pnpm config set "//registry.npmjs.org/:_authToken" "${{ env.NPM_TOKEN }}"
-          pnpm --filter ${{ env.PACKAGE_NAME }} publish --access public --tag ${{ env.PUBLISH_TAG }}
+          pnpm --filter ${{ env.PACKAGE_NAME }} publish --no-git-checks --access public --tag ${{ env.PUBLISH_TAG }}
