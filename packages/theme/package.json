@@ -47,11 +47,13 @@
     "typecheck": "tsc --noEmit",
     "lint:check": "biome check",
     "lint": "biome check --write",
-    "dev": "vite build --watch",
+    "dev:client": "vite build --watch",
+    "dev:node": "tsdown --watch",
+    "dev": "concurrently --kill-others \"pnpm dev:client\" \"pnpm dev:node\"",
     "clean": "rimraf dist",
     "build:client": "vite build && tsc --emitDeclarationOnly",
     "build:node": "tsdown",
-    "build": "pnpm clean && pnpm build:client && pnpm build:node"
+    "build": "pnpm clean && concurrently \"pnpm build:client\" \"pnpm build:node\""
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.2.0",
@@ -65,6 +67,7 @@
     "@types/node": "^25.2.3",
     "@vitejs/plugin-vue": "^6.0.4",
     "autoprefixer": "^10.4.24",
+    "concurrently": "^9.2.1",
     "glob": "^13.0.5",
     "gray-matter": "^4.0.3",
     "postcss": "^8.5.6",
