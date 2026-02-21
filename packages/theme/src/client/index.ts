@@ -31,13 +31,6 @@ const theme: Theme = {
   },
 } satisfies Theme
 
-export type {
-  DonationPluginConfig,
-  GoogleAnalyticsOptions,
-  Post,
-  PostDate,
-  Project,
-  ThemeConfig,
-} from './types'
+export type * from './types'
 
 export default theme

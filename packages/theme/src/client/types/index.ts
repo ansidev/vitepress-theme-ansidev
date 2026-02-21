@@ -1,6 +1,7 @@
 import type { DefaultTheme } from 'vitepress/theme'
 import type { DonationPluginConfig } from '../plugins/donation'
 import type { GoogleAnalyticsOptions } from '../plugins/google-analytics'
+import type { SwetrixOptions } from '../plugins/swetrix'
 
 export interface ThemeConfig extends DefaultTheme.Config {
   /**
@@ -9,8 +10,9 @@ export interface ThemeConfig extends DefaultTheme.Config {
    * @default process.env.VITE_BASE_URL
    */
   siteURL?: string
-  googleAnalytics?: GoogleAnalyticsOptions
   donation?: DonationPluginConfig
+  googleAnalytics?: GoogleAnalyticsOptions
+  swetrix?: SwetrixOptions
   /**
    * The footer configuration.
    */
@@ -19,6 +21,7 @@ export interface ThemeConfig extends DefaultTheme.Config {
 
 export type { DonationPluginConfig } from '../plugins/donation'
 export type { GoogleAnalyticsOptions } from '../plugins/google-analytics'
+export type { SwetrixOptions } from '../plugins/swetrix'
 
 export interface Post {
   type: string

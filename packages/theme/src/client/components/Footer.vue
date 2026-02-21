@@ -12,12 +12,16 @@ const copyright = computed(() => {
     : theme.value.themeFooter.copyright
 })
 
+const Donation = theme.value.donation
+  ? defineAsyncComponent(() => import('../plugins/donation/components/Donation.vue'))
+  : () => null
+
 const GoogleAnalytics = theme.value.googleAnalytics
   ? defineAsyncComponent(() => import('../plugins/google-analytics/components/GoogleAnalytics.vue'))
   : () => null
 
-const Donation = theme.value.donation
-  ? defineAsyncComponent(() => import('../plugins/donation/components/Donation.vue'))
+const Swetrix = theme.value.swetrix
+  ? defineAsyncComponent(() => import('../plugins/swetrix/components/Swetrix.vue'))
   : () => null
 </script>
 
@@ -40,6 +44,7 @@ const Donation = theme.value.donation
     </div>
   </footer>
   <GoogleAnalytics :google-analytics="theme.googleAnalytics" />
+  <Swetrix :swetrix="theme.swetrix" />
 </template>
 
 <style scoped>
