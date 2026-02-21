@@ -11,6 +11,7 @@
     "typecheck": "pnpm -r typecheck",
     "lint:check": "pnpm biome check",
     "lint": "pnpm -r typecheck && pnpm lint:check --write",
+    "theme:build": "pnpm --filter @ansidev-oss/vitepress-theme-ansidev build",
     "demo:dev": "pnpm --filter @ansidev-oss/vitepress-theme-ansidev-demo dev",
     "demo:build": "pnpm --filter @ansidev-oss/vitepress-theme-ansidev-demo build",
     "demo:preview": "pnpm --filter @ansidev-oss/vitepress-theme-ansidev-demo preview"

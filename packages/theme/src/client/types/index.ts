@@ -11,6 +11,10 @@ export interface ThemeConfig extends DefaultTheme.Config {
   siteURL?: string
   googleAnalytics?: GoogleAnalyticsOptions
   donation?: DonationPluginConfig
+  /**
+   * The footer configuration.
+   */
+  themeFooter?: DefaultTheme.Footer
 }
 
 export type { DonationPluginConfig } from '../plugins/donation'

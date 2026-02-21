@@ -1,12 +1,11 @@
 // @ts-nocheck
 
 import type { ThemeConfig } from '@ansidev-oss/vitepress-theme-ansidev'
-import baseConfig from '@ansidev-oss/vitepress-theme-ansidev/config'
-import { defineConfig, mergeConfig } from 'vitepress'
+import { defineWithDefaultThemeConfig } from '@ansidev-oss/vitepress-theme-ansidev/config'
 
 globalThis.__VUE_PROD_DEVTOOLS__ = process.env.NODE_ENV === 'development'
 
-const siteConfig = defineConfig<ThemeConfig>({
+export default defineWithDefaultThemeConfig<ThemeConfig>({
   srcDir: 'content',
   outDir: 'dist',
   lang: 'en-US',
@@ -88,5 +87,3 @@ const siteConfig = defineConfig<ThemeConfig>({
     },
   },
 })
-
-export default mergeConfig(baseConfig, siteConfig)

@@ -7,9 +7,9 @@ const { theme, frontmatter } = useData()
 const { hasSidebar } = useLayout()
 
 const copyright = computed(() => {
-  return typeof theme.value.footer.copyright === 'string'
-    ? theme.value.footer.copyright.replace(/#\{present\}/g, new Date().getFullYear().toString())
-    : theme.value.footer.copyright
+  return typeof theme.value.themeFooter.copyright === 'string'
+    ? theme.value.themeFooter.copyright.replace(/#\{present\}/g, new Date().getFullYear().toString())
+    : theme.value.themeFooter.copyright
 })
 
 const GoogleAnalytics = theme.value.googleAnalytics
@@ -26,15 +26,15 @@ const Donation = theme.value.donation
     <Donation :donation="theme.donation" />
   </div>
   <footer
-    v-if="theme.footer && frontmatter.footer !== false"
+    v-if="theme.themeFooter && frontmatter.themeFooter !== false"
     class="VPFooter"
     :class="{ 'has-sidebar': hasSidebar }"
   >
     <div class="container">
       <p
-        v-if="theme.footer.message"
+        v-if="theme.themeFooter.message"
         class="message"
-        v-html="theme.footer.message"
+        v-html="theme.themeFooter.message"
       ></p>
       <p v-if="copyright" class="copyright" v-html="copyright"></p>
     </div>

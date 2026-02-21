@@ -1,6 +1,7 @@
 // @ts-nocheck
-import { fileURLToPath, URL } from 'node:url'
-import { loadEnv } from 'vitepress'
+import type { UserConfig } from 'vitepress'
+import { loadEnv, mergeConfig } from 'vitepress'
+import type { ThemeConfig } from '../client/types'
 
 process.env.VITE_EXTRA_EXTENSIONS = 'rss'
 globalThis.__VUE_PROD_DEVTOOLS__ = process.env.NODE_ENV === 'development'
@@ -17,12 +18,12 @@ const siteURL = env.VITE_BASE_URL
  */
 
 // for local-linked development
-const deps = ['vitepress-theme-ansidev']
+const deps = ['@ansidev-oss/vitepress-theme-ansidev']
 
 /**
  * @type {import('vitepress').UserConfig}
  */
-const config = {
+const baseConfig = {
   themeConfig: {
     siteURL,
     googleAnalytics: {
@@ -65,15 +66,23 @@ const config = {
         },
       },
     },
-    resolve: {
-      alias: [
-        {
-          find: /^.*\/VPFooter\.vue$/,
-          replacement: fileURLToPath(new URL('./components/EmptyFooter.vue', import.meta.url)),
-        },
-      ],
-    },
   },
 }
 
-export default config
+/**
+ * Helper function to define theme configuration with proper typing
+ * Note: TailwindCSS plugin should be added in vite.config.ts, not here
+ */
+export function defineWithDefaultThemeConfig(config: UserConfig<ThemeConfig> = {}): UserConfig<ThemeConfig> {
+  // Rename 'footer' to 'themeFooter' to avoid conflict with VitePress built-in footer config
+  if (config.themeConfig?.footer) {
+    config.themeConfig = {
+      ...config.themeConfig,
+      themeFooter: config.themeConfig.footer,
+    }
+    delete config.themeConfig.footer
+  }
+  return mergeConfig(baseConfig, config) as UserConfig<ThemeConfig>
+}
+
+export default baseConfig
