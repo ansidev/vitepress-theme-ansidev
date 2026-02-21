@@ -1,6 +1,7 @@
 <script setup lang='ts'>
 import { useData } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
+import DonationWidget from '../components/DonationWidget.vue'
 import Footer from '../components/Footer.vue'
 import LocaleSwitcher from '../components/LocaleSwitcher.vue'
 
@@ -18,8 +19,16 @@ const { frontmatter } = useData()
     <template #nav-bar-content-after>
       <LocaleSwitcher />
     </template>
+    <template #aside-ads-before>
+      <DonationWidget direction="vertical" />
+    </template>
     <template #layout-bottom>
       <Footer />
     </template>
   </DefaultLayout>
 </template>
+<style lang="css">
+.VPDoc.has-aside .aside-container {
+  z-index: var(--vp-z-index-sidebar);
+}
+</style>
