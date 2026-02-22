@@ -2,44 +2,44 @@
 import { useData } from 'vitepress'
 import { useLayout } from 'vitepress/theme'
 import { computed, defineAsyncComponent } from 'vue'
+import DonationWidget from './DonationWidget.vue'
 
 const { theme, frontmatter } = useData()
-const { hasSidebar } = useLayout()
+const { hasSidebar, hasAside } = useLayout()
 
 const copyright = computed(() => {
-  return typeof theme.value.footer.copyright === 'string'
-    ? theme.value.footer.copyright.replace(/#\{present\}/g, new Date().getFullYear().toString())
-    : theme.value.footer.copyright
+  return typeof theme.value.themeFooter.copyright === 'string'
+    ? theme.value.themeFooter.copyright.replace(/#\{present\}/g, new Date().getFullYear().toString())
+    : theme.value.themeFooter.copyright
 })
 
 const GoogleAnalytics = theme.value.googleAnalytics
   ? defineAsyncComponent(() => import('../plugins/google-analytics/components/GoogleAnalytics.vue'))
   : () => null
 
-const Donation = theme.value.donation
-  ? defineAsyncComponent(() => import('../plugins/donation/components/Donation.vue'))
+const Swetrix = theme.value.swetrix
+  ? defineAsyncComponent(() => import('../plugins/swetrix/components/Swetrix.vue'))
   : () => null
 </script>
 
 <template>
-  <div class="flex flex-wrap space-x-4 py-4 items-center justify-center">
-    <Donation :donation="theme.donation" />
-  </div>
+  <DonationWidget v-if="!hasAside" direction="horizontal" />
   <footer
-    v-if="theme.footer && frontmatter.footer !== false"
+    v-if="theme.themeFooter && frontmatter.themeFooter !== false"
     class="VPFooter"
     :class="{ 'has-sidebar': hasSidebar }"
   >
     <div class="container">
       <p
-        v-if="theme.footer.message"
+        v-if="theme.themeFooter.message"
         class="message"
-        v-html="theme.footer.message"
+        v-html="theme.themeFooter.message"
       ></p>
       <p v-if="copyright" class="copyright" v-html="copyright"></p>
     </div>
   </footer>
   <GoogleAnalytics :google-analytics="theme.googleAnalytics" />
+  <Swetrix :swetrix="theme.swetrix" />
 </template>
 
 <style scoped>

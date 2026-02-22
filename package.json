@@ -1,16 +1,18 @@
 {
   "name": "vitepress-theme-ansidev",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "private": true,
   "description": "The VitePress theme for ansidev's blog",
   "type": "module",
   "packageManager": "pnpm@10.30.0",
   "scripts": {
     "build": "pnpm -r build",
-    "dev": "pnpm -r dev",
+    "dev": "concurrently --kill-others \"pnpm theme:dev\" \"pnpm demo:dev\"",
     "typecheck": "pnpm -r typecheck",
     "lint:check": "pnpm biome check",
     "lint": "pnpm -r typecheck && pnpm lint:check --write",
+    "theme:dev": "pnpm --filter @ansidev-oss/vitepress-theme-ansidev dev",
+    "theme:build": "pnpm --filter @ansidev-oss/vitepress-theme-ansidev build",
     "demo:dev": "pnpm --filter @ansidev-oss/vitepress-theme-ansidev-demo dev",
     "demo:build": "pnpm --filter @ansidev-oss/vitepress-theme-ansidev-demo build",
     "demo:preview": "pnpm --filter @ansidev-oss/vitepress-theme-ansidev-demo preview"
@@ -31,6 +33,7 @@
     "packages/*"
   ],
   "devDependencies": {
-    "@biomejs/biome": "2.4.2"
+    "@biomejs/biome": "2.4.2",
+    "concurrently": "^9.2.1"
   }
 }
