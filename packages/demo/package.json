@@ -4,10 +4,6 @@
   "version": "1.0.11",
   "description": "The demo site for VitePress theme @ansidev-oss/vitepress-theme-ansidev",
   "type": "module",
-  "dependencies": {
-    "@ansidev-oss/vitepress-theme-ansidev": "workspace:*",
-    "vitepress": "^2.0.0-alpha.16"
-  },
   "scripts": {
     "lint:check": "biome check",
     "lint": "biome check --write",
@@ -16,6 +12,9 @@
     "preview": "vitepress preview"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.4.2"
+    "@ansidev-oss/vitepress-theme-ansidev": "workspace:*",
+    "@biomejs/biome": "2.4.4",
+    "vitepress": "^2.0.0-alpha.16",
+    "vitepress-plugin-rss": "^0.4.2"
   }
 }
