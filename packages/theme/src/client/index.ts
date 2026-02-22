@@ -32,5 +32,6 @@ const theme: Theme = {
 } satisfies Theme
 
 export type * from './types'
+export * from './composables'
 
 export default theme
