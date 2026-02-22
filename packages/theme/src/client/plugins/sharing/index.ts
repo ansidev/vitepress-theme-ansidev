@@ -1,4 +1,8 @@
 export declare interface SharingPluginConfig {
+  wrapperCssClass?: string
+  titleCssClass?: string
+  buttonCssClass?: string
+  title?: string
   networks?: string[]
   displayMode?: string
   buttonSize?: number
