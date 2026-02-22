@@ -2,9 +2,10 @@
 import { useData } from 'vitepress'
 import { useLayout } from 'vitepress/theme'
 import { computed, defineAsyncComponent } from 'vue'
+import DonationWidget from './DonationWidget.vue'
 
 const { theme, frontmatter } = useData()
-const { hasSidebar } = useLayout()
+const { hasSidebar, hasAside } = useLayout()
 
 const copyright = computed(() => {
   return typeof theme.value.themeFooter.copyright === 'string'
@@ -16,15 +17,13 @@ const GoogleAnalytics = theme.value.googleAnalytics
   ? defineAsyncComponent(() => import('../plugins/google-analytics/components/GoogleAnalytics.vue'))
   : () => null
 
-const Donation = theme.value.donation
-  ? defineAsyncComponent(() => import('../plugins/donation/components/Donation.vue'))
+const Swetrix = theme.value.swetrix
+  ? defineAsyncComponent(() => import('../plugins/swetrix/components/Swetrix.vue'))
   : () => null
 </script>
 
 <template>
-  <div class="flex flex-wrap space-x-4 py-4 items-center justify-center">
-    <Donation :donation="theme.donation" />
-  </div>
+  <DonationWidget v-if="!hasAside" direction="horizontal" />
   <footer
     v-if="theme.themeFooter && frontmatter.themeFooter !== false"
     class="VPFooter"
@@ -40,6 +39,7 @@ const Donation = theme.value.donation
     </div>
   </footer>
   <GoogleAnalytics :google-analytics="theme.googleAnalytics" />
+  <Swetrix :swetrix="theme.swetrix" />
 </template>
 
 <style scoped>

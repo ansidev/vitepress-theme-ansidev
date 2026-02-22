@@ -4,6 +4,7 @@ import type { ThemeConfig } from '@ansidev-oss/vitepress-theme-ansidev'
 import { defineWithDefaultThemeConfig } from '@ansidev-oss/vitepress-theme-ansidev/config'
 
 globalThis.__VUE_PROD_DEVTOOLS__ = process.env.NODE_ENV === 'development'
+const siteURL = process.env.VITE_BASE_URL || 'http://localhost:5173'
 
 export default defineWithDefaultThemeConfig<ThemeConfig>({
   srcDir: 'content',
@@ -13,6 +14,7 @@ export default defineWithDefaultThemeConfig<ThemeConfig>({
   description: 'Personal blog of ansidev',
   head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
   themeConfig: {
+    siteURL,
     logo: '/pwa-192x192.png',
     nav: [
       { link: '/categories', text: 'Categories' },
@@ -81,6 +83,21 @@ export default defineWithDefaultThemeConfig<ThemeConfig>({
           },
         },
       },
+    },
+    sharing: {
+      title: 'Share this post',
+      networks: [
+        'email',
+        'facebook',
+        'twitter',
+        'linkedin',
+        'telegram',
+        'whatsapp',
+      ],
+      displayMode: 'icon',
+    },
+    mediumZoom: {
+      selector: '.medium-zoom',
     },
     footer: {
       copyright: 'Copyright © 2019-#{present} Le Minh Tri (a.k.a ansidev)',

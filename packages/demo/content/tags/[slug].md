@@ -4,16 +4,23 @@ layout: home
 ---
 
 <script setup>
+import { useSlugFilter } from '@ansidev-oss/vitepress-theme-ansidev'
 import { useData } from 'vitepress'
-import { computed } from 'vue'
-import { useSlugFilter } from '../../composables'
-import { data as posts } from '../../loaders/post.data'
+import { computed, ref } from 'vue'
+import { data } from '../../loaders/post.data'
 
 const { params } = useData()
 
-const tagFilter = useSlugFilter(params.value.slug)
-const tagName = computed(() => posts.flatMap(post => post.tags).find(tagFilter))
-const postsByTag = computed(() => posts.filter(post => post.tags.filter(tagFilter).length > 0))
+const tagFilter = useSlugFilter(params.value?.slug)
+let tagName = ref('')
+const postsByTag = computed(() => data.filter(post => {
+  const filteredTags = post.tags.filter(tagFilter)
+  const matchedTag = filteredTags.length === 1
+  if (tagName.value === '' && matchedTag) {
+    tagName.value = filteredTags[0]
+  }
+  return matchedTag
+}))
 </script>
 
 <PostsPage :title="tagName" :posts="postsByTag" />

@@ -3,13 +3,17 @@
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "target": "ESNext",
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "jsx": "preserve",
     "outDir": "dist",
-    "esModuleInterop": true
+    "esModuleInterop": true,
   },
   "include": [
-    "./**/*.ts"
+    ".vitepress/**/*.ts",
+    "**/*.ts",
+    "**/*.vue",
+    "**/*.md",
   ],
   "exclude": [
     "node_modules",
