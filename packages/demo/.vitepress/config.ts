@@ -96,6 +96,9 @@ export default defineWithDefaultThemeConfig<ThemeConfig>({
       ],
       displayMode: 'icon',
     },
+    mediumZoom: {
+      selector: '.medium-zoom',
+    },
     footer: {
       copyright: 'Copyright © 2019-#{present} Le Minh Tri (a.k.a ansidev)',
     },

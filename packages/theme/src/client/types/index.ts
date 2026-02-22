@@ -1,6 +1,7 @@
 import type { DefaultTheme } from 'vitepress/theme'
 import type { DonationPluginConfig } from '../plugins/donation'
 import type { GoogleAnalyticsOptions } from '../plugins/google-analytics'
+import type { MediumZoomPluginConfig } from '../plugins/medium-zoom'
 import type { SharingPluginConfig } from '../plugins/sharing'
 import type { SwetrixOptions } from '../plugins/swetrix'
 
@@ -13,6 +14,7 @@ export interface ThemeConfig extends DefaultTheme.Config {
   siteURL?: string
   donation?: DonationPluginConfig
   googleAnalytics?: GoogleAnalyticsOptions
+  mediumZoom?: MediumZoomPluginConfig
   sharing?: SharingPluginConfig
   swetrix?: SwetrixOptions
   /**
@@ -23,6 +25,7 @@ export interface ThemeConfig extends DefaultTheme.Config {
 
 export type { DonationPluginConfig } from '../plugins/donation'
 export type { GoogleAnalyticsOptions } from '../plugins/google-analytics'
+export type { MediumZoomPluginConfig } from '../plugins/medium-zoom'
 export type { SharingPluginConfig } from '../plugins/sharing'
 export type { SwetrixOptions } from '../plugins/swetrix'
 
