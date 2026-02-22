@@ -89,6 +89,7 @@ jobs:
         env:
           NETLIFY_DEPLOY_PREFIX: ${{ needs.set_deploy_environment.outputs.netlify_deploy_prefix }}
           NETLIFY_DEPLOY_ALIAS: ${{ needs.set_deploy_environment.outputs.netlify_deploy_alias }}
+          VITE_BASE_URL: https://${{ needs.set_deploy_environment.outputs.netlify_deploy_prefix }}${{ vars.NETLIFY_SITE_NAME }}.netlify.app
           VITE_GA_ID: ${{ vars.VITE_GA_ID }}
           VITE_SWETRIX_ID: ${{ vars.VITE_SWETRIX_ID }}
           VITE_COUNTER_ANALYTICS_ID: ${{ vars.VITE_COUNTER_ANALYTICS_ID }}
@@ -97,6 +98,7 @@ jobs:
           {
             echo "ASTRO_BASE_URL=https://${NETLIFY_DEPLOY_PREFIX}${NETLIFY_SITE_NAME}.netlify.app"
             echo "NETLIFY_DEPLOY_ALIAS=${NETLIFY_DEPLOY_ALIAS}"
+            echo "VITE_BASE_URL=${VITE_BASE_URL}"
             echo "VITE_GA_ID=${VITE_GA_ID}"
             echo "VITE_SWETRIX_ID=${VITE_SWETRIX_ID}"
             echo "VITE_COUNTER_ANALYTICS_ID=${VITE_COUNTER_ANALYTICS_ID}"
