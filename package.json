@@ -1,6 +1,6 @@
 {
   "name": "vitepress-theme-ansidev",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "private": true,
   "description": "The VitePress theme for ansidev's blog",
   "type": "module",

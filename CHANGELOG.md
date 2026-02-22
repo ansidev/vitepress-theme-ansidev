@@ -4,6 +4,34 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](http://semver.org).
 
+## [v1.0.11](https://github.com/ansidev/vitepress-theme-ansidev/compare/v1.0.10...v1.0.11) (2026-02-22)
+
+### Bug Fixes
+
+- do not use MPA mode
+
+- hide default footer
+
+- declare [@iconify](https://github.com/iconify)/vue as peerDependencies
+
+- **content:** reduce duplicate code and fix errors in generated pages
+
+- **demo:** add tsconfig.json
+
+- **plugin-donation:** display donation on the right aside on post page
+
+### Features
+
+- **dev:** run scripts concurrently
+
+- **plugin-medium-zoom:** add plugin medium zoom
+
+- **plugin-sharing:** add sharing plugin
+
+- **plugin-swetrix:** add plugin Swetrix
+
+Full Changelog: [v1.0.10...v1.0.11](https://github.com/ansidev/vitepress-theme-ansidev/compare/v1.0.10...v1.0.11)
+
 ## [v1.0.10](https://github.com/ansidev/vitepress-theme-ansidev/compare/v1.0.9...v1.0.10) (2026-02-19)
 
 ### Bug Fixes
