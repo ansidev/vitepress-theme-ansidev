@@ -2,9 +2,18 @@
 
 import type { ThemeConfig } from '@ansidev-oss/vitepress-theme-ansidev'
 import { defineWithDefaultThemeConfig } from '@ansidev-oss/vitepress-theme-ansidev/config'
+import { type RSSOptions, RssPlugin } from "vitepress-plugin-rss"
 
 globalThis.__VUE_PROD_DEVTOOLS__ = process.env.NODE_ENV === 'development'
 const siteURL = process.env.VITE_BASE_URL || 'http://localhost:5173'
+const siteTitle: string = "ansidev's blog"
+const rssOptions: RSSOptions = {
+  title: siteTitle,
+  baseUrl: siteURL,
+  copyright: "Copyright © 2019-present Le Minh Tri (a.k.a ansidev)",
+}
+
+console.log("Site URL", siteURL)
 
 export default defineWithDefaultThemeConfig<ThemeConfig>({
   srcDir: 'content',
@@ -102,5 +111,14 @@ export default defineWithDefaultThemeConfig<ThemeConfig>({
     footer: {
       copyright: 'Copyright © 2019-#{present} Le Minh Tri (a.k.a ansidev)',
     },
+  },
+  sitemap: {
+    hostname: siteURL as string,
+    lastmodDateOnly: false,
+  },
+  vite: {
+    plugins: [
+      RssPlugin(rssOptions)
+    ],
   },
 })

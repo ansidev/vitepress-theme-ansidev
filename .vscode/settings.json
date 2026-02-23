@@ -1,5 +1,5 @@
 {
-  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.tsdk": "packages/theme/node_modules/typescript/lib",
   "typescript.format.semicolons": "remove",
   "i18n-ally.localesPaths": [
     "src/core/locales"

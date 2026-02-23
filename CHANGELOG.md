@@ -4,6 +4,24 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](http://semver.org).
 
+## [v1.0.12](https://github.com/ansidev/vitepress-theme-ansidev/compare/v1.0.11...v1.0.12) (2026-02-22)
+
+### Bug Fixes
+
+- correct typescript sdk path
+
+- **deployment:** set env variable VITE_BASE_URL
+
+- **deps:** add peerDependencies and update dependency versions
+
+- **plugin-sharing:** add missing plugin configurations
+
+### Features
+
+- **demo:** add configurations to generate sitemap and rss
+
+Full Changelog: [v1.0.11...v1.0.12](https://github.com/ansidev/vitepress-theme-ansidev/compare/v1.0.11...v1.0.12)
+
 ## [v1.0.11](https://github.com/ansidev/vitepress-theme-ansidev/compare/v1.0.10...v1.0.11) (2026-02-22)
 
 ### Bug Fixes
