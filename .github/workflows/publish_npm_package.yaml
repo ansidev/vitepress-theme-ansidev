@@ -19,6 +19,7 @@ jobs:
     steps:
       - name: Build
         env:
+          VITE_BASE_URL: "https://${{ vars.NETLIFY_SITE_NAME }}.netlify.app"
           VITE_GA_ID: ${{ vars.VITE_GA_ID }}
           VITE_SWETRIX_ID: ${{ vars.VITE_SWETRIX_ID }}
           VITE_COUNTER_ANALYTICS_ID: ${{ vars.VITE_COUNTER_ANALYTICS_ID }}
