@@ -55,12 +55,12 @@ export type SharingComponentProps = {
    * URL to share
    * @type string
    */
-  url: string,
+  url: string
   /**
    * Share text
    * @type string
    */
-  text: string,
+  text: string
 }
 
 export const useUrlQueryParamsBuilder = (params: Record<string, string | undefined> | undefined): string => {
@@ -69,8 +69,9 @@ export const useUrlQueryParamsBuilder = (params: Record<string, string | undefin
   }
   const esc = encodeURIComponent
   const paramKeys = Object.keys(params)
-  if (paramKeys.length < 1)
+  if (paramKeys.length < 1) {
     return ''
+  }
 
   const s = paramKeys
     .filter((key) => params[key] !== undefined)
