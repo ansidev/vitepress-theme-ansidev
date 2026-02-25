@@ -81,7 +81,7 @@
     "typescript": "^5.9.3",
     "vite": "^7.3.1",
     "vitepress": "^2.0.0-alpha.16",
-    "vue": "^3.5.28",
+    "vue": "^3.5.29",
     "vue-tsc": "^3.2.5"
   },
   "peerDependencies": {
@@ -93,7 +93,7 @@
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3",
     "vitepress": "^2.0.0-alpha.16",
-    "vue": "^3.5.28"
+    "vue": "^3.5.29"
   },
   "packageManager": "pnpm@10.30.1"
 }
