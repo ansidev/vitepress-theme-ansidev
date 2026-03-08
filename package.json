@@ -4,7 +4,7 @@
   "private": true,
   "description": "The VitePress theme for ansidev's blog",
   "type": "module",
-  "packageManager": "pnpm@10.30.0",
+  "packageManager": "pnpm@10.31.0",
   "scripts": {
     "build": "pnpm -r build",
     "dev": "concurrently --kill-others \"pnpm theme:dev\" \"pnpm demo:dev\"",
