@@ -9,7 +9,6 @@ permissions:
   id-token: write
 
 env:
-  NODE_VERSION: 24
   PACKAGE_NAME: '@ansidev-oss/vitepress-theme-ansidev'
   OUTPUT_DIR: packages/theme/dist/
 
@@ -26,9 +25,7 @@ jobs:
           VITE_DISQUS_ID: ${{ vars.VITE_DISQUS_ID }}
         uses: ghacts/static-site@main
         with:
-          node-version: ${{ env.NODE_VERSION }}
           package-manager: pnpm
-          package-manager-version: 10
           output-dir: ${{ env.OUTPUT_DIR }}
           skip-test: true
 
