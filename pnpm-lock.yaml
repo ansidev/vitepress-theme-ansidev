@@ -59,7 +59,7 @@ importers:
         version: 25.9.1
       '@vitejs/plugin-vue':
         specifier: ^6.0.4
-        version: 6.0.6(vite@8.0.11(@types/node@25.9.1)(esbuild@0.27.4)(jiti@2.6.1))(vue@3.5.34(typescript@6.0.3))
+        version: 6.0.7(vite@8.0.11(@types/node@25.9.1)(esbuild@0.27.4)(jiti@2.6.1))(vue@3.5.34(typescript@6.0.3))
       autoprefixer:
         specifier: ^10.4.24
         version: 10.5.0(postcss@8.5.14)
@@ -817,9 +817,6 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@rolldown/pluginutils@1.0.0-rc.13':
-    resolution: {integrity: sha512-3ngTAv6F/Py35BsYbeeLeecvhMKdsKm4AoOETVhAA+Qc8nrA2I0kF7oa93mE9qnIurngOSpMnQ0x2nQY2FPviA==}
-
   '@rolldown/pluginutils@1.0.0-rc.18':
     resolution: {integrity: sha512-CUY5Mnhe64xQBGZEEXQ5WyZwsc1JU3vAZLIxtrsBt3LO6UOb+C8GunVKqe9sT8NeWb4lqSaoJtp2xo6GxT1MNw==}
 
@@ -1147,8 +1144,8 @@ packages:
       vite: ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0
       vue: 3.5.34
 
-  '@vitejs/plugin-vue@6.0.6':
-    resolution: {integrity: sha512-u9HHgfrq3AjXlysn0eINFnWQOJQLO9WN6VprZ8FXl7A2bYisv3Hui9Ij+7QZ41F/WYWarHjwBbXtD7dKg3uxbg==}
+  '@vitejs/plugin-vue@6.0.7':
+    resolution: {integrity: sha512-km+p+XdSz9Sxm5rqUbqcSfZYaAniKxWBj1KURl+Jr7UaPvvX7BmaWMdP69I5rrFDeQGyxAG7NXdc57vz+snhWg==}
     engines: {node: ^20.19.0 || >=22.12.0}
     peerDependencies:
       vite: ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0
@@ -2617,8 +2614,6 @@ snapshots:
   '@rolldown/binding-win32-x64-msvc@1.0.2':
     optional: true
 
-  '@rolldown/pluginutils@1.0.0-rc.13': {}
-
   '@rolldown/pluginutils@1.0.0-rc.18': {}
 
   '@rolldown/pluginutils@1.0.0-rc.2': {}
@@ -2869,9 +2864,9 @@ snapshots:
       vite: 7.3.1(@types/node@25.9.1)(jiti@2.6.1)(lightningcss@1.32.0)
       vue: 3.5.34(typescript@6.0.3)
 
-  '@vitejs/plugin-vue@6.0.6(vite@8.0.11(@types/node@25.9.1)(esbuild@0.27.4)(jiti@2.6.1))(vue@3.5.34(typescript@6.0.3))':
+  '@vitejs/plugin-vue@6.0.7(vite@8.0.11(@types/node@25.9.1)(esbuild@0.27.4)(jiti@2.6.1))(vue@3.5.34(typescript@6.0.3))':
     dependencies:
-      '@rolldown/pluginutils': 1.0.0-rc.13
+      '@rolldown/pluginutils': 1.0.1
       vite: 8.0.11(@types/node@25.9.1)(esbuild@0.27.4)(jiti@2.6.1)
       vue: 3.5.34(typescript@6.0.3)
 
