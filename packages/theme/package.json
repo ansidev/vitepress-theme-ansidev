@@ -95,5 +95,8 @@
     "vitepress": "^2.0.0-alpha.16",
     "vue": "^3.5.28"
   },
-  "packageManager": "pnpm@10.33.4"
+  "engines": {
+    "node": ">=26.2.0",
+    "pnpm": ">=11.3.0"
+  }
 }
