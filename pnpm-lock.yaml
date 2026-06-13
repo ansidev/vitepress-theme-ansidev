@@ -16,7 +16,7 @@ importers:
         version: 2.4.16
       concurrently:
         specifier: ^10.0.0
-        version: 10.0.1
+        version: 10.0.3
 
   packages/demo:
     devDependencies:
@@ -65,7 +65,7 @@ importers:
         version: 10.5.0(postcss@8.5.15)
       concurrently:
         specifier: ^10.0.0
-        version: 10.0.1
+        version: 10.0.3
       glob:
         specifier: ^13.0.6
         version: 13.0.6
@@ -1360,8 +1360,8 @@ packages:
   comma-separated-tokens@2.0.3:
     resolution: {integrity: sha512-Fu4hJdvzeylCfQPp9SGWidpzrMs7tTrlu6Vb8XGaRGck8QSNZJJp538Wrb60Lax4fPwR64ViY468OIUTbRlGZg==}
 
-  concurrently@10.0.1:
-    resolution: {integrity: sha512-vN61cP9COzctyhBqKUOh9YHqU70hYPnaHqNpXdBzM9PcwIpfPAvNK06hjm4gEJEGuvy4GBairO6uU32+FKpS4g==}
+  concurrently@10.0.3:
+    resolution: {integrity: sha512-hc3LH4UaKWd/bbyDK/IGVa4RB6PtQ3CUYwtrkzqHn+wIG3Hr5fhpRlk0L/gCa8ZE1L/Ufj50Zho69cI5w8SQBA==}
     engines: {node: '>=22'}
     hasBin: true
 
@@ -3045,7 +3045,7 @@ snapshots:
 
   comma-separated-tokens@2.0.3: {}
 
-  concurrently@10.0.1:
+  concurrently@10.0.3:
     dependencies:
       chalk: 5.6.2
       rxjs: 7.8.2
