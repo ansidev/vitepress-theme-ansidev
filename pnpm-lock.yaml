@@ -62,7 +62,7 @@ importers:
         version: 6.0.7(vite@8.0.16(@types/node@25.9.5)(esbuild@0.27.4)(jiti@2.7.0))(vue@3.5.39(typescript@6.0.3))
       autoprefixer:
         specifier: ^10.4.24
-        version: 10.5.2(postcss@8.5.15)
+        version: 10.5.2(postcss@8.5.19)
       concurrently:
         specifier: ^10.0.0
         version: 10.0.3
@@ -77,7 +77,7 @@ importers:
         version: 1.1.0
       postcss:
         specifier: ^8.5.6
-        version: 8.5.15
+        version: 8.5.19
       prettier:
         specifier: ^3.8.1
         version: 3.8.4
@@ -104,7 +104,7 @@ importers:
         version: 8.0.16(@types/node@25.9.5)(esbuild@0.27.4)(jiti@2.7.0)
       vitepress:
         specifier: ^2.0.0-alpha.16
-        version: 2.0.0-alpha.18(@types/node@25.9.5)(esbuild@0.27.4)(jiti@2.7.0)(postcss@8.5.15)(typescript@6.0.3)
+        version: 2.0.0-alpha.18(@types/node@25.9.5)(esbuild@0.27.4)(jiti@2.7.0)(postcss@8.5.19)(typescript@6.0.3)
       vue:
         specifier: 3.5.39
         version: 3.5.39(typescript@6.0.3)
@@ -1670,12 +1670,12 @@ packages:
     resolution: {integrity: sha512-FfR8sjd4em2T6fb3I2MwAJU7HWVMr9zba+enmQeeWFfCbm+UOC/0X4DS8XtpUTMwWMGbjKYP7xjfNekzyGmB3A==}
     engines: {node: ^10 || ^12 || >=14}
 
-  postcss@8.5.17:
-    resolution: {integrity: sha512-J7EF+8X+CzRPaJPOv9Ck2wNWJvGnnl3PcNPAdGg6GTLjyVpyQ0yATMSXRFRV01BviT/9Gwuc3rjEyJbDJG9a4w==}
-    engines: {node: ^10 || ^12 || >=14}
-
   postcss@8.5.18:
     resolution: {integrity: sha512-xdB1oSLHbz1vRWgCDalrCqEFTWzFlhqFC5tIHLMOSUIjhm3XXQ1qrFy8S/ESr1JYRRXqM3c1QFiMZUJdUTqyMQ==}
+    engines: {node: ^10 || ^12 || >=14}
+
+  postcss@8.5.19:
+    resolution: {integrity: sha512-Mz8SaolMd8nB+G13WkORcxQKHZ/NE4xXevtkJHVuG+guo9/wYKlIMTKAqGdEmYOXR2ijPjTYNHssizdaVSUNdQ==}
     engines: {node: ^10 || ^12 || >=14}
 
   prettier@3.8.4:
@@ -2780,7 +2780,7 @@ snapshots:
       '@vue/shared': 3.5.39
       estree-walker: 2.0.2
       magic-string: 0.30.21
-      postcss: 8.5.17
+      postcss: 8.5.18
       source-map-js: 1.2.1
 
   '@vue/compiler-ssr@3.5.39':
@@ -2950,13 +2950,13 @@ snapshots:
     dependencies:
       sprintf-js: 1.0.3
 
-  autoprefixer@10.5.2(postcss@8.5.15):
+  autoprefixer@10.5.2(postcss@8.5.19):
     dependencies:
       browserslist: 4.28.5
       caniuse-lite: 1.0.30001803
       fraction.js: 5.3.4
       picocolors: 1.1.1
-      postcss: 8.5.15
+      postcss: 8.5.19
       postcss-value-parser: 4.2.0
 
   balanced-match@4.0.3: {}
@@ -3309,13 +3309,13 @@ snapshots:
       picocolors: 1.1.1
       source-map-js: 1.2.1
 
-  postcss@8.5.17:
+  postcss@8.5.18:
     dependencies:
       nanoid: 3.3.12
       picocolors: 1.1.1
       source-map-js: 1.2.1
 
-  postcss@8.5.18:
+  postcss@8.5.19:
     dependencies:
       nanoid: 3.3.12
       picocolors: 1.1.1
@@ -3407,7 +3407,7 @@ snapshots:
 
   rrweb-snapshot@2.0.1:
     dependencies:
-      postcss: 8.5.17
+      postcss: 8.5.18
 
   rrweb@2.0.1:
     dependencies:
@@ -3630,7 +3630,7 @@ snapshots:
     dependencies:
       lightningcss: 1.32.0
       picomatch: 4.0.4
-      postcss: 8.5.15
+      postcss: 8.5.18
       rolldown: 1.0.3
       tinyglobby: 0.2.17
     optionalDependencies:
@@ -3660,7 +3660,7 @@ snapshots:
       sharp: 0.34.5
       vitepress: 2.0.0-alpha.18(@types/node@25.9.5)(esbuild@0.27.4)(jiti@2.7.0)(postcss@8.5.18)(typescript@6.0.3)
 
-  vitepress@2.0.0-alpha.18(@types/node@25.9.5)(esbuild@0.27.4)(jiti@2.7.0)(postcss@8.5.15)(typescript@6.0.3):
+  vitepress@2.0.0-alpha.18(@types/node@25.9.5)(esbuild@0.27.4)(jiti@2.7.0)(postcss@8.5.18)(typescript@6.0.3):
     dependencies:
       '@docsearch/css': 4.6.3
       '@docsearch/js': 4.6.3
@@ -3682,7 +3682,7 @@ snapshots:
       vite: 8.1.4(@types/node@25.9.5)(esbuild@0.27.4)(jiti@2.7.0)
       vue: 3.5.39(typescript@6.0.3)
     optionalDependencies:
-      postcss: 8.5.15
+      postcss: 8.5.18
     transitivePeerDependencies:
       - '@types/node'
       - '@vitejs/devtools'
@@ -3709,7 +3709,7 @@ snapshots:
       - universal-cookie
       - yaml
 
-  vitepress@2.0.0-alpha.18(@types/node@25.9.5)(esbuild@0.27.4)(jiti@2.7.0)(postcss@8.5.18)(typescript@6.0.3):
+  vitepress@2.0.0-alpha.18(@types/node@25.9.5)(esbuild@0.27.4)(jiti@2.7.0)(postcss@8.5.19)(typescript@6.0.3):
     dependencies:
       '@docsearch/css': 4.6.3
       '@docsearch/js': 4.6.3
@@ -3731,7 +3731,7 @@ snapshots:
       vite: 8.1.4(@types/node@25.9.5)(esbuild@0.27.4)(jiti@2.7.0)
       vue: 3.5.39(typescript@6.0.3)
     optionalDependencies:
-      postcss: 8.5.18
+      postcss: 8.5.19
     transitivePeerDependencies:
       - '@types/node'
       - '@vitejs/devtools'
