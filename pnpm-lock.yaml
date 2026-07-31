@@ -86,7 +86,7 @@ importers:
         version: 6.1.3
       swetrix:
         specifier: ^4.1.0
-        version: 4.4.0
+        version: 4.5.0
       tailwindcss:
         specifier: ^4.2.0
         version: 4.3.3
@@ -795,11 +795,14 @@ packages:
   '@rolldown/pluginutils@1.0.1':
     resolution: {integrity: sha512-2j9bGt5Jh8hj+vPtgzPtl72j0yRxHAyumoo6TNfAjsLB04UtpSvPbPcDcBMxz7n+9CYB0c1GxQFxYRg2jimqGw==}
 
-  '@rrweb/types@2.0.1':
-    resolution: {integrity: sha512-x8cNaKFxdvS0/5IfKOj1xG8Htnw1fUwqoPqgP61bOaWqZL6t9UtRPpO9ZlMB2z+FiTxg9zlFFL+Da4ZpFuhoiA==}
+  '@rrweb/record@2.1.1':
+    resolution: {integrity: sha512-c2u175R+daC37PhbjaQV0migxtIXsLuD0mRgRstj/x/CRmLGctRlDi373/4miIUclleq4eZIQXAglH9opclFRQ==}
 
-  '@rrweb/utils@2.0.1':
-    resolution: {integrity: sha512-t+b+4rB23/e4EpoGMdPUr6cKtDsFuOb3LxA9IHE8e3A/Xo0nMUfH0bkwqdpUNa/VGDOdiGeG3bhHjuO9zWX54g==}
+  '@rrweb/types@2.1.1':
+    resolution: {integrity: sha512-g0I3nCNL1S7slDXwhunxOuOoswkY8WVZJQrPFiwixOc6xoD514d1JLTuyAzCKIox8g/PaLKtV5g31Uk42inQSQ==}
+
+  '@rrweb/utils@2.1.1':
+    resolution: {integrity: sha512-x2SgJAD3YJ9eVcLZ5l6OqWMtczdA3VfS5XqPeqpZdQgV9oh6Id5GK2cDN4bimnkqryOcIJdz8cTvV0yNvqQ+nA==}
 
   '@shikijs/core@4.3.1':
     resolution: {integrity: sha512-ANMDxuaPsNMdDC1m4vfvhlDmJweMwkE5XitTwrq2rWHx5jM+dlm4MmHt2PP6t0uejfR77SuhrhJ0zEijIF/uhA==}
@@ -1819,14 +1822,14 @@ packages:
     engines: {node: ^20.19.0 || >=22.12.0}
     hasBin: true
 
-  rrdom@2.0.1:
-    resolution: {integrity: sha512-z8GdQWFmVfa8GpcGkAqfBXseb89z0ciTPSBkID0qr0i6KHCye1MdQ4VoXFf0Ejp3ELe/c7AObu4zsbSbMT+hiw==}
+  rrdom@2.1.1:
+    resolution: {integrity: sha512-VBkTF3bGNqcZjqnbo/gKi9GVQPIxiG0dofw7CQdAZQFQ2juJdt2YKIf3oS9QudL8HTpGh9bz5TUN+3amBn1Geg==}
 
-  rrweb-snapshot@2.0.1:
-    resolution: {integrity: sha512-H8TA29ct2tpYtr5oaB0N+ksRY9bhEErfAYcKbce4+w8lqEUQChpKZd41HpBJLkp04b5QUfWUg4v6r9Okf8r7vA==}
+  rrweb-snapshot@2.1.1:
+    resolution: {integrity: sha512-al4Kx7Am7YlIn/5Yb2EMr7cdmjGiK+cLhdilJEXqkFXgpnys8t/yMJumXy2Ormgirpg3MBnFha0GTgny+iIL2w==}
 
-  rrweb@2.0.1:
-    resolution: {integrity: sha512-MQYzOtI7aZft9ffDMT6rmRSAj6hO4W6T7iA4eB9Mtcuiv3M7DbnnxDMrcPW0sQXepgYN46YhfSKe75d/mlUHrQ==}
+  rrweb@2.1.1:
+    resolution: {integrity: sha512-ToxhJg3SsrAhw+/DPhI/2iiwZQIrGK5BGkZ0kHn4qUExcvQYRaolkciD1FWX2+r6vf1IxFyhsoRY18h3D+XoCg==}
 
   rxjs@7.8.2:
     resolution: {integrity: sha512-dhKf903U/PQZY6boNNtAGdWbG85WAbjT/1xYoZIC7FAY0yWapOBQVsVrDl58W86//e1VpMNBtRV4MaXfdMySFA==}
@@ -1893,8 +1896,8 @@ packages:
     resolution: {integrity: sha512-SS+jx45GF1QjgEXQx4NJZV9ImqmO2NPz5FNsIHrsDjh2YsHnawpan7SNQ1o8NuhrbHZy9AZhIoCUiCeaW/C80g==}
     engines: {node: '>=18'}
 
-  swetrix@4.4.0:
-    resolution: {integrity: sha512-UHQYER6tNHoM25mPw8rRkNRZts0xvUyPQXUzxW2C/nBBD5MxUjhsWqKhuuWjjgUn+nJ4Kl9Y0QsY/m50ryWWEA==}
+  swetrix@4.5.0:
+    resolution: {integrity: sha512-kzFmwEE7LeGtvWCkDcF2UZ/yeG1ScRn+BHBcT0SOWcNKVBZSqIkarY8kuHniW9f7QYiUXwHIAjQ3vQ0EwYpQoA==}
 
   tabbable@6.5.0:
     resolution: {integrity: sha512-wieBHXygIm7OyQOu5hQlkk62/WyCFYGlWg7L6/ZCUZwx0o398Zkn4pVmMyfYhfMG8kGrj/Krt8eIk6UKC6VzwA==}
@@ -2632,9 +2635,15 @@ snapshots:
 
   '@rolldown/pluginutils@1.0.1': {}
 
-  '@rrweb/types@2.0.1': {}
+  '@rrweb/record@2.1.1':
+    dependencies:
+      '@rrweb/types': 2.1.1
+      '@rrweb/utils': 2.1.1
+      rrweb: 2.1.1
 
-  '@rrweb/utils@2.0.1': {}
+  '@rrweb/types@2.1.1': {}
+
+  '@rrweb/utils@2.1.1': {}
 
   '@shikijs/core@4.3.1':
     dependencies:
@@ -3539,24 +3548,24 @@ snapshots:
       '@rolldown/binding-win32-arm64-msvc': 1.2.1
       '@rolldown/binding-win32-x64-msvc': 1.2.1
 
-  rrdom@2.0.1:
+  rrdom@2.1.1:
     dependencies:
-      rrweb-snapshot: 2.0.1
+      rrweb-snapshot: 2.1.1
 
-  rrweb-snapshot@2.0.1:
+  rrweb-snapshot@2.1.1:
     dependencies:
       postcss: 8.5.25
 
-  rrweb@2.0.1:
+  rrweb@2.1.1:
     dependencies:
-      '@rrweb/types': 2.0.1
-      '@rrweb/utils': 2.0.1
+      '@rrweb/types': 2.1.1
+      '@rrweb/utils': 2.1.1
       '@types/css-font-loading-module': 0.0.7
       '@xstate/fsm': 1.6.5
       base64-arraybuffer: 1.0.2
       mitt: 3.0.1
-      rrdom: 2.0.1
-      rrweb-snapshot: 2.0.1
+      rrdom: 2.1.1
+      rrweb-snapshot: 2.1.1
 
   rxjs@7.8.2:
     dependencies:
@@ -3646,9 +3655,9 @@ snapshots:
 
   supports-color@10.2.2: {}
 
-  swetrix@4.4.0:
+  swetrix@4.5.0:
     dependencies:
-      rrweb: 2.0.1
+      '@rrweb/record': 2.1.1
 
   tabbable@6.5.0: {}
 
