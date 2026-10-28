@@ -18,6 +18,7 @@ export default defineConfig({
         'tailwindcss',
         'vue',
         'vitepress',
+        /^vitepress\//,
         '@iconify/vue',
         '@localSearchIndex',
         '@tailwindcss/vite',
