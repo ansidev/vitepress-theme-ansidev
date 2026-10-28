@@ -70,7 +70,7 @@
     "@vue/test-utils": "^2.5.1",
     "autoprefixer": "^10.4.24",
     "concurrently": "^10.0.0",
-    "glob": "^13.0.6",
+    "glob": "^14.0.0",
     "gray-matter": "^4.0.3",
     "happy-dom": "^21.0.4",
     "medium-zoom": "^1.1.0",
