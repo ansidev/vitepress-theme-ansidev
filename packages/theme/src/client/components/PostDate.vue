@@ -17,8 +17,11 @@ const { t } = useI18n()
 const dateObject = computed(() => {
   const date = props.date instanceof Date ? props.date : new Date(props.date as string)
 
+  const isValid = !Number.isNaN(+date)
+
   return {
     time: +date,
+    iso: isValid ? date.toISOString() : undefined,
     string: date.toLocaleDateString('en-US', {
       year: 'numeric',
       month: 'long',
@@ -26,8 +29,6 @@ const dateObject = computed(() => {
     }),
   }
 })
-
-const getDateTime = () => new Date().toISOString()
 </script>
 
 <template>
@@ -36,7 +37,7 @@ const getDateTime = () => new Date().toISOString()
       {{ t('posted_on') }}
     </dt>
     <dd class="font-medium leading-6" :class="[textSize ? `text-${textSize}` : 'text-base']">
-      <time :datetime="getDateTime()">{{ dateObject.string }}</time>
+      <time :datetime="dateObject.iso">{{ dateObject.string }}</time>
     </dd>
   </dl>
 </template>
