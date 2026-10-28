@@ -1,6 +1,7 @@
 <script setup lang='ts'>
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
+import { usePageLang } from '../composables/lang'
 
 const props = defineProps({
   /**
@@ -14,6 +15,18 @@ const props = defineProps({
 })
 
 const { t } = useI18n()
+const pageLang = usePageLang()
+
+const formatDate = (date: Date, locale: string) => {
+  const options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' }
+  try {
+    return date.toLocaleDateString(locale, options)
+  } catch {
+    // Invalid lang tag: fall back to English.
+    return date.toLocaleDateString('en-US', options)
+  }
+}
+
 const dateObject = computed(() => {
   const date = props.date instanceof Date ? props.date : new Date(props.date as string)
 
@@ -22,11 +35,7 @@ const dateObject = computed(() => {
   return {
     time: +date,
     iso: isValid ? date.toISOString() : undefined,
-    string: date.toLocaleDateString('en-US', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric',
-    }),
+    string: formatDate(date, pageLang.value),
   }
 })
 </script>
