@@ -1,6 +1,7 @@
 import { Icon } from '@iconify/vue'
 import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
+import { useHtmlLang, usePageLocale } from './composables/lang'
 import Layout from './layouts/Layout.vue'
 import ArchivesPage from './pages/ArchivesPage.vue'
 import CategoriesPage from './pages/CategoriesPage.vue'
@@ -28,6 +29,10 @@ const theme: Theme = {
     app.component('TagsPage', TagsPage)
     app.component('ArchivesPage', ArchivesPage)
     app.use(i18n)
+  },
+  setup() {
+    useHtmlLang()
+    usePageLocale(i18n)
   },
 } satisfies Theme
 

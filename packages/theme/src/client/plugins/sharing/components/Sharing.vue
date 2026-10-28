@@ -27,9 +27,7 @@ const wrapperCssClass = computed(() =>
     : defaultConfigs.wrapperCssClass,
 )
 const title = computed(() =>
-  pluginConfig.value && typeof pluginConfig.value.title === 'string'
-    ? pluginConfig.value.title
-    : defaultConfigs.title,
+  pluginConfig.value && typeof pluginConfig.value.title === 'string' ? pluginConfig.value.title : defaultConfigs.title,
 )
 const titleCssClass = computed(() =>
   pluginConfig.value && typeof pluginConfig.value.titleCssClass === 'string'
@@ -66,7 +64,6 @@ const displayMode = computed(() =>
     ? pluginConfig.value.displayMode
     : defaultConfigs.displayMode,
 )
-
 </script>
 
 <template>

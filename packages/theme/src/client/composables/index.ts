@@ -1,4 +1,5 @@
 export * from '../../shared/composables'
 export * from './date'
+export * from './lang'
 export * from './project'
 export * from './rank'

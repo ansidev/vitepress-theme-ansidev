@@ -1,0 +1,352 @@
+:root {
+  --vp-font-family-base: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --vp-font-family-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  /* Light palette, based on Dracula's Alucard variant */
+  --accent: #644ac9;
+  --accent-soft: #8668e0;
+  --green: #14710a;
+  --vp-c-bg: #fffbeb;
+  --vp-c-bg-alt: #f5f1df;
+  --vp-c-bg-elv: #ece8d3;
+  --vp-c-bg-soft: #f7f3e1;
+  --vp-c-divider: #d9d4bb;
+  --vp-c-gutter: #f5f1df;
+  --vp-c-text-1: #1f1f1f;
+  --vp-c-text-2: #4b4b52;
+  --vp-c-text-3: #6c664b;
+  --vp-c-brand-1: #644ac9;
+  --vp-c-brand-2: #7459d8;
+  --vp-c-brand-3: #644ac9;
+  --vp-c-brand-soft: rgba(100, 74, 201, 0.12);
+  /* theme utilities (link-alt, link) read these Tailwind variables with !important */
+  --color-primary: #644ac9;
+  --color-primary-alt: #4f39a8;
+  --color-primary-alt-dark: #8668e0;
+  --color-secondary: #3b2a8a;
+  --color-secondary-dark: #3b2a8a;
+  /* "Active" status badge: bg-green-100 / text-green-800 in light, swapped in dark */
+  --color-green-100: #d4f2cf;
+  --color-green-800: #14710a;
+}
+
+/* Dracula-inspired dark palette */
+.dark {
+  --accent: #bd93f9;
+  --accent-soft: #d6bcfa;
+  --green: #50fa7b;
+  --color-primary: #9d6ff0;
+  --color-primary-alt: #8a5cd8;
+  --color-primary-alt-dark: #d6bcfa;
+  --color-secondary: #f8f8f2;
+  --color-secondary-dark: #f8f8f2;
+  --color-green-100: #50fa7b;
+  --color-green-800: #1f4d33;
+  --vp-c-bg: #282a36;
+  --vp-c-bg-alt: #21222c;
+  --vp-c-bg-elv: #343746;
+  --vp-c-bg-soft: #2f3241;
+  --vp-c-divider: #44475a;
+  --vp-c-gutter: #21222c;
+  --vp-c-text-1: #f8f8f2;
+  --vp-c-text-2: #b6b8c9;
+  --vp-c-text-3: #8e94b3;
+  --vp-c-brand-1: var(--accent);
+  --vp-c-brand-2: var(--accent);
+  --vp-c-brand-3: #9d6ff0;
+  --vp-c-brand-soft: rgba(189, 147, 249, 0.16);
+}
+
+body {
+  letter-spacing: -0.005em;
+}
+
+/* Nav */
+.VPNav .VPNavBar,
+.VPNavBar .content-body {
+  backdrop-filter: saturate(180%) blur(12px);
+}
+.VPNavBar:not(.has-sidebar):not(.home.top) {
+  background-color: rgba(255, 251, 235, 0.85);
+}
+.dark .VPNavBar:not(.has-sidebar):not(.home.top) {
+  background-color: rgba(40, 42, 54, 0.8);
+}
+
+/* Cards (post list, project cards, term chips) */
+.component-border {
+  background: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 0;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+.component-border:hover,
+.component-border:focus-within {
+  border-color: color-mix(in srgb, var(--accent) 55%, transparent);
+  background: linear-gradient(180deg, color-mix(in srgb, var(--accent) 7%, var(--vp-c-bg-soft)), var(--vp-c-bg-soft));
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 18%, transparent), 0 8px 30px -12px color-mix(in srgb, var(--accent) 45%, transparent);
+}
+
+/* Titles inside cards: neutral text, accent on hover */
+.component-border > .pl-8 a.text-2xl,
+.component-border a.text-2xl {
+  color: var(--vp-c-text-1);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+/* Card hover only glows; the link itself gets its own hover/pressed feedback */
+.component-border a.text-2xl {
+  transition: color 0.15s ease, text-shadow 0.15s ease;
+}
+.component-border a.text-2xl:hover {
+  color: var(--accent);
+  text-shadow: 0 0 18px color-mix(in srgb, var(--accent) 45%, transparent);
+}
+.component-border a.text-2xl:active {
+  color: var(--accent-soft);
+  text-shadow: none;
+}
+
+/* Date block: mono, muted */
+.component-border .text-6xl {
+  font-family: var(--vp-font-family-mono);
+  font-weight: 500;
+  color: var(--vp-c-text-1);
+  font-size: 2.5rem;
+  line-height: 1;
+}
+
+/* Category / tech chips as pills */
+a.link-alt.uppercase,
+.component-border a.uppercase {
+  display: inline-block;
+  padding: 2px 10px;
+  margin-bottom: 4px;
+  border-radius: 0;
+  border: 1px solid var(--vp-c-divider);
+  background: var(--vp-c-bg-elv);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  transition: border-color 0.2s ease;
+}
+a.link-alt.uppercase:hover {
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 16%, var(--vp-c-bg-elv));
+}
+a.link-alt.uppercase:active {
+  background: color-mix(in srgb, var(--accent) 30%, var(--vp-c-bg-elv));
+  transform: translateY(1px);
+}
+
+/* Technology filter buttons on /projects */
+a.component-border {
+  border-radius: 0;
+}
+
+/* Links in content */
+.vp-doc a,
+.vp-doc a:hover {
+  color: var(--vp-c-brand-1);
+  text-decoration: none;
+  font-weight: 500;
+}
+.vp-doc a:hover {
+  color: var(--vp-c-brand-2);
+}
+
+/* No underlines on any link (VitePress adds one to .vp-doc a via its own rules) */
+a,
+a:hover,
+.vp-doc a,
+.vp-doc a:hover,
+.vp-doc .header-anchor {
+  text-decoration: none !important;
+}
+
+/* Post typography */
+.vp-doc h1 {
+  letter-spacing: -0.03em;
+  font-weight: 700;
+}
+.vp-doc h2 {
+  letter-spacing: -0.02em;
+  border-top-color: var(--vp-c-divider);
+}
+.vp-doc p,
+.vp-doc li {
+  line-height: 1.75;
+}
+.vp-doc :not(pre) > code {
+  color: var(--green);
+  font-family: var(--vp-font-family-mono);
+  font-size: 0.85em;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 0;
+}
+.vp-doc div[class*='language-'] {
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 0;
+}
+
+/* Focus visibility */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 0;
+}
+
+/* Home hero */
+.home-hero {
+  padding: 56px 0 8px;
+}
+.home-hero h1 {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  line-height: 1.1;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+.home-hero h1 span {
+  background: linear-gradient(90deg, var(--vp-c-text-1), var(--accent-soft) 70%, var(--accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.home-hero p {
+  margin: 16px 0 0;
+  max-width: 36rem;
+  color: var(--vp-c-text-2);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .component-border,
+  a.link-alt.uppercase {
+    transition: none;
+  }
+}
+
+/* Square corners everywhere (theme uses Tailwind rounded-* utilities) */
+[class*='rounded'],
+.VPNavBarSearchButton,
+.vp-doc [class*='language-'],
+.vp-doc :not(pre) > code,
+.vp-doc img,
+.vp-doc table,
+.custom-block,
+.VPLocalSearchBox .results .result,
+.VPSkipLink,
+.keys,
+button.copy,
+.VPSwitch,
+.VPSwitch .check {
+  border-radius: 0 !important;
+}
+
+/* Technology filter buttons on /projects: roomier horizontal padding */
+p.flex.flex-wrap > a.border.m-1 {
+  padding: 0.25rem 0.875rem;
+  margin: 0.25rem;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+p.flex.flex-wrap > a.border.m-1:hover {
+  border-color: var(--accent);
+  background-color: color-mix(in srgb, var(--accent) 14%, transparent);
+}
+
+/* Mobile */
+@media (max-width: 639px) {
+  /* Post cards: stack the date above the title instead of a fixed 80px side column */
+  .component-border.flex:has(> .text-center) {
+    flex-direction: column;
+  }
+  .component-border > .text-center {
+    min-width: 0 !important;
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    text-align: left;
+    margin-bottom: 0.5rem;
+  }
+  .component-border > .text-center .text-6xl {
+    font-size: 1.75rem;
+  }
+  .component-border > .pl-8 {
+    padding-left: 0;
+  }
+
+  /* Technology filter: one horizontally scrollable row instead of 40 wrapped buttons */
+  p.flex.flex-wrap:has(> a.border.m-1) {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    margin-inline: -0.25rem;
+    padding-bottom: 0.25rem;
+  }
+  p.flex.flex-wrap:has(> a.border.m-1)::-webkit-scrollbar {
+    display: none;
+  }
+  p.flex.flex-wrap > a.border.m-1 {
+    flex: 0 0 auto;
+    white-space: nowrap;
+    min-height: 2.25rem;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  /* Tighter gap under page headings (theme adds pt-6 pb-8 + mb-6) */
+  div.pt-6.pb-8 {
+    padding-top: 0.75rem;
+    padding-bottom: 0.5rem;
+  }
+  div.pt-6.pb-8 > h1.mb-6 {
+    margin-bottom: 0.75rem;
+  }
+
+  /* Larger tap targets for category / tech chips */
+  a.link-alt.uppercase,
+  .component-border a.uppercase {
+    padding: 6px 12px;
+    margin-bottom: 6px;
+  }
+}
+
+/* Donation buttons: equal-size slots, even spacing. The theme sets img width/height
+   inline with !important and uses space-y-4 (sidebar) or space-x-4 (home page, wraps
+   unevenly), so reset its margins and size the link box instead. */
+div.flex.flex-wrap.py-4.items-center.justify-center:has(> a[href*='ko-fi.com']) {
+  gap: 12px;
+}
+div.flex.flex-wrap.py-4.items-center.justify-center:has(> a[href*='ko-fi.com']) > a {
+  margin: 0 !important;
+  width: 200px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+div.flex.flex-wrap.py-4.items-center.justify-center:has(> a[href*='ko-fi.com']) > a img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+/* Sidebar variant: single column */
+div.flex.flex-wrap.py-4.items-center.justify-center.space-y-4:has(> a[href*='ko-fi.com']) {
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+
+/* Footer variant (home page): 2x2 grid of equal slots */
+div.flex.flex-wrap.py-4.items-center.justify-center.space-x-4:has(> a[href*='ko-fi.com']) {
+  display: grid;
+  grid-template-columns: repeat(2, 168px);
+  justify-content: center;
+  gap: 12px;
+}
+div.flex.flex-wrap.py-4.items-center.justify-center.space-x-4:has(> a[href*='ko-fi.com']) > a {
+  width: 168px;
+  height: 52px;
+}

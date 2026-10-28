@@ -8,7 +8,7 @@ export default defineConfig({
   build: {
     lib: {
       entry: {
-        index: resolve(__dirname, 'src/client/index.ts'),
+        index: resolve(import.meta.dirname, 'src/client/index.ts'),
       },
       formats: ['es'],
       fileName: (_, entryName) => `${entryName}.js`,
@@ -18,6 +18,7 @@ export default defineConfig({
         'tailwindcss',
         'vue',
         'vitepress',
+        /^vitepress\//,
         '@iconify/vue',
         '@localSearchIndex',
         '@tailwindcss/vite',
@@ -38,7 +39,7 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      '@': resolve(__dirname, 'src'),
+      '@': resolve(import.meta.dirname, 'src'),
     },
   },
 })

@@ -7,8 +7,8 @@ const route = useRoute()
 const { theme, frontmatter, page } = useData()
 
 const Sharing = theme.value.sharing
-? defineAsyncComponent(() => import('../plugins/sharing/components/Sharing.vue'))
-: () => null
+  ? defineAsyncComponent(() => import('../plugins/sharing/components/Sharing.vue'))
+  : () => null
 
 const postURL = new URL(route.path, theme.value.siteURL).href
 const postTitle = frontmatter.value.title || page.value.title

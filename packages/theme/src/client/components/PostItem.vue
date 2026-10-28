@@ -27,7 +27,7 @@ const postDate = computed(() => usePostDate(props.post.date))
       <div class="flex flex-wrap mb-3">
         <TermLink v-for="category in post.categories" :key="category" :text="category" basePath="/categories/" />
       </div>
-      <p>{{ post?.excerpt }}</p>
+      <p v-html="post?.excerpt" />
     </div>
   </div>
 </template>
