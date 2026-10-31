@@ -1,17 +1,19 @@
 import { resolve } from 'node:path'
 import tailwindcss from '@tailwindcss/vite'
 import vue from '@vitejs/plugin-vue'
-import { defineConfig } from 'vite'
+import { defineConfig, lazyPlugins } from 'vite-plus'
+import tsdownConfig from './tsdown.config.js'
 
 export default defineConfig({
-  plugins: [vue(), tailwindcss()],
+  pack: tsdownConfig,
+  plugins: lazyPlugins(() => [vue(), tailwindcss()]),
   build: {
     lib: {
       entry: {
-        index: resolve(import.meta.dirname, 'src/client/index.ts'),
+        index: resolve(import.meta.dirname, 'src/client/index.ts')
       },
       formats: ['es'],
-      fileName: (_, entryName) => `${entryName}.js`,
+      fileName: (_, entryName) => `${entryName}.js`
     },
     rollupOptions: {
       external: [
@@ -24,22 +26,22 @@ export default defineConfig({
         '@tailwindcss/vite',
         '@vitepress/client',
         '@vitepress/shared',
-        '@siteData',
+        '@siteData'
       ],
       output: {
         globals: {
           vue: 'Vue',
-          vitepress: 'VitePress',
+          vitepress: 'VitePress'
         },
-        assetFileNames: 'styles.css',
-      },
+        assetFileNames: 'styles.css'
+      }
     },
     outDir: 'dist/client',
-    emptyOutDir: true,
+    emptyOutDir: true
   },
   resolve: {
     alias: {
-      '@': resolve(import.meta.dirname, 'src'),
-    },
-  },
+      '@': resolve(import.meta.dirname, 'src')
+    }
+  }
 })

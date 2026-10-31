@@ -1,4 +1,4 @@
-import { describe, expect, it, vi } from 'vitest'
+import { describe, expect, it, vi } from 'vite-plus/test'
 import { nextTick, ref } from 'vue'
 import { createI18n } from 'vue-i18n'
 import { matchLocale, usePageLocale } from './lang'
@@ -25,7 +25,11 @@ describe('matchLocale', () => {
 
 describe('usePageLocale', () => {
   const setup = () => {
-    const i18n = createI18n({ legacy: false, locale: 'en', messages: { en: {}, vi: {} } })
+    const i18n = createI18n({
+      legacy: false,
+      locale: 'en',
+      messages: { en: {}, vi: {} }
+    })
     usePageLocale(i18n)
     return i18n
   }

@@ -1,10 +1,10 @@
-import { defineConfig } from 'tsdown'
+import { defineConfig } from 'vite-plus/pack'
 
 export default defineConfig([
   {
     entry: {
       config: 'src/node/config.ts',
-      composables: 'src/node/composables/index.ts',
+      composables: 'src/node/composables/index.ts'
     },
     outDir: 'dist/node',
     platform: 'node',
@@ -22,8 +22,8 @@ export default defineConfig([
         'js-yaml',
         'esprima',
         'gray-matter',
-        'strip-bom-string',
-      ],
-    },
-  },
+        'strip-bom-string'
+      ]
+    }
+  }
 ])
