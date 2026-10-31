@@ -52,7 +52,7 @@
     "lint:check": "biome check",
     "lint": "biome check --write",
     "dev:client": "vp build --watch",
-    "dev:node": "vp pack --watch",
+    "dev:node": "vp pack --watch --on-success \"node ../../scripts/touch-demo.mjs\"",
     "dev": "concurrently --kill-others \"pnpm dev:client\" \"pnpm dev:node\"",
     "clean": "rimraf dist",
     "build:client": "vp build && tsc --emitDeclarationOnly",
