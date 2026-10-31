@@ -110,6 +110,7 @@ jobs:
         with:
           package-manager: pnpm
           output-dir: ${{ env.OUTPUT_DIR }}
+          lint-script: ci:lint
 
       - name: Deploy
         id: deploy
