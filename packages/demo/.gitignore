@@ -2,3 +2,4 @@ node_modules/
 dist/
 .vitepress/.temp/
 .vitepress/cache/
+.vitepress/.theme-rebuild
