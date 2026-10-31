@@ -9,7 +9,7 @@ on:
 jobs:
   create_release_pr:
     name: Create release pull request
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     permissions:
       contents: write
     # only create draft pull requests on

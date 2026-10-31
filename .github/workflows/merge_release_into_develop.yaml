@@ -10,7 +10,7 @@ on:
 jobs:
   merge_release_into_develop:
     name: Merge release into develop
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     permissions:
       contents: write
     # only merge pull requests that begin with 'release/' or 'hotfix/'
