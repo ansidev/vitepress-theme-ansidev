@@ -8,7 +8,7 @@
     "build": "pnpm -r build",
     "dev": "pnpm theme:build && concurrently --kill-others \"pnpm theme:dev\" \"pnpm demo:dev\"",
     "typecheck": "pnpm -r typecheck",
-    "lint": "pnpm -r typecheck && pnpm vp check",
+    "lint": "pnpm theme:build && pnpm -r typecheck && pnpm vp check",
     "lint:fix": "pnpm vp check --fix",
     "theme:dev": "pnpm --filter @ansidev-oss/vitepress-theme-ansidev dev",
     "theme:build": "pnpm --filter @ansidev-oss/vitepress-theme-ansidev build",
