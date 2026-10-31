@@ -20,7 +20,7 @@ env:
 jobs:
   set_deploy_environment:
     if: github.event.action != 'closed' || github.event.pull_request.merged == true
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     steps:
       - name: Set deploy environment as pr-${{ github.event.number }}
         if: github.base_ref == 'develop' && contains(fromJSON('["opened", "synchronize"]'), github.event.action)
@@ -83,7 +83,7 @@ jobs:
     environment:
       name: ${{ needs.set_deploy_environment.outputs.github_environment }}
       url: ${{ steps.deploy.outputs.netlify-deploy-url }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     steps:
       - name: Set app environment variables
         env:
@@ -131,7 +131,7 @@ jobs:
       - set_deploy_environment
       - deploy
     if: needs.deploy.outputs.success == 'true' && github.base_ref == 'develop' && github.event.action == 'closed' && github.event.pull_request.merged == true
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     steps:
       - name: Delete the PR branch after merged into develop
         env:

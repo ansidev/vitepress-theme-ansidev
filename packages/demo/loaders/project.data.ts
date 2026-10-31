@@ -1,7 +1,9 @@
 import type { Project } from '@ansidev-oss/vitepress-theme-ansidev'
+import { useExcerptHtml } from '@ansidev-oss/vitepress-theme-ansidev/composables'
 import { createContentLoader } from 'vitepress'
 
 declare const data: Project[]
+
 export { data }
 
 export default createContentLoader('projects/**/!(index).md', {
@@ -13,7 +15,7 @@ export default createContentLoader('projects/**/!(index).md', {
         url,
         showcaseUrl: frontmatter.showcaseUrl,
         repositoryUrl: frontmatter.repositoryUrl,
-        excerpt,
+        excerpt: useExcerptHtml(excerpt),
         license: frontmatter.license,
         licenseUrl: frontmatter.licenseUrl,
         developmentStatus: frontmatter.developmentStatus,

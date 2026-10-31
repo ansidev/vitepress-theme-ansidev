@@ -7,13 +7,13 @@
     "moduleResolution": "bundler",
     "jsx": "preserve",
     "outDir": "dist",
-    "esModuleInterop": true,
+    "esModuleInterop": true
   },
   "include": [
     ".vitepress/**/*.ts",
     "**/*.ts",
     "**/*.vue",
-    "**/*.md",
+    "**/*.md"
   ],
   "exclude": [
     "node_modules",
@@ -21,6 +21,8 @@
     ".vitepress/cache"
   ],
   "vueCompilerOptions": {
-    "vitePressExtensions": [".md"],
+    "vitePressExtensions": [
+      ".md"
+    ]
   }
 }

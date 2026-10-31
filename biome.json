@@ -39,6 +39,24 @@
   "overrides": [
     {
       "includes": [
+        "packages/theme/src/client/components/Footer.vue",
+        "packages/theme/src/client/components/Link.vue",
+        "packages/theme/src/client/layouts/Layout.vue",
+        "packages/theme/src/client/pages/Page.vue",
+        "packages/theme/src/client/plugins/donation/components/Donation.vue",
+        "packages/theme/src/client/plugins/sharing/components/Sharing.vue",
+        "packages/theme/src/client/plugins/swetrix/components/Swetrix.vue"
+      ],
+      "linter": {
+        "rules": {
+          "style": {
+            "useVueMultiWordComponentNames": "off"
+          }
+        }
+      }
+    },
+    {
+      "includes": [
         "**/*.vue"
       ],
       "linter": {

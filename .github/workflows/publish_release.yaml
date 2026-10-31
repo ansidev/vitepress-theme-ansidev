@@ -13,7 +13,7 @@ env:
 jobs:
   release:
     name: Publish release
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     permissions:
       contents: write
     # only merge pull requests that begin with 'release/' or 'hotfix/'

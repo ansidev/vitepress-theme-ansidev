@@ -1,7 +1,9 @@
 import type { Post } from '@ansidev-oss/vitepress-theme-ansidev'
+import { useExcerptHtml } from '@ansidev-oss/vitepress-theme-ansidev/composables'
 import { createContentLoader } from 'vitepress'
 
 declare const data: Post[]
+
 export { data }
 
 export default createContentLoader('posts/**/!(index).md', {
@@ -15,7 +17,7 @@ export default createContentLoader('posts/**/!(index).md', {
         gravatar: frontmatter.gravatar,
         twitter: frontmatter.twitter,
         url,
-        excerpt: excerpt?.replace('<p>', '').replace('</p>\n', ''),
+        excerpt: useExcerptHtml(excerpt),
         date: new Date(frontmatter.date as string),
         categories: frontmatter.categories,
         tags: frontmatter.tags,
