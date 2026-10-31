@@ -49,8 +49,8 @@
   "scripts": {
     "typecheck": "tsc --noEmit",
     "test": "vp test run",
-    "lint:check": "biome check",
-    "lint": "biome check --write",
+    "lint:check": "vp check",
+    "lint": "vp check --fix",
     "dev:client": "vp build --watch",
     "dev:node": "vp pack --watch --on-success \"node ../../scripts/touch-demo.mjs\"",
     "dev": "concurrently --kill-others \"pnpm dev:client\" \"pnpm dev:node\"",
@@ -66,7 +66,6 @@
     "vue-i18n": "^11.2.8"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.6.4",
     "@iconify/vue": "^5.0.0",
     "@tailwindcss/postcss": "^4.2.0",
     "@types/markdown-it": "^14.2.0",
