@@ -1,3 +1,5 @@
+# Decision (VTA-10): Option A - keep pnpm as package manager; ghacts/static-site uses pnpm.
+# Vite+ checks run separately in ci.yaml.
 name: publish_npm_package
 
 on:
