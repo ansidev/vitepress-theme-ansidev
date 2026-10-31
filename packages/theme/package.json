@@ -53,7 +53,6 @@
     "lint": "biome check --write",
     "dev:client": "vp build --watch",
     "dev:node": "vp pack --watch --on-success \"node ../../scripts/touch-demo.mjs\"",
-    "dev:node": "vp pack --watch --on-success \"node ../../scripts/touch-demo.mjs\"",
     "clean": "rimraf dist",
     "build:client": "vp build && tsc --emitDeclarationOnly",
     "build:node": "vp pack",
