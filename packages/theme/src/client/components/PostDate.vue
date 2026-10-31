@@ -1,4 +1,4 @@
-<script setup lang='ts'>
+<script setup lang="ts">
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { usePageLang } from '../composables/lang'
@@ -10,15 +10,20 @@ const props = defineProps({
   date: [Date, String],
   textSize: {
     type: String,
-    default: null,
-  },
+    default: null
+  }
 })
 
 const { t } = useI18n()
 const pageLang = usePageLang()
 
 const formatDate = (date: Date, locale: string) => {
-  const options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' }
+  const options: Intl.DateTimeFormatOptions = {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    timeZone: 'UTC'
+  }
   try {
     return date.toLocaleDateString(locale, options)
   } catch {
@@ -28,14 +33,15 @@ const formatDate = (date: Date, locale: string) => {
 }
 
 const dateObject = computed(() => {
-  const date = props.date instanceof Date ? props.date : new Date(props.date as string)
+  const date =
+    props.date instanceof Date ? props.date : new Date(props.date as string)
 
   const isValid = !Number.isNaN(+date)
 
   return {
     time: +date,
     iso: isValid ? date.toISOString() : undefined,
-    string: formatDate(date, pageLang.value),
+    string: formatDate(date, pageLang.value)
   }
 })
 </script>
@@ -45,7 +51,10 @@ const dateObject = computed(() => {
     <dt class="sr-only">
       {{ t('posted_on') }}
     </dt>
-    <dd class="font-medium leading-6" :class="[textSize ? `text-${textSize}` : 'text-base']">
+    <dd
+      class="font-medium leading-6"
+      :class="[textSize ? `text-${textSize}` : 'text-base']"
+    >
       <time :datetime="dateObject.iso">{{ dateObject.string }}</time>
     </dd>
   </dl>

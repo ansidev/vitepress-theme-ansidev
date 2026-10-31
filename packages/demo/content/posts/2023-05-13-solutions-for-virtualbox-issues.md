@@ -4,7 +4,7 @@ title: Solutions for VirtualBox issues
 date: 2023-05-13T09:30:05+07:00
 author: ansidev
 gravatar: a2ac3c4477e717c7fa15041d907e71fd
-twitter: "@ansidev"
+twitter: '@ansidev'
 permalink: /tips-and-tricks/solutions-for-virtualbox-issues
 categories:
   - Tips and Tricks
@@ -44,4 +44,3 @@ VBoxManage modifyvm "{virtual-machine-name}" --vram 256
 ```
 
 from host terminal.
-

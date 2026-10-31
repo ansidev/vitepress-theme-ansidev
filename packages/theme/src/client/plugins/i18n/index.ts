@@ -8,6 +8,6 @@ export default createI18n({
   locale: 'en',
   messages: {
     en,
-    vi,
-  },
+    vi
+  }
 })

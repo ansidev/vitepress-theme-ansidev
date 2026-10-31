@@ -13,7 +13,7 @@ developmentStatus: active
 date: 2018-11-22T09:00:00+07:00
 author: ansidev
 gravatar: a2ac3c4477e717c7fa15041d907e71fd
-twitter: "@ansidev"
+twitter: '@ansidev'
 ---
 
 A curated list of awesome things related to NuxtJS

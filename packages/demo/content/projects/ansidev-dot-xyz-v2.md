@@ -18,7 +18,7 @@ developmentStatus: active
 date: 2022-01-07T09:00:00+07:00
 author: ansidev
 gravatar: a2ac3c4477e717c7fa15041d907e71fd
-twitter: "@ansidev"
+twitter: '@ansidev'
 ---
 
 My personal blog (version 2).
@@ -60,6 +60,7 @@ v1:
 - Medium Zoom for images.
 
 v2:
+
 - Server-side generation.
 - Rewrote blog theme.
 - Support dark mode.
@@ -72,6 +73,7 @@ v2:
 - Fix bugs, optimize code.
 
 ### Blog theme
+
 - v1: Inspired by [Official VueJS blog](https://github.com/vuejs/blog). This theme is originally included in the blog v1 and I ported it when I upgraded my blog to v2.
 - v2: Inspired by [Tailwind NextJs Starter Blog Theme](https://github.com/timlrx/tailwind-nextjs-starter-blog) by [Timothy](https://github.com/timlrx) with customizations.
 - v2.1: Add Projects page, support searching for projects basically, change the default font.

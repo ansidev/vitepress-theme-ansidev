@@ -16,7 +16,7 @@ developmentStatus: active
 date: 2022-08-24T02:49:06+07:00
 author: ansidev
 gravatar: a2ac3c4477e717c7fa15041d907e71fd
-twitter: "@ansidev"
+twitter: '@ansidev'
 ---
 
 Swetrix Tracking integration for Vue v3

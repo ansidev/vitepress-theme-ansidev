@@ -7,6 +7,6 @@ export const usePostDate: (raw: Date) => PostDate = (raw: Date) => {
     time: +date,
     day: date.toLocaleDateString('en-US', { day: 'numeric' }),
     month: date.toLocaleDateString('en-US', { month: 'short' }),
-    year: date.toLocaleDateString('en-US', { year: 'numeric' }),
+    year: date.toLocaleDateString('en-US', { year: 'numeric' })
   }
 }

@@ -11,7 +11,7 @@ developmentStatus: active
 date: 2023-03-22T12:14:00+07:00
 author: ansidev
 gravatar: a2ac3c4477e717c7fa15041d907e71fd
-twitter: "@ansidev"
+twitter: '@ansidev'
 ---
 
 My personal configuration for NvChad.

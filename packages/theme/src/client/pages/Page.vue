@@ -1,10 +1,10 @@
-<script setup lang='ts'>
+<script setup lang="ts">
 defineProps({
   title: {
     type: String,
     required: true,
-    default: '',
-  },
+    default: ''
+  }
 })
 </script>
 

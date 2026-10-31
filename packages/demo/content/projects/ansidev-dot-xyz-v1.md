@@ -14,7 +14,7 @@ developmentStatus: inactive
 date: 2021-01-17T09:00:00+07:00
 author: ansidev
 gravatar: a2ac3c4477e717c7fa15041d907e71fd
-twitter: "@ansidev"
+twitter: '@ansidev'
 ---
 
 My personal blog (version 1).
@@ -38,6 +38,7 @@ The official VueJS blog is using VitePress, so I just forked and customized it.
 ## Technologies
 
 The blog is built with:
+
 - [VitePress 0.x](https://vitepress.vuejs.org/).
 - [TailwindCss 2.x](https://tailwindcss.com/).
 - [Netlify](https://netlify.com).

@@ -6,7 +6,11 @@ import type { ThemeConfig } from '../client/types'
 process.env.VITE_EXTRA_EXTENSIONS = 'rss'
 globalThis.__VUE_PROD_DEVTOOLS__ = process.env.NODE_ENV === 'development'
 
-const env = loadEnv(process.env.NODE_ENV || 'development', process.cwd(), 'VITE_')
+const env = loadEnv(
+  process.env.NODE_ENV || 'development',
+  process.cwd(),
+  'VITE_'
+)
 
 const siteURL = env.VITE_BASE_URL
 
@@ -27,7 +31,7 @@ const baseConfig = {
   themeConfig: {
     siteURL,
     googleAnalytics: {
-      id: env.VITE_GA_ID,
+      id: env.VITE_GA_ID
     },
     search: {
       provider: 'local',
@@ -48,37 +52,39 @@ const baseConfig = {
             renderedHtml += html
           }
           return renderedHtml
-        },
-      },
-    },
+        }
+      }
+    }
   },
   vite: {
     ssr: {
-      noExternal: deps,
+      noExternal: deps
     },
     optimizeDeps: {
-      exclude: deps,
+      exclude: deps
     },
     css: {
       preprocessorOptions: {
         scss: {
-          api: 'modern-compiler',
-        },
-      },
-    },
-  },
+          api: 'modern-compiler'
+        }
+      }
+    }
+  }
 }
 
 /**
  * Helper function to define theme configuration with proper typing
  * Note: TailwindCSS plugin should be added in vite.config.ts, not here
  */
-export function defineWithDefaultThemeConfig(config: UserConfig<ThemeConfig> = {}): UserConfig<ThemeConfig> {
+export function defineWithDefaultThemeConfig(
+  config: UserConfig<ThemeConfig> = {}
+): UserConfig<ThemeConfig> {
   // Rename 'footer' to 'themeFooter' to avoid conflict with VitePress built-in footer config
   if (config.themeConfig?.footer) {
     config.themeConfig = {
       ...config.themeConfig,
-      themeFooter: config.themeConfig.footer,
+      themeFooter: config.themeConfig.footer
     }
     delete config.themeConfig.footer
   }

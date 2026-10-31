@@ -1,11 +1,9 @@
-# Decision (VTA-10): Option A - keep pnpm as package manager; ghacts/static-site uses pnpm.
-# Vite+ checks run separately in ci.yaml.
 name: publish_npm_package
 
 on:
   push:
     tags:
-      - "v*.*.*"
+      - 'v*.*.*'
 
 permissions:
   id-token: write
@@ -20,7 +18,7 @@ jobs:
     steps:
       - name: Build
         env:
-          VITE_BASE_URL: "https://${{ vars.NETLIFY_SITE_NAME }}.netlify.app"
+          VITE_BASE_URL: 'https://${{ vars.NETLIFY_SITE_NAME }}.netlify.app'
           VITE_GA_ID: ${{ vars.VITE_GA_ID }}
           VITE_SWETRIX_ID: ${{ vars.VITE_SWETRIX_ID }}
           VITE_COUNTER_ANALYTICS_ID: ${{ vars.VITE_COUNTER_ANALYTICS_ID }}
