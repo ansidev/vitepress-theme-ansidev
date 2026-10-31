@@ -5,15 +5,14 @@
   "description": "The demo site for VitePress theme @ansidev-oss/vitepress-theme-ansidev",
   "type": "module",
   "scripts": {
-    "lint:check": "biome check",
-    "lint": "biome check --write",
+    "lint:check": "vp check",
+    "lint": "vp check --fix",
     "dev": "vitepress dev",
     "build": "vitepress build",
     "preview": "vitepress preview"
   },
   "devDependencies": {
     "@ansidev-oss/vitepress-theme-ansidev": "workspace:*",
-    "@biomejs/biome": "2.6.4",
     "vitepress": "^2.0.0-alpha.16",
     "vitepress-plugin-rss": "^0.4.2"
   }
