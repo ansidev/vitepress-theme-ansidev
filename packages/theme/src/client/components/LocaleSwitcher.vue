@@ -6,8 +6,8 @@ defineProps({
   size: {
     type: Number,
     required: false,
-    default: 20,
-  },
+    default: 20
+  }
 })
 
 const { t, availableLocales, locale } = useI18n()
@@ -33,7 +33,7 @@ const toggleLocale = () => switchLocale(availableLocales, locale)
   width: 1px;
   height: 24px;
   background-color: var(--vp-c-divider);
-  content: "";
+  content: '';
 }
 
 .VPLocaleSwitcher {
@@ -43,12 +43,12 @@ const toggleLocale = () => switchLocale(availableLocales, locale)
   width: 36px;
   height: 36px;
   color: var(--vp-c-text-2);
-  transition: color 0.5s;
+  transition: none;
 }
 
 .VPLocaleSwitcher:hover {
   color: var(--vp-c-text-1);
-  transition: color 0.25s;
+  transition: none;
 }
 
 .VPLocaleSwitcher > :deep(svg) {

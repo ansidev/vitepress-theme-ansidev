@@ -1,6 +1,7 @@
 :root {
   --vp-font-family-base: 'Inter', ui-sans-serif, system-ui, sans-serif;
-  --vp-font-family-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  --vp-font-family-mono:
+    'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
   /* Light palette, based on Dracula's Alucard variant */
   --accent: #644ac9;
   --accent-soft: #8668e0;
@@ -77,13 +78,19 @@ body {
   background: var(--vp-c-bg-soft);
   border: 1px solid var(--vp-c-divider);
   border-radius: 0;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  transition: none;
 }
 .component-border:hover,
 .component-border:focus-within {
   border-color: color-mix(in srgb, var(--accent) 55%, transparent);
-  background: linear-gradient(180deg, color-mix(in srgb, var(--accent) 7%, var(--vp-c-bg-soft)), var(--vp-c-bg-soft));
-  box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 18%, transparent), 0 8px 30px -12px color-mix(in srgb, var(--accent) 45%, transparent);
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--accent) 7%, var(--vp-c-bg-soft)),
+    var(--vp-c-bg-soft)
+  );
+  box-shadow:
+    0 0 0 1px color-mix(in srgb, var(--accent) 18%, transparent),
+    0 8px 30px -12px color-mix(in srgb, var(--accent) 45%, transparent);
 }
 
 /* Titles inside cards: neutral text, accent on hover */
@@ -95,7 +102,7 @@ body {
 }
 /* Card hover only glows; the link itself gets its own hover/pressed feedback */
 .component-border a.text-2xl {
-  transition: color 0.15s ease, text-shadow 0.15s ease;
+  transition: none;
 }
 .component-border a.text-2xl:hover {
   color: var(--accent);
@@ -127,7 +134,7 @@ a.link-alt.uppercase,
   font-size: 0.7rem;
   font-weight: 500;
   letter-spacing: 0.04em;
-  transition: border-color 0.2s ease;
+  transition: none;
 }
 a.link-alt.uppercase:hover {
   border-color: var(--accent);
@@ -208,7 +215,12 @@ button:focus-visible {
   letter-spacing: -0.04em;
 }
 .home-hero h1 span {
-  background: linear-gradient(90deg, var(--vp-c-text-1), var(--accent-soft) 70%, var(--accent));
+  background: linear-gradient(
+    90deg,
+    var(--vp-c-text-1),
+    var(--accent-soft) 70%,
+    var(--accent)
+  );
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -249,7 +261,7 @@ button.copy,
 p.flex.flex-wrap > a.border.m-1 {
   padding: 0.25rem 0.875rem;
   margin: 0.25rem;
-  transition: border-color 0.15s ease, background-color 0.15s ease;
+  transition: none;
 }
 p.flex.flex-wrap > a.border.m-1:hover {
   border-color: var(--accent);
@@ -317,10 +329,13 @@ p.flex.flex-wrap > a.border.m-1:hover {
 /* Donation buttons: equal-size slots, even spacing. The theme sets img width/height
    inline with !important and uses space-y-4 (sidebar) or space-x-4 (home page, wraps
    unevenly), so reset its margins and size the link box instead. */
-div.flex.flex-wrap.py-4.items-center.justify-center:has(> a[href*='ko-fi.com']) {
+div.flex.flex-wrap.py-4.items-center.justify-center:has(
+    > a[href*='ko-fi.com']
+  ) {
   gap: 12px;
 }
-div.flex.flex-wrap.py-4.items-center.justify-center:has(> a[href*='ko-fi.com']) > a {
+div.flex.flex-wrap.py-4.items-center.justify-center:has(> a[href*='ko-fi.com'])
+  > a {
   margin: 0 !important;
   width: 200px;
   height: 56px;
@@ -328,25 +343,34 @@ div.flex.flex-wrap.py-4.items-center.justify-center:has(> a[href*='ko-fi.com']) 
   align-items: center;
   justify-content: center;
 }
-div.flex.flex-wrap.py-4.items-center.justify-center:has(> a[href*='ko-fi.com']) > a img {
+div.flex.flex-wrap.py-4.items-center.justify-center:has(> a[href*='ko-fi.com'])
+  > a
+  img {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
 }
 /* Sidebar variant: single column */
-div.flex.flex-wrap.py-4.items-center.justify-center.space-y-4:has(> a[href*='ko-fi.com']) {
+div.flex.flex-wrap.py-4.items-center.justify-center.space-y-4:has(
+    > a[href*='ko-fi.com']
+  ) {
   flex-direction: column;
   flex-wrap: nowrap;
 }
 
 /* Footer variant (home page): 2x2 grid of equal slots */
-div.flex.flex-wrap.py-4.items-center.justify-center.space-x-4:has(> a[href*='ko-fi.com']) {
+div.flex.flex-wrap.py-4.items-center.justify-center.space-x-4:has(
+    > a[href*='ko-fi.com']
+  ) {
   display: grid;
   grid-template-columns: repeat(2, 168px);
   justify-content: center;
   gap: 12px;
 }
-div.flex.flex-wrap.py-4.items-center.justify-center.space-x-4:has(> a[href*='ko-fi.com']) > a {
+div.flex.flex-wrap.py-4.items-center.justify-center.space-x-4:has(
+    > a[href*='ko-fi.com']
+  )
+  > a {
   width: 168px;
   height: 52px;
 }
