@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "build": "pnpm -r build",
-    "dev": "pnpm theme:build && concurrently --kill-others \"pnpm theme:dev\" \"pnpm demo:dev\"",
+    "dev": "pnpm theme:build && (pnpm theme:dev & pnpm demo:dev & wait)",
     "typecheck": "pnpm -r typecheck",
     "test": "pnpm -r test",
     "lint": "pnpm -r typecheck && pnpm vp check",
@@ -35,7 +35,8 @@
     "packages/*"
   ],
   "devDependencies": {
-    "concurrently": "^10.0.0",
+    "@tailwindcss/postcss": "^4.3.3",
+    "autoprefixer": "^10.6.2",
     "vite-plus": "catalog:"
   },
   "engines": {
