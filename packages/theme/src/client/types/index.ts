@@ -37,6 +37,10 @@ export interface Post {
   twitter: string
   url?: string
   date: Date
+  /**
+   * Excerpt rendered as HTML and normalized by the theme's `useExcerptHtml` helper.
+   * Undefined when the post contains no excerpt separator.
+   */
   excerpt: string | undefined
   categories: string[]
   tags: string[]
@@ -54,6 +58,10 @@ export interface Project {
   url: string
   showcaseUrl: string
   repositoryUrl: string
+  /**
+   * Excerpt rendered as HTML and normalized by the theme's `useExcerptHtml` helper.
+   * Undefined when the project contains no excerpt separator.
+   */
   excerpt: string | undefined
   license: string
   licenseUrl: string
