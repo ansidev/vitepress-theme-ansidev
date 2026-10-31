@@ -11,7 +11,7 @@ developmentStatus: active
 date: 2023-05-20T15:34:55+07:00
 author: ansidev
 gravatar: a2ac3c4477e717c7fa15041d907e71fd
-twitter: "@ansidev"
+twitter: '@ansidev'
 ---
 
 Simple Go module for decompressing tar.xz file

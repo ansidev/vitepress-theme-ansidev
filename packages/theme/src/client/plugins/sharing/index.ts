@@ -63,7 +63,9 @@ export type SharingComponentProps = {
   text: string
 }
 
-export const useUrlQueryParamsBuilder = (params: Record<string, string | undefined> | undefined): string => {
+export const useUrlQueryParamsBuilder = (
+  params: Record<string, string | undefined> | undefined
+): string => {
   if (!params) {
     return ''
   }

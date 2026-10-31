@@ -33,7 +33,7 @@ const theme: Theme = {
   setup() {
     useHtmlLang()
     usePageLocale(i18n)
-  },
+  }
 } satisfies Theme
 
 export * from './composables'

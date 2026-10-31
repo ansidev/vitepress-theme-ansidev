@@ -5,7 +5,7 @@ import { SharingButtonComponentProps, useUrlQueryParamsBuilder } from '..'
 
 const props = withDefaults(defineProps<SharingButtonComponentProps>(), {
   iconSize: 32,
-  displayMode: 'icon',
+  displayMode: 'icon'
 })
 
 const provider = computed(() => {
@@ -16,7 +16,7 @@ const provider = computed(() => {
         shareBaseURL: 'mailto:',
         icon: 'bi:envelope-fill',
         params: { subject: props.text, body: props.url },
-        allowedParams: ['subject', 'body'],
+        allowedParams: ['subject', 'body']
       }
     case 'facebook':
       return {
@@ -24,7 +24,7 @@ const provider = computed(() => {
         shareBaseURL: 'https://facebook.com/sharer/sharer.php',
         icon: 'bi:facebook',
         params: { u: props.url },
-        allowedParams: ['u', 'display', 'redirect_uri'],
+        allowedParams: ['u', 'display', 'redirect_uri']
       }
     case 'linkedin':
       return {
@@ -32,7 +32,7 @@ const provider = computed(() => {
         shareBaseURL: 'https://www.linkedin.com/sharing/share-offsite',
         icon: 'bi:linkedin',
         params: { url: props.url },
-        allowedParams: ['url'],
+        allowedParams: ['url']
       }
     case 'pinterest':
       return {
@@ -40,7 +40,15 @@ const provider = computed(() => {
         shareBaseURL: 'https://pinterest.com/pin/create/button',
         icon: 'bi:pinterest',
         params: { posttype: 'link', title: props.text, url: props.url },
-        allowedParams: ['posttype', 'tags', 'title', 'content', 'caption', 'show-via', 'canonicalUrl'],
+        allowedParams: [
+          'posttype',
+          'tags',
+          'title',
+          'content',
+          'caption',
+          'show-via',
+          'canonicalUrl'
+        ]
       }
     case 'reddit':
       return {
@@ -48,7 +56,7 @@ const provider = computed(() => {
         shareBaseURL: 'https://www.reddit.com/submit',
         icon: 'bi:reddit',
         params: { title: props.text, url: props.url },
-        allowedParams: ['title', 'url'],
+        allowedParams: ['title', 'url']
       }
     case 'telegram':
       return {
@@ -56,7 +64,7 @@ const provider = computed(() => {
         shareBaseURL: 'https://telegram.me/share/url',
         icon: 'bi:telegram',
         params: { text: props.text, url: props.url },
-        allowedParams: ['text', 'url'],
+        allowedParams: ['text', 'url']
       }
     // case 'tumblr':
     //   return {
@@ -72,7 +80,7 @@ const provider = computed(() => {
         shareBaseURL: 'https://twitter.com/intent/tweet',
         icon: 'bi:twitter',
         params: { text: props.text, url: props.url },
-        allowedParams: ['text', 'url', 'hashtag', 'via'],
+        allowedParams: ['text', 'url', 'hashtag', 'via']
       }
     // case 'vk':
     //   return {
@@ -88,7 +96,7 @@ const provider = computed(() => {
         shareBaseURL: 'whatsapp://send',
         icon: 'bi:whatsapp',
         params: { text: props.url },
-        allowedParams: ['text'],
+        allowedParams: ['text']
       }
     default:
       return {}
@@ -106,10 +114,22 @@ const shareURL = computed(() => {
 </script>
 
 <template>
-  <a :href="shareURL" target="_blank" rel="noopener" :aria-label="networkName"
-    style="padding-left: 0.25rem; padding-right: 0.25rem;">
-    <Icon v-if="['icon', 'both'].includes(props.displayMode)" :icon="networkIcon" :width="iconSize" :height="iconSize"
-      class="fill-current text-gray-700 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400" />
-    <template v-if="['text', 'both'].includes(props.displayMode)">&nbsp;{{ networkName }}</template>
+  <a
+    :href="shareURL"
+    target="_blank"
+    rel="noopener"
+    :aria-label="networkName"
+    style="padding-left: 0.25rem; padding-right: 0.25rem"
+  >
+    <Icon
+      v-if="['icon', 'both'].includes(props.displayMode)"
+      :icon="networkIcon"
+      :width="iconSize"
+      :height="iconSize"
+      class="fill-current text-gray-700 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400"
+    />
+    <template v-if="['text', 'both'].includes(props.displayMode)"
+      >&nbsp;{{ networkName }}</template
+    >
   </a>
 </template>

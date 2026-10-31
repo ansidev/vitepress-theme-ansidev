@@ -1,4 +1,4 @@
-<script setup lang='ts'>
+<script setup lang="ts">
 import { computed } from 'vue'
 import { useSlug } from '../composables'
 import RouterLink from './RouterLink.vue'
@@ -6,12 +6,12 @@ import RouterLink from './RouterLink.vue'
 const props = defineProps({
   text: {
     type: String,
-    required: true,
+    required: true
   },
   basePath: {
     type: String,
-    required: true,
-  },
+    required: true
+  }
 })
 
 const slug = computed(() => useSlug(props.text))

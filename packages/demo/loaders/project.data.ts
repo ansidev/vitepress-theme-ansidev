@@ -20,8 +20,8 @@ export default createContentLoader('projects/**/!(index).md', {
         licenseUrl: frontmatter.licenseUrl,
         developmentStatus: frontmatter.developmentStatus,
         techs: frontmatter.techs,
-        date: new Date(frontmatter.date),
+        date: new Date(frontmatter.date)
       }))
       .sort((a, b) => b.date.getTime() - a.date.getTime())
-  },
+  }
 })

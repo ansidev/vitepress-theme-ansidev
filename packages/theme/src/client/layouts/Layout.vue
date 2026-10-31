@@ -1,4 +1,4 @@
-<script setup lang='ts'>
+<script setup lang="ts">
 import { useData, useRoute } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 import { onMounted, watch } from 'vue'
@@ -30,7 +30,7 @@ watch(
     if (newPath !== oldPath) {
       initMediumZoom()
     }
-  },
+  }
 )
 </script>
 

@@ -1,12 +1,12 @@
-<script setup lang='ts'>
+<script setup lang="ts">
 import { useRouter } from 'vitepress'
 
 defineProps({
   to: {
     type: String,
     required: true,
-    default: '#',
-  },
+    default: '#'
+  }
 })
 
 const router = useRouter()

@@ -22,21 +22,24 @@ export const supportedDonationPlatforms: {
 } = {
   buymeacoffee: {
     donationBaseUrl: 'https://buymeacoffee.com',
-    donationButtonImage: 'https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png',
+    donationButtonImage:
+      'https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png',
     donationButtonStyle: {
       height: '60px !important',
-      width: '217px !important',
-    },
+      width: '217px !important'
+    }
   },
   kofi: {
     donationBaseUrl: 'https://ko-fi.com',
-    donationButtonImage: 'https://storage.ko-fi.com/cdn/brandasset/kofi_bg_tag_white.png',
+    donationButtonImage:
+      'https://storage.ko-fi.com/cdn/brandasset/kofi_bg_tag_white.png',
     donationButtonStyle: {
-      height: '60px !important',
-    },
+      height: '60px !important'
+    }
   },
   paypal: {
     donationBaseUrl: 'https://paypal.me',
-    donationButtonImage: 'https://paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif',
-  },
+    donationButtonImage:
+      'https://paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif'
+  }
 }

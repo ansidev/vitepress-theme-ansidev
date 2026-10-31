@@ -10,7 +10,7 @@ developmentStatus: unmaintained
 date: 2019-06-25T13:23:00+07:00
 author: ansidev
 gravatar: a2ac3c4477e717c7fa15041d907e71fd
-twitter: "@ansidev"
+twitter: '@ansidev'
 featuredImage: /uploads/2019/06/ansidev-dot-xyz-google-page-speed-result-desktop.webp
 ---
 
@@ -31,6 +31,7 @@ This is test result from Google Page Speed. I have not optimized yet.
 ## Technologies
 
 Currently, this site is built with:
+
 - [VuePress 1.x](https://v1.vuepress.vuejs.org/).
 - [Bootstrap CSS 4.x](https://getbootstrap.com/).
 - [Netlify](https://netlify.com).

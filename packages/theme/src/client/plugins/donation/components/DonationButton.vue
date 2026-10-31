@@ -8,7 +8,9 @@ interface DonationButtonProps extends CustomDonationConfig {
 
 const props = defineProps<DonationButtonProps>()
 
-const donationUrl = computed(() => new URL(props.donationId, props.donationBaseUrl).toString())
+const donationUrl = computed(() =>
+  new URL(props.donationId, props.donationBaseUrl).toString()
+)
 </script>
 
 <template>

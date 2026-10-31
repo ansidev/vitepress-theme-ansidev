@@ -10,31 +10,34 @@ const props = defineProps({
   projectPage: {
     type: String,
     required: false,
-    default: '/projects.html',
+    default: '/projects.html'
   },
   projects: {
     type: Object as PropType<Project[]>,
     required: true,
-    default: [],
+    default: []
   },
   technology: {
     type: String,
-    required: false,
-  },
+    required: false
+  }
 })
 
 const { t } = useI18n()
 const tech = props.technology
 const hasTechParam = typeof tech === 'string' && tech.length > 0
-const byTech: (project: Project) => boolean = (project) => !hasTechParam || project.techs.some(useSlugFilter(tech))
+const byTech: (project: Project) => boolean = (project) =>
+  !hasTechParam || project.techs.some(useSlugFilter(tech))
 const projectsByTech = computed(() => props.projects.filter(byTech))
 const technologies = computed(() => {
-  const uniqueTechnologies = [...new Set(props.projects.flatMap((project) => project.techs))]
+  const uniqueTechnologies = [
+    ...new Set(props.projects.flatMap((project) => project.techs))
+  ]
   return uniqueTechnologies
     .map((name) => ({
       name,
       slug: useSlug(name),
-      selected: hasTechParam && useSlug(name) === tech,
+      selected: hasTechParam && useSlug(name) === tech
     }))
     .sort((a, b) => (b.selected === a.selected ? 0 : b.selected ? 1 : -1))
 })

@@ -9,4 +9,5 @@ export const useSlug = (str: string) => {
     .replace(/^-+|-+$/g, '') // Remove leading or trailing dashes
 }
 
-export const useSlugFilter = (slug: string) => (str: string) => useSlug(str) === slug
+export const useSlugFilter = (slug: string) => (str: string) =>
+  useSlug(str) === slug

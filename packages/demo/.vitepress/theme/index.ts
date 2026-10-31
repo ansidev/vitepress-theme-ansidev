@@ -3,5 +3,5 @@ import type { Theme } from 'vitepress'
 import '@ansidev-oss/vitepress-theme-ansidev/styles.css'
 
 export default {
-  extends: AnsidevTheme,
+  extends: AnsidevTheme
 } satisfies Theme

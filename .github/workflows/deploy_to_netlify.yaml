@@ -1,5 +1,5 @@
 # Decision (VTA-10): Option A - keep pnpm as package manager; ghacts/static-site uses pnpm.
-# Vite+ checks run separately in ci.yaml.
+# Decision (VTA-13): checks and tests run here instead of ci.yaml.
 name: deploy_to_netlify
 
 on:
@@ -110,7 +110,7 @@ jobs:
         with:
           package-manager: pnpm
           output-dir: ${{ env.OUTPUT_DIR }}
-          skip-test: true
+          lint-script: ci:lint
 
       - name: Deploy
         id: deploy

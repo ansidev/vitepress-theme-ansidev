@@ -11,7 +11,7 @@ developmentStatus: active
 date: 2022-10-07T09:08:10+07:00
 author: ansidev
 gravatar: a2ac3c4477e717c7fa15041d907e71fd
-twitter: "@ansidev"
+twitter: '@ansidev'
 ---
 
 A starter project for solving LeetCode problem using Go.

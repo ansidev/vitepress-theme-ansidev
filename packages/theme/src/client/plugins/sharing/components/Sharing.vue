@@ -9,11 +9,22 @@ const defaultConfigs = {
   titleCssClass: 'text-sm/[32px] font-semibold mb-2',
   buttonCssClass: 'flex flex-wrap space-x-1',
   title: 'Share',
-  networks: ['email', 'facebook', 'twitter', 'telegram', 'reddit', 'linkedin', 'whatsapp', 'pinterest', 'tumblr', 'vk'],
+  networks: [
+    'email',
+    'facebook',
+    'twitter',
+    'telegram',
+    'reddit',
+    'linkedin',
+    'whatsapp',
+    'pinterest',
+    'tumblr',
+    'vk'
+  ],
   buttonSize: 18,
   iconSize: 20,
   iconStyle: 'solid',
-  displayMode: 'both',
+  displayMode: 'both'
 }
 
 const props = defineProps<SharingComponentProps>()
@@ -24,45 +35,51 @@ const pluginConfig = computed(() => theme.value.sharing || false)
 const wrapperCssClass = computed(() =>
   pluginConfig.value && typeof pluginConfig.value.wrapperCssClass === 'string'
     ? pluginConfig.value.wrapperCssClass
-    : defaultConfigs.wrapperCssClass,
+    : defaultConfigs.wrapperCssClass
 )
 const title = computed(() =>
-  pluginConfig.value && typeof pluginConfig.value.title === 'string' ? pluginConfig.value.title : defaultConfigs.title,
+  pluginConfig.value && typeof pluginConfig.value.title === 'string'
+    ? pluginConfig.value.title
+    : defaultConfigs.title
 )
 const titleCssClass = computed(() =>
   pluginConfig.value && typeof pluginConfig.value.titleCssClass === 'string'
     ? pluginConfig.value.titleCssClass
-    : defaultConfigs.titleCssClass,
+    : defaultConfigs.titleCssClass
 )
 const buttonCssClass = computed(() =>
   pluginConfig.value && typeof pluginConfig.value.buttonCssClass === 'string'
     ? pluginConfig.value.buttonCssClass
-    : defaultConfigs.buttonCssClass,
+    : defaultConfigs.buttonCssClass
 )
 const networks = computed(() =>
   pluginConfig.value && Array.isArray(pluginConfig.value.networks)
     ? pluginConfig.value.networks
-    : defaultConfigs.networks,
+    : defaultConfigs.networks
 )
 const buttonSize = computed(() =>
-  pluginConfig.value && Number.isInteger(pluginConfig.value.buttonSize) && pluginConfig.value.buttonSize > 0
+  pluginConfig.value &&
+  Number.isInteger(pluginConfig.value.buttonSize) &&
+  pluginConfig.value.buttonSize > 0
     ? pluginConfig.value.buttonSize
-    : defaultConfigs.buttonSize,
+    : defaultConfigs.buttonSize
 )
 const iconSize = computed(() =>
-  pluginConfig.value && Number.isInteger(pluginConfig.value.iconSize) && pluginConfig.value.iconSize > 0
+  pluginConfig.value &&
+  Number.isInteger(pluginConfig.value.iconSize) &&
+  pluginConfig.value.iconSize > 0
     ? pluginConfig.value.iconSize
-    : defaultConfigs.iconSize,
+    : defaultConfigs.iconSize
 )
 const iconStyle = computed(() =>
   pluginConfig.value && typeof pluginConfig.value.iconStyle === 'string'
     ? pluginConfig.value.iconStyle
-    : defaultConfigs.iconStyle,
+    : defaultConfigs.iconStyle
 )
 const displayMode = computed(() =>
   pluginConfig.value && typeof pluginConfig.value.displayMode === 'string'
     ? pluginConfig.value.displayMode
-    : defaultConfigs.displayMode,
+    : defaultConfigs.displayMode
 )
 </script>
 
@@ -73,8 +90,15 @@ const displayMode = computed(() =>
     </p>
     <div :class="buttonCssClass">
       <template v-for="network in networks" :key="network">
-        <SharingButton :url="props.url" :text="props.text" :network="network" :button-size="buttonSize"
-          :icon-size="iconSize" :icon-style="iconStyle" :display-mode="displayMode" />
+        <SharingButton
+          :url="props.url"
+          :text="props.text"
+          :network="network"
+          :button-size="buttonSize"
+          :icon-size="iconSize"
+          :icon-style="iconStyle"
+          :display-mode="displayMode"
+        />
       </template>
     </div>
   </div>
