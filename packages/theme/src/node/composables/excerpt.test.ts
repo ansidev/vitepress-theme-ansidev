@@ -43,4 +43,28 @@ describe('useExcerptHtml', () => {
   it('preserves multi-paragraph already-rendered excerpts', () => {
     expect(useExcerptHtml('<p>First.</p>\n<p>Second.</p>')).toBe('<p>First.</p>\n<p>Second.</p>')
   })
+
+  it('strips script/style/iframe elements from already-rendered excerpts', () => {
+    expect(useExcerptHtml("<p>before<script>alert('xss')</script>after</p>")).toBe('beforeafter')
+    expect(useExcerptHtml('<p>clean <style>.x{}</style>text</p>')).toBe('clean text')
+    expect(useExcerptHtml('<p>see <iframe src="https://evil.example"></iframe>this</p>')).toBe('see this')
+  })
+
+  it('escapes non-block HTML that is not pre-rendered output', () => {
+    // <img>/<a> are not block-level, so they take the markdown-it path and are
+    // escaped (quotes included) rather than sanitized.
+    expect(useExcerptHtml('<img src="x.png" onerror="alert(1)">')).toBe(
+      '&lt;img src=&quot;x.png&quot; onerror=&quot;alert(1)&quot;&gt;',
+    )
+  })
+
+  it('strips event handler attributes from already-rendered excerpts', () => {
+    // Sanitized block HTML keeps its <p> wrapper only when multi-paragraph;
+    // a single-paragraph <p> is unwrapped after sanitizing.
+    expect(useExcerptHtml("<p onclick='alert(1)'>text</p>")).toBe('text')
+  })
+
+  it('neutralizes javascript: URLs in already-rendered excerpts', () => {
+    expect(useExcerptHtml('<p><a href="javascript:alert(1)">click</a></p>')).toBe('<a>click</a>')
+  })
 })
