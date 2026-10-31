@@ -2,7 +2,7 @@
 
 import type { ThemeConfig } from '@ansidev-oss/vitepress-theme-ansidev'
 import { defineWithDefaultThemeConfig } from '@ansidev-oss/vitepress-theme-ansidev/config'
-import { type RSSOptions, RssPlugin } from "vitepress-plugin-rss"
+import { type RSSOptions, RssPlugin } from 'vitepress-plugin-rss'
 
 globalThis.__VUE_PROD_DEVTOOLS__ = process.env.NODE_ENV === 'development'
 const siteURL = process.env.VITE_BASE_URL || 'http://localhost:5173'
@@ -10,10 +10,10 @@ const siteTitle: string = "ansidev's blog"
 const rssOptions: RSSOptions = {
   title: siteTitle,
   baseUrl: siteURL,
-  copyright: "Copyright © 2019-present Le Minh Tri (a.k.a ansidev)",
+  copyright: 'Copyright © 2019-present Le Minh Tri (a.k.a ansidev)',
 }
 
-console.log("Site URL", siteURL)
+console.log('Site URL', siteURL)
 
 export default defineWithDefaultThemeConfig<ThemeConfig>({
   srcDir: 'content',
@@ -95,14 +95,7 @@ export default defineWithDefaultThemeConfig<ThemeConfig>({
     },
     sharing: {
       title: 'Share this post',
-      networks: [
-        'email',
-        'facebook',
-        'twitter',
-        'linkedin',
-        'telegram',
-        'whatsapp',
-      ],
+      networks: ['email', 'facebook', 'twitter', 'linkedin', 'telegram', 'whatsapp'],
       displayMode: 'icon',
     },
     mediumZoom: {
@@ -117,8 +110,6 @@ export default defineWithDefaultThemeConfig<ThemeConfig>({
     lastmodDateOnly: false,
   },
   vite: {
-    plugins: [
-      RssPlugin(rssOptions)
-    ],
+    plugins: [RssPlugin(rssOptions)],
   },
 })
