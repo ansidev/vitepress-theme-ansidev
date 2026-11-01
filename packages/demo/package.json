@@ -7,7 +7,7 @@
   "scripts": {
     "lint:check": "vp check",
     "lint": "vp check --fix",
-    "dev": "vitepress dev",
+    "dev": "node scripts/vitepress-dev.mjs; exit 0",
     "build": "vitepress build",
     "preview": "vitepress preview"
   },
