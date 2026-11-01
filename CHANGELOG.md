@@ -4,6 +4,28 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](http://semver.org).
 
+## [v1.4.0](https://github.com/ansidev/vitepress-theme-ansidev/compare/v1.3.0...v1.4.0) (2026-11-02)
+
+### Bug Fixes
+
+- **VTA-15:** render locale icon inline for SSR
+
+- **VTA-15:** add descriptive aria-label to TermLink for a11y
+
+### Performance Improvements
+
+- **VTA-15:** add intrinsic sizes and lazy loading to donation button images
+
+- **VTA-15:** inline bi:translate icon to avoid Iconify API fetch
+
+- **VTA-15:** use vitepress theme-without-fonts to drop bundled Inter subsets
+
+- **VTA-15:** self-host fonts and optimize momo image for 100/100 PageSpeed
+
+- **VTA-15:** defer Google Analytics init to idle/load
+
+Full Changelog: [v1.3.0...v1.4.0](https://github.com/ansidev/vitepress-theme-ansidev/compare/v1.3.0...v1.4.0)
+
 ## [v1.3.0](https://github.com/ansidev/vitepress-theme-ansidev/compare/v1.2.0...v1.3.0) (2026-11-01)
 
 ### Miscellaneous
