@@ -114,6 +114,7 @@ export default defineWithDefaultThemeConfig<ThemeConfig>({
           donationBaseUrl: 'https://me.momo.vn',
           donationId: 'ansidev',
           donationButtonImage: '/imgs/momo_icon_rectangle_pinkbg_RGB.webp',
+          donationButtonSize: { width: 168, height: 60 },
           donationButtonStyle: {
             height: '60px !important'
           }
