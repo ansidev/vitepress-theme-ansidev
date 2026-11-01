@@ -4,11 +4,67 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](http://semver.org).
 
+## [v1.3.0](https://github.com/ansidev/vitepress-theme-ansidev/compare/v1.2.0...v1.3.0) (2026-11-01)
+
+### Miscellaneous
+
+- **VTA-11:** post-migration validation, prune only pack outputs in publish-node so `tsc` declarations survive in `dist/node`, drop `ts-node` from theme dependencies
+
+Full Changelog: [v1.2.0...v1.3.0](https://github.com/ansidev/vitepress-theme-ansidev/compare/v1.2.0...v1.3.0)
+
+## [v1.2.0](https://github.com/ansidev/vitepress-theme-ansidev/compare/v1.1.0...v1.2.0) (2026-11-01)
+
+### Bug Fixes
+
+- **VTA-9:** wire ensure-theme-built into dev, stop masking dev failures
+
+- **VTA-9:** make demo dev script resilient to theme dist and SIGINT issues
+
+- **VTA-9:** stop demo dev server racing theme pack rebuilds
+
+- **ci:** build theme before typecheck in lint script
+
+- **ci:** add root test script so ghacts static-site test step passes
+
+- **ci:** build theme package before lint so typecheck resolves demo imports
+
+- **demo:** escape raw script tag in excerpt-escaping test post
+
+- **deps:** update dependency `@vueuse/core` to v15
+
+- **dev:** prevent demo dev server racing theme pack watch build
+
+- **lint:** resolve biome lint failures
+
+- **theme:** restore dev script dropped during rebase conflict resolution
+
+### Code Refactoring
+
+- **VTA-9:** drop vitepress-dev wrapper, run vitepress dev directly
+
+### Documentations
+
+- **release:** add v1.2.0 changelog
+
+### Features
+
+- **VTA-9:** replace concurrently with Vite Task
+
+- **theme:** add <main> landmark to custom page layout (VTA-14)
+
+- **theme:** add excerpt HTML rendering helper for post cards
+
+### Performance Improvements
+
+- **theme:** remove render-blocking Google Fonts `@import` from theme CSS
+
+Full Changelog: [v1.1.0...v1.2.0](https://github.com/ansidev/vitepress-theme-ansidev/compare/v1.1.0...v1.2.0)
+
 ## [v1.1.0](https://github.com/ansidev/vitepress-theme-ansidev/compare/v1.0.12...v1.1.0) (2026-10-29)
 
 ### Bug Fixes
 
-- add pnpm overrides to force vue[@3](https://github.com/3).5.30 across all packages
+- add pnpm overrides to force `vue@3.5.30` across all packages
 
 - remove pnpm version from package.json to avoid version conflicts in CI/CD pipelines
 
