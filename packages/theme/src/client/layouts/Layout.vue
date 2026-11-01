@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useData, useRoute } from 'vitepress'
-import DefaultTheme from 'vitepress/theme'
+import DefaultTheme from 'vitepress/theme-without-fonts'
 import { onMounted, watch } from 'vue'
 import DonationWidget from '../components/DonationWidget.vue'
 import Footer from '../components/Footer.vue'

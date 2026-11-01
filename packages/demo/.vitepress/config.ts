@@ -23,24 +23,30 @@ export default defineWithDefaultThemeConfig<ThemeConfig>({
   description: 'Personal blog of ansidev',
   head: [
     ['link', { rel: 'icon', href: '/favicon.ico' }],
-    ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
     [
       'link',
-      { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' }
+      {
+        rel: 'preload',
+        href: '/fonts/Inter.woff2',
+        as: 'font',
+        type: 'font/woff2',
+        crossorigin: ''
+      }
     ],
     [
       'link',
       {
-        rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap',
-        media: 'print',
-        onload: "this.media='all'"
+        rel: 'preload',
+        href: '/fonts/JetBrainsMono.woff2',
+        as: 'font',
+        type: 'font/woff2',
+        crossorigin: ''
       }
     ],
     [
-      'noscript',
+      'style',
       {},
-      "<link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap'>"
+      "@font-face{font-family:'Inter';font-style:normal;font-weight:100 900;font-display:swap;src:url('/fonts/Inter.woff2') format('woff2')}@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:100 800;font-display:swap;src:url('/fonts/JetBrainsMono.woff2') format('woff2')}"
     ]
   ],
   themeConfig: {
@@ -107,7 +113,8 @@ export default defineWithDefaultThemeConfig<ThemeConfig>({
         momo: {
           donationBaseUrl: 'https://me.momo.vn',
           donationId: 'ansidev',
-          donationButtonImage: '/imgs/momo_icon_rectangle_pinkbg_RGB.png',
+          donationButtonImage: '/imgs/momo_icon_rectangle_pinkbg_RGB.webp',
+          donationButtonSize: { width: 168, height: 60 },
           donationButtonStyle: {
             height: '60px !important'
           }

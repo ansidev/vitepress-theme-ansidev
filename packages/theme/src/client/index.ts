@@ -1,6 +1,6 @@
 import { Icon } from '@iconify/vue'
 import type { Theme } from 'vitepress'
-import DefaultTheme from 'vitepress/theme'
+import DefaultTheme from 'vitepress/theme-without-fonts'
 import { useHtmlLang, usePageLocale } from './composables/lang'
 import Layout from './layouts/Layout.vue'
 import ArchivesPage from './pages/ArchivesPage.vue'
