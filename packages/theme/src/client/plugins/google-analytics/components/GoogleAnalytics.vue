@@ -49,7 +49,7 @@ function scheduleInit() {
     // Defer loading until the browser is idle so analytics never competes
     // with critical rendering / interaction on the initial navigation.
     if (typeof (window as any).requestIdleCallback === 'function') {
-      (window as any).requestIdleCallback(() => init(), { timeout: 5000 })
+      ;(window as any).requestIdleCallback(() => init(), { timeout: 5000 })
     } else {
       setTimeout(init, 3000)
     }
