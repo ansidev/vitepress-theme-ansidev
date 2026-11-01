@@ -40,8 +40,15 @@ for (const file of readdirSync(src)) {
 // don't accumulate in dist/node and leak into the published npm package
 // (`files: ["dist"]` ships this whole directory).
 // Renames are not atomic across the set, so move stale entries out first.
+// Only pack-shaped outputs (.mjs/.d.mts) are pruned: `vp exec tsc
+// --emitDeclarationOnly` also lands declarations (config.d.ts,
+// composables/*.d.ts) in dist/node as part of build:all, matching the 1.1.0
+// published package, and those must survive this step.
 const stale = readdirSync(dest).filter(
-  (file) => !file.endsWith('.tmp') && !published.has(file)
+  (file) =>
+    !file.endsWith('.tmp') &&
+    !published.has(file) &&
+    (file.endsWith('.mjs') || file.endsWith('.d.mts'))
 )
 if (stale.length > 0) {
   const trash = resolve(themeDir, 'dist/.stale-node')
