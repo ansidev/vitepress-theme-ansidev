@@ -9,3 +9,6 @@ demo/.vitepress/cache
 .history
 .env.local
 *.tgz
+*trace.json\n*devtoolslog.json
+*trace.json
+*devtoolslog.json
