@@ -16,10 +16,20 @@ const props = defineProps({
 
 const slug = computed(() => useSlug(props.text))
 const link = computed(() => `${props.basePath}${slug.value}`)
+const label = computed(() => {
+  if (props.basePath === '/categories/') {
+    return `View all posts in category ${props.text}`
+  }
+  return `View all projects using ${props.text}`
+})
 </script>
 
 <template>
-  <RouterLink :to="link" class="mr-2 text-sm font-medium uppercase link-alt">
+  <RouterLink
+    :to="link"
+    :aria-label="label"
+    class="mr-2 text-sm font-medium uppercase link-alt"
+  >
     {{ text }}
   </RouterLink>
 </template>
