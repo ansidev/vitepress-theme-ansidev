@@ -42,6 +42,7 @@
   },
   "files": [
     "dist",
+    "!dist/.pack",
     "src",
     "README.md",
     "LICENSE"
@@ -53,7 +54,7 @@
     "lint": "vp check --fix",
     "clean": "rimraf dist",
     "build": "vp run build:all",
-    "dev": "vp build --watch & vp pack --watch --on-success \"node ../../scripts/touch-demo.mjs\" & wait"
+    "dev": "vp build --watch & vp pack --watch --on-success \"node ../../scripts/publish-node.mjs && node ../../scripts/touch-demo.mjs\" & wait"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.2.0",

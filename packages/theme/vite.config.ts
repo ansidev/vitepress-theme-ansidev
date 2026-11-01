@@ -17,12 +17,12 @@ export default defineConfig({
       },
       'build:all': {
         command:
-          'rimraf dist && vp build && vp exec tsc --emitDeclarationOnly && vp pack',
+          'rimraf dist && vp build && vp exec tsc --emitDeclarationOnly && vp pack && node ../../scripts/publish-node.mjs',
         cache: false
       },
       'dev:node': {
         command:
-          'vp pack --watch --on-success "node ../../scripts/touch-demo.mjs"',
+          'vp pack --watch --on-success "node ../../scripts/publish-node.mjs && node ../../scripts/touch-demo.mjs"',
         cache: false
       },
       'build:client': {
@@ -32,7 +32,7 @@ export default defineConfig({
         command: 'vp exec tsc --emitDeclarationOnly'
       },
       'build:node': {
-        command: 'vp pack'
+        command: 'vp pack && node ../../scripts/publish-node.mjs'
       }
     }
   },
