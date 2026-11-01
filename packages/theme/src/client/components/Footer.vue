@@ -9,16 +9,23 @@ const { hasSidebar, hasAside } = useLayout()
 
 const copyright = computed(() => {
   return typeof theme.value.themeFooter.copyright === 'string'
-    ? theme.value.themeFooter.copyright.replace(/#\{present\}/g, new Date().getFullYear().toString())
+    ? theme.value.themeFooter.copyright.replace(
+        /#\{present\}/g,
+        new Date().getFullYear().toString()
+      )
     : theme.value.themeFooter.copyright
 })
 
 const GoogleAnalytics = theme.value.googleAnalytics
-  ? defineAsyncComponent(() => import('../plugins/google-analytics/components/GoogleAnalytics.vue'))
+  ? defineAsyncComponent(
+      () => import('../plugins/google-analytics/components/GoogleAnalytics.vue')
+    )
   : () => null
 
 const Swetrix = theme.value.swetrix
-  ? defineAsyncComponent(() => import('../plugins/swetrix/components/Swetrix.vue'))
+  ? defineAsyncComponent(
+      () => import('../plugins/swetrix/components/Swetrix.vue')
+    )
   : () => null
 </script>
 
@@ -58,7 +65,7 @@ const Swetrix = theme.value.swetrix
 .VPFooter :deep(a) {
   text-decoration-line: underline;
   text-underline-offset: 2px;
-  transition: color 0.25s;
+  transition: none;
 }
 
 .VPFooter :deep(a:hover) {

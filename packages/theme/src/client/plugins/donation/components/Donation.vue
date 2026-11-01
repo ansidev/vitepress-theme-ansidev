@@ -17,15 +17,17 @@ const computedDonationConfig = computed(() => {
     if (donationPlatform === 'custom') {
       continue
     }
-    const donationId: string = donationConfigs[donationPlatform as keyof typeof donationConfigs] as string
+    const donationId: string = donationConfigs[
+      donationPlatform as keyof typeof donationConfigs
+    ] as string
     donationConfig[donationPlatform] = {
       ...supportedDonationPlatforms[donationPlatform],
-      donationId,
+      donationId
     }
   }
   return {
     ...donationConfig,
-    ...donationConfigs.custom,
+    ...donationConfigs.custom
   }
 })
 </script>

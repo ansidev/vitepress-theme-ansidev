@@ -4,7 +4,7 @@ title: WezTerm cheatsheet
 date: 2023-05-18T15:00:00+07:00
 author: ansidev
 gravatar: a2ac3c4477e717c7fa15041d907e71fd
-twitter: "@ansidev"
+twitter: '@ansidev'
 permalink: /tips-and-tricks/wezterm-cheatsheet
 categories:
   - Tips and Tricks

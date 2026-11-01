@@ -9,4 +9,13 @@ onlyBuiltDependencies:
   - esbuild
 
 overrides:
-  "vue": "3.5.44"
+  'vue': '3.5.44'
+  vite@*: 'catalog:'
+catalog:
+  vite: npm:@voidzero-dev/vite-plus-core@1.4.0
+  vite-plus: 1.4.0
+peerDependencyRules:
+  allowAny:
+    - vite
+  allowedVersions:
+    vite: '*'

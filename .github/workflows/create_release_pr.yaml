@@ -3,8 +3,8 @@ name: create_release_pr
 on:
   push:
     branches:
-      - "release/**"
-      - "hotfix/**"
+      - 'release/**'
+      - 'hotfix/**'
 
 jobs:
   create_release_pr:

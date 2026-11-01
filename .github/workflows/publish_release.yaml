@@ -8,7 +8,7 @@ on:
       - main
 
 env:
-  VERSION_TAG_PREFIX: "v"
+  VERSION_TAG_PREFIX: 'v'
 
 jobs:
   release:

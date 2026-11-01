@@ -1,4 +1,4 @@
-<script setup lang='ts'>
+<script setup lang="ts">
 import { computed, type PropType } from 'vue'
 import { useI18n } from 'vue-i18n'
 import TermBadge from '../components/TermBadge.vue'
@@ -9,8 +9,8 @@ const props = defineProps({
   posts: {
     type: Object as PropType<Post[]>,
     required: true,
-    default: [],
-  },
+    default: []
+  }
 })
 
 const { t } = useI18n()
@@ -24,7 +24,13 @@ const tags = computed(() => useRank(props.posts.flatMap((post) => post.tags)))
       <div v-if="Object.keys(tags).length === 0" class="mt-2 mb-2 mr-5">
         {{ t('no_tag') }}
       </div>
-      <TermBadge v-for="(count, tag) in tags" :key="tag" :title="tag" :count="count" :href="`/tags/${useSlug(tag)}`" />
+      <TermBadge
+        v-for="(count, tag) in tags"
+        :key="tag"
+        :title="tag"
+        :count="count"
+        :href="`/tags/${useSlug(tag)}`"
+      />
     </div>
   </Page>
 </template>

@@ -6,7 +6,7 @@ export const useProjectStatusStyle = (developmentStatus: string) => {
         backgroundColor: 'bg-green-100',
         darkBackgroundColor: 'dark:bg-green-800',
         textColor: 'text-green-800',
-        darkTextColor: 'dark:text-green-100',
+        darkTextColor: 'dark:text-green-100'
       }
     case 'inactive':
       return {
@@ -14,7 +14,7 @@ export const useProjectStatusStyle = (developmentStatus: string) => {
         backgroundColor: 'bg-yellow-100',
         darkBackgroundColor: 'dark:bg-yellow-800',
         textColor: 'text-yellow-800',
-        darkTextColor: 'dark:text-yellow-100',
+        darkTextColor: 'dark:text-yellow-100'
       }
     case 'unmaintained':
       return {
@@ -22,7 +22,7 @@ export const useProjectStatusStyle = (developmentStatus: string) => {
         backgroundColor: 'bg-red-100',
         darkBackgroundColor: 'dark:bg-red-800',
         textColor: 'text-red-800',
-        darkTextColor: 'dark:text-red-100',
+        darkTextColor: 'dark:text-red-100'
       }
     default:
       return {}

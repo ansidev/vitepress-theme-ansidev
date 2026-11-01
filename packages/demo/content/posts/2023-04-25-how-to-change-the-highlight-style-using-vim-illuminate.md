@@ -4,7 +4,7 @@ title: How to change the highlight style using vim-illuminate?
 date: 2023-04-25T05:58:22+07:00
 author: ansidev
 gravatar: a2ac3c4477e717c7fa15041d907e71fd
-twitter: "@ansidev"
+twitter: '@ansidev'
 permalink: /tips-and-tricks/how-to-change-the-highlight-style-using-vim-illuminate
 categories:
   - Tips and Tricks

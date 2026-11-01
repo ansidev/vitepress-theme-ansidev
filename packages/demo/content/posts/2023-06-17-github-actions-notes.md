@@ -5,7 +5,7 @@ title: GitHub Actions notes
 date: 2023-06-17T15:58:40+07:00
 author: ansidev
 gravatar: a2ac3c4477e717c7fa15041d907e71fd
-twitter: "@ansidev"
+twitter: '@ansidev'
 permalink: /tips-and-tricks/github-actions-notes/
 categories:
   - Tips and Tricks

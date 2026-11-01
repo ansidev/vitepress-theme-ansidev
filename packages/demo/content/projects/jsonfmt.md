@@ -12,7 +12,7 @@ developmentStatus: active
 date: 2022-08-04T04:25:00+07:00
 author: ansidev
 gravatar: a2ac3c4477e717c7fa15041d907e71fd
-twitter: "@ansidev"
+twitter: '@ansidev'
 ---
 
 JSON Formatter CLI

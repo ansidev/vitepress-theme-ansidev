@@ -9,26 +9,31 @@ const props = defineProps({
   posts: {
     type: Object as PropType<Post[]>,
     required: true,
-    default: [],
-  },
+    default: []
+  }
 })
 
 const { t } = useI18n()
 
 const totalPostsByYears = computed(() =>
-  useRank(props.posts.flatMap((post) => new Date(post.date).getFullYear().toString())),
+  useRank(
+    props.posts.flatMap((post) => new Date(post.date).getFullYear().toString())
+  )
 )
 const sortedYearDesc = computed(() =>
   Object.keys(totalPostsByYears.value)
     .map((str) => Number(str))
-    .reverse(),
+    .reverse()
 )
 </script>
 
 <template>
   <Page :title="t('archives')">
     <div class="flex flex-wrap pt-4">
-      <div v-if="Object.keys(sortedYearDesc).length === 0" class="mt-2 mb-2 mr-5">
+      <div
+        v-if="Object.keys(sortedYearDesc).length === 0"
+        class="mt-2 mb-2 mr-5"
+      >
         {{ t('no_archive') }}
       </div>
       <TermBadge

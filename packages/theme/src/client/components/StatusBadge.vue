@@ -1,40 +1,40 @@
-<script setup lang='ts'>
+<script setup lang="ts">
 defineProps({
   backgroundColor: {
     type: String,
     required: false,
-    default: 'bg-blue-100',
+    default: 'bg-blue-100'
   },
   darkBackgroundColor: {
     type: String,
     required: false,
-    default: 'dark:bg-blue-800',
+    default: 'dark:bg-blue-800'
   },
   textColor: {
     type: String,
     required: false,
-    default: 'text-blue-800',
+    default: 'text-blue-800'
   },
   darkTextColor: {
     type: String,
     required: false,
-    default: 'dark:text-blue-100',
+    default: 'dark:text-blue-100'
   },
   fontSize: {
     type: String,
     required: false,
-    default: 'text-base',
+    default: 'text-base'
   },
   fontWeight: {
     type: String,
     required: false,
-    default: 'font-normal',
+    default: 'font-normal'
   },
   rounded: {
     type: Boolean,
     required: false,
-    default: true,
-  },
+    default: true
+  }
 })
 </script>
 
@@ -48,7 +48,7 @@ defineProps({
       darkTextColor,
       fontSize,
       fontWeight,
-      rounded ? 'rounded' : '',
+      rounded ? 'rounded' : ''
     ]"
   >
     <slot />

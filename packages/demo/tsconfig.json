@@ -9,20 +9,9 @@
     "outDir": "dist",
     "esModuleInterop": true
   },
-  "include": [
-    ".vitepress/**/*.ts",
-    "**/*.ts",
-    "**/*.vue",
-    "**/*.md"
-  ],
-  "exclude": [
-    "node_modules",
-    "dist",
-    ".vitepress/cache"
-  ],
+  "include": [".vitepress/**/*.ts", "**/*.ts", "**/*.vue", "**/*.md"],
+  "exclude": ["node_modules", "dist", ".vitepress/cache"],
   "vueCompilerOptions": {
-    "vitePressExtensions": [
-      ".md"
-    ]
+    "vitePressExtensions": [".md"]
   }
 }

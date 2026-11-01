@@ -8,7 +8,5 @@
     "outDir": "dist",
     "esModuleInterop": true
   },
-  "include": [
-    "src/node/**/*.ts"
-  ]
+  "include": ["src/node/**/*.ts"]
 }

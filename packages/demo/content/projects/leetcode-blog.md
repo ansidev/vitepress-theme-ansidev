@@ -13,7 +13,7 @@ developmentStatus: active
 date: 2022-10-26T00:12:00+07:00
 author: ansidev
 gravatar: a2ac3c4477e717c7fa15041d907e71fd
-twitter: "@ansidev"
+twitter: '@ansidev'
 ---
 
 Solutions for LeetCode problems.
@@ -34,14 +34,14 @@ I created this project to keep notes for LeetCode problems.
   This version is rewritten from the scratch based on v1 code base since v1 used Astro v1.
 
   **Features**
-    - Astro v2.
-    - SEO.
-    - Analytics Integrations: Google Analytics, Swetrix Analytics, Counter Analytics.
-    - Re-implemented multiple theme using [TailwindCSS Themer](https://www.npmjs.com/package/tailwindcss-themer).
-    - Improved UI design.
+  - Astro v2.
+  - SEO.
+  - Analytics Integrations: Google Analytics, Swetrix Analytics, Counter Analytics.
+  - Re-implemented multiple theme using [TailwindCSS Themer](https://www.npmjs.com/package/tailwindcss-themer).
+  - Improved UI design.
 
   **Developer Features**
-    - Use my own [Astro starter template](https://github.com/ansidev/astro-basic-template) with multiple pre-configurations to help saving the development time.
+  - Use my own [Astro starter template](https://github.com/ansidev/astro-basic-template) with multiple pre-configurations to help saving the development time.
 
   **Release notes**: [v2.0.0](https://github.com/ansidev/leetcode-blog/releases/tag/v2.0.0).
 

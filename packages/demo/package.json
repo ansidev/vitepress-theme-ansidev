@@ -1,19 +1,18 @@
 {
   "name": "@ansidev-oss/vitepress-theme-ansidev-demo",
   "private": true,
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "The demo site for VitePress theme @ansidev-oss/vitepress-theme-ansidev",
   "type": "module",
   "scripts": {
-    "lint:check": "biome check",
-    "lint": "biome check --write",
-    "dev": "vitepress dev",
+    "lint:check": "vp check",
+    "lint": "vp check --fix",
+    "dev": "node ../../scripts/ensure-theme-built.mjs && vitepress dev",
     "build": "vitepress build",
     "preview": "vitepress preview"
   },
   "devDependencies": {
     "@ansidev-oss/vitepress-theme-ansidev": "workspace:*",
-    "@biomejs/biome": "2.6.3",
     "vitepress": "^2.0.0-alpha.16",
     "vitepress-plugin-rss": "^0.4.2"
   }

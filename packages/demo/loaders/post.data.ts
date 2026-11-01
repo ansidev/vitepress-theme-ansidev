@@ -20,8 +20,8 @@ export default createContentLoader('posts/**/!(index).md', {
         excerpt: useExcerptHtml(excerpt),
         date: new Date(frontmatter.date as string),
         categories: frontmatter.categories,
-        tags: frontmatter.tags,
+        tags: frontmatter.tags
       }))
       .sort((a: Post, b: Post) => b.date.getTime() - a.date.getTime())
-  },
+  }
 })

@@ -1,4 +1,4 @@
-<script setup lang='ts'>
+<script setup lang="ts">
 import { computed, type PropType } from 'vue'
 import { useI18n } from 'vue-i18n'
 import TermBadge from '../components/TermBadge.vue'
@@ -9,13 +9,15 @@ const props = defineProps({
   posts: {
     type: Object as PropType<Post[]>,
     required: true,
-    default: [],
-  },
+    default: []
+  }
 })
 
 const { t } = useI18n()
 
-const categories = computed(() => useRank(props.posts.flatMap((post) => post.categories)))
+const categories = computed(() =>
+  useRank(props.posts.flatMap((post) => post.categories))
+)
 </script>
 
 <template>
@@ -24,7 +26,13 @@ const categories = computed(() => useRank(props.posts.flatMap((post) => post.cat
       <div v-if="Object.keys(categories).length === 0" class="mt-2 mb-2 mr-5">
         {{ t('no_category') }}
       </div>
-      <TermBadge v-for="(count, category) in categories" :key="category" :title="category" :count="count" :href="`/categories/${useSlug(category)}`" />
+      <TermBadge
+        v-for="(count, category) in categories"
+        :key="category"
+        :title="category"
+        :count="count"
+        :href="`/categories/${useSlug(category)}`"
+      />
     </div>
   </Page>
 </template>

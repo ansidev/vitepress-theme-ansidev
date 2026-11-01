@@ -10,6 +10,11 @@ However, if you want to use it for your VitePress site and you get into any issu
 
 This repo can be developed on its own since it is a self-contained VitePress theme. Make sure to use [pnpm](https://pnpm.io/) as the package manager when installing deps. A demo app is available in `/demo` and can be run with `pnpm dev`:
 
+> [!NOTE]
+> The dev workflows use POSIX shell features (`&`, `wait`) to run watchers in
+> parallel, so development on Windows requires WSL or another POSIX-compatible
+> environment.
+
 ```bash
 pnpm install
 pnpm dev

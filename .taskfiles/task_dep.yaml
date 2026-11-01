@@ -1,4 +1,4 @@
-version: "3"
+version: '3'
 
 vars:
   GIT_REMOTE: origin
@@ -33,12 +33,12 @@ tasks:
     cmds:
       - task: init_dep_branch
         vars:
-          BRANCH_NAME: "{{.CLI_ARGS}}"
+          BRANCH_NAME: '{{.CLI_ARGS}}'
       - ncu -u -f {{.CLI_ARGS}}
-      - task: "site:build"
+      - task: 'site:build'
       - task: commit
         vars:
-          PACKAGE_NAME: "{{.CLI_ARGS}}"
+          PACKAGE_NAME: '{{.CLI_ARGS}}'
     silent: true
 
   commit:
@@ -50,9 +50,9 @@ tasks:
       - git add {{.COMMIT_FILES}}
       - |
         git commit -m "build(deps): update {{.PACKAGE_NAME}} to version {{.PACKAGE_VERSION}}"
-      - task: "git:push_current"
-      - task: "github:create_pr"
+      - task: 'git:push_current'
+      - task: 'github:create_pr'
         vars:
-          BASE: "{{.BRANCH_BASE}}"
-          HEAD: "{{.BRANCH_DEP_PREFIX}}/{{.CLI_ARGS}}"
+          BASE: '{{.BRANCH_BASE}}'
+          HEAD: '{{.BRANCH_DEP_PREFIX}}/{{.CLI_ARGS}}'
     silent: true

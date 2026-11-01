@@ -9,7 +9,9 @@ export const usePageLang = (): ComputedRef<string> => {
   const { frontmatter, lang } = useData()
   return computed(() => {
     const pageLang = frontmatter.value.lang
-    return typeof pageLang === 'string' && pageLang.trim() ? pageLang.trim() : lang.value
+    return typeof pageLang === 'string' && pageLang.trim()
+      ? pageLang.trim()
+      : lang.value
   })
 }
 
@@ -25,7 +27,7 @@ export const useHtmlLang = (): void => {
       () => {
         document.documentElement.lang = pageLang.value
       },
-      { flush: 'post' },
+      { flush: 'post' }
     )
   })
 }
@@ -33,7 +35,10 @@ export const useHtmlLang = (): void => {
 /**
  * Picks the available locale matching `lang` exactly or by base language (`vi-VN` -> `vi`).
  */
-export const matchLocale = (lang: string, availableLocales: readonly Locale[]): Locale | undefined => {
+export const matchLocale = (
+  lang: string,
+  availableLocales: readonly Locale[]
+): Locale | undefined => {
   const normalized = lang.toLowerCase()
   return (
     availableLocales.find((l) => l.toLowerCase() === normalized) ??
@@ -45,7 +50,9 @@ export const matchLocale = (lang: string, availableLocales: readonly Locale[]): 
  * Syncs the vue-i18n locale with the resolved page lang, synchronously so SSR renders the right strings.
  * A manual `LocaleSwitcher` choice lasts until the page lang changes.
  */
-export const usePageLocale = (i18n: { global: { locale: { value: Locale }; availableLocales: Locale[] } }): void => {
+export const usePageLocale = (i18n: {
+  global: { locale: { value: Locale }; availableLocales: Locale[] }
+}): void => {
   const pageLang = usePageLang()
   watch(
     pageLang,
@@ -53,6 +60,6 @@ export const usePageLocale = (i18n: { global: { locale: { value: Locale }; avail
       const matched = matchLocale(lang, i18n.global.availableLocales)
       if (matched) i18n.global.locale.value = matched
     },
-    { immediate: true },
+    { immediate: true }
   )
 }

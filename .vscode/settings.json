@@ -1,12 +1,7 @@
 {
   "typescript.tsdk": "packages/theme/node_modules/typescript/lib",
   "typescript.format.semicolons": "remove",
-  "i18n-ally.localesPaths": [
-    "src/core/locales"
-  ],
+  "i18n-ally.localesPaths": ["src/core/locales"],
   "i18n-ally.keystyle": "nested",
-  "vue.server.includeLanguages": [
-    "vue",
-    "markdown"
-  ]
+  "vue.server.includeLanguages": ["vue", "markdown"]
 }

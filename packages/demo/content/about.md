@@ -4,7 +4,7 @@ title: About me
 date: 2021-01-18T01:46:39+07:00
 author: ansidev
 gravatar: a2ac3c4477e717c7fa15041d907e71fd
-twitter: "@ansidev"
+twitter: '@ansidev'
 ---
 
 ## About me
