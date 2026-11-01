@@ -42,6 +42,7 @@
   },
   "files": [
     "dist",
+    "!dist/.pack",
     "src",
     "README.md",
     "LICENSE"
@@ -51,13 +52,9 @@
     "test": "vp test run",
     "lint:check": "vp check",
     "lint": "vp check --fix",
-    "dev:client": "vp build --watch",
-    "dev:node": "vp pack --watch --on-success \"node ../../scripts/touch-demo.mjs\"",
-    "dev": "concurrently --kill-others \"pnpm dev:client\" \"pnpm dev:node\"",
     "clean": "rimraf dist",
-    "build:client": "vp build && tsc --emitDeclarationOnly",
-    "build:node": "vp pack",
-    "build": "pnpm clean && concurrently \"pnpm build:client\" \"pnpm build:node\""
+    "build": "vp run build:all",
+    "dev": "vp build --watch & vp pack --watch --on-success \"node ../../scripts/publish-node.mjs && node ../../scripts/touch-demo.mjs\" & wait"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.2.0",
@@ -73,7 +70,6 @@
     "@vitejs/plugin-vue": "^6.0.4",
     "@vue/test-utils": "^2.5.1",
     "autoprefixer": "^10.4.24",
-    "concurrently": "^10.0.0",
     "glob": "^14.0.0",
     "gray-matter": "^4.0.3",
     "happy-dom": "^21.0.4",
