@@ -44,8 +44,26 @@ function init() {
   }
 }
 
+function scheduleInit() {
+  const start = () => {
+    // Defer loading until the browser is idle so analytics never competes
+    // with critical rendering / interaction on the initial navigation.
+    if (typeof (window as any).requestIdleCallback === 'function') {
+      (window as any).requestIdleCallback(() => init(), { timeout: 5000 })
+    } else {
+      setTimeout(init, 3000)
+    }
+  }
+
+  if (document.readyState === 'complete') {
+    start()
+  } else {
+    window.addEventListener('load', start, { once: true })
+  }
+}
+
 if (googleAnalyticsOptions) {
-  onMounted(init)
+  onMounted(scheduleInit)
 }
 </script>
 
