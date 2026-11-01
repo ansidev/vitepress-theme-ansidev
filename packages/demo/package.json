@@ -7,7 +7,7 @@
   "scripts": {
     "lint:check": "vp check",
     "lint": "vp check --fix",
-    "dev": "node scripts/vitepress-dev.mjs; exit 0",
+    "dev": "node ../../scripts/ensure-theme-built.mjs && node scripts/vitepress-dev.mjs",
     "build": "vitepress build",
     "preview": "vitepress preview"
   },
