@@ -4,3 +4,9 @@
 /fonts/*
   cache-control: max-age=31536000
   cache-control: immutable
+/imgs/*
+  cache-control: max-age=31536000
+  cache-control: immutable
+/uploads/*
+  cache-control: max-age=31536000
+  cache-control: immutable

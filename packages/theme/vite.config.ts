@@ -52,7 +52,13 @@ export default defineConfig({
         'vue',
         'vitepress',
         /^vitepress\//,
+        'medium-zoom',
         '@iconify/vue',
+        // Swetrix dynamically imports @rrweb/record for session replay, but it
+        // ships its own CDN fallback (replaylibrary.min.js) when that import
+        // fails, so the 91 KB recorder must stay out of the client bundle.
+        '@rrweb/record',
+        'swetrix',
         '@localSearchIndex',
         '@tailwindcss/vite',
         '@vitepress/client',
