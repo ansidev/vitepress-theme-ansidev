@@ -46,13 +46,38 @@ function init() {
 
 function scheduleInit() {
   const start = () => {
-    // Defer loading until the browser is idle so analytics never competes
-    // with critical rendering / interaction on the initial navigation.
-    if (typeof (window as any).requestIdleCallback === 'function') {
-      ;(window as any).requestIdleCallback(() => init(), { timeout: 5000 })
-    } else {
-      setTimeout(init, 3000)
+    // Defer loading until the user interacts with the page (or the tab has
+    // been open for 30s) so analytics never competes with critical
+    // rendering / interaction on the initial navigation.
+    const idle = () => {
+      if (typeof (window as any).requestIdleCallback === 'function') {
+        ;(window as any).requestIdleCallback(() => init(), { timeout: 5000 })
+      } else {
+        setTimeout(init, 3000)
+      }
     }
+
+    const events: Array<keyof DocumentEventMap> = [
+      'keydown',
+      'pointerdown',
+      'pointermove',
+      'scroll',
+      'touchstart'
+    ]
+    const onFirstInteraction = () => {
+      events.forEach((event) =>
+        document.removeEventListener(event, onFirstInteraction)
+      )
+      idle()
+    }
+    events.forEach((event) =>
+      document.addEventListener(event, onFirstInteraction, {
+        once: true,
+        passive: true
+      })
+    )
+    // Fallback for sessions with no interaction at all.
+    setTimeout(onFirstInteraction, 30000)
   }
 
   if (document.readyState === 'complete') {
